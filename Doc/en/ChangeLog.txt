@@ -1,0 +1,50 @@
+{************************************************************}
+{                                                            }
+{                  Mercury Database Objects                  }
+{                                                            }
+{          Copyright(c) 2002-2005, The Mercury Team          }
+{                  Contact: info@mdolib.org                  }
+{                                                            }
+{           Based on the FreeIBComponents written            }
+{          by  Gregory H. Deatz - gdeatz@hlmdd.com           }
+{           and InterBase Express 4.3 created by             }
+{                    Inprise Corporation.                    }
+{                                                            }
+{************************************************************}
+
+MDO-RC2
+28-FEV-2006 - Release RC2 available in sourceforge files.
+28-FEV-2006 - Samples, in samples folder, translated to english.
+11-fev-2006 - Fix TMDODatabaseEditForm to work with all Client Lib options.
+07-fev-2006 - Fix TMDOXSQLVAR.GetAsCurrency method, when the value for SQL_DOUBLE, SQL_FLOAT, SQL_D_FLOAT types the returned value was truncate (thanks to Antônio Gomes)
+02-feb-2006 - Added compatibility to Delphi 2006 (thanks Hugo Martins);
+07-dec-2005 - Renamed EMDOFirebirdRoleError to EMDOFirebirdPermissionError.
+01-dec-2005 - Added FExplicitEndTransaction variable to control explicit end transaction by programmer, blocking MDO to apply DefaultAction.
+27-nov-2005 - Prepare method is called when Dataset is opened, now it's supported because permissions treatment was added.
+27-nov-2005 - Added support to permission error exceptions: EMDOFirebirdRoleError.
+20-nov-2005 - Fixed support requests 1353245 and 1357622.
+20-nov-2005 - Fixed a memory overwrite during the destroy of the TMDOTable.
+19-nov-2005 - Removed the FB10/FB15 compiler directive, added clAutoDetect and clFBEmbed to the MDOClientLib property of the MDODatabase. In clAutoDetect mode (default), MDO tries to load the client library in this order: FBEmbed.dll, FBClient.dll, GDS32.dll.
+18-nov-2005 - Renamed a variable in TMDOCSVDataExport and translated two exceptions.
+18-nov-2005 - Updated the MDOHeader to reflect the last ibase.h.
+14-nov-2005 - Added compatibility to Firebird 1.5 for triggers creation in MDOExtract. (by Ivan Mecena)
+14-nov-2005 - Bug fix in TMDOCSVDataExport to work with private variable FSeparator. (by Ivan Mecena)
+14-nov-2005 - Alter Prepare method from TMDOSQL to set FCursor name; Removed the code FCursor set name from the TMDOSQL.Create. This is needed because if you create the MDOSQL dynamically, the name is not assigned in the create and the cursor is only based on a 'random' number. And, in some special situation, duplicate cursornames will appear. (By Marco de Groot)
+14-nov-2005 - For DoBeforeEdit, DoBeforeInsert and DoBeforeDelete TMDOCustomDataSet methods, before call Prepare method is check if an object TUpdateObject was assigned to current object (by Marco de Groot).
+14-nov-2005 - Added MDOConst_PT_BR.pas file with messages translated to brazilian portuguese;
+MDO-RC1
+01-oct-2005 - Added documentation;
+MDO 0.9.1
+31-jul-2005 - Added MDOEvents sample that use Firebird Events.
+30-may-2005 - Added Delphi 2005 support (send by Mauricio Torres Fernandes) MDO 0.9.0
+05-aug-2005 - New method TMDOTransaction.ApplyDefaultAction added to fix bug post by Edson.
+apr-26-2005 - Translated to Italy (by FORNERO MONIA Marco)
+09-jan-2005 - Added order when retrieves fields from specific table to match with creation order that fields (by João Morais)
+09-jan-2005 - Adjusts and fix of tabs in some editors (by João Morais)
+09-jan-2005 - Added constants messages translation to pt_PT (by Carlos Mação)
+09-jan-2005 - Event OnStatement created on MDOScript (by Carlos Mação)
+09-jan-2005 - Added option to delete calculated fields on SQL generation to MDOUpdateSQLEditor (by Antônio Gomes)
+09-jan-2005 - Changed search for key fields from table to compatibility with Firebird 1.5. Since 1.5 version, it's allowed to change indexes name.(by Antônio Gomes)
+09-jan-2005 - Allowed use field by alias, and search by field real name in TMDOCustomDataset. (by Antônio Gomes)
+04-feb-2005 - Added ParamByName(String) method (by Hugo Bereta)
+03-feb-2005 - Fix missing variables since last version.

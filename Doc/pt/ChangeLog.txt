@@ -1,0 +1,54 @@
+{************************************************************}
+{                                                            }
+{                  Mercury Database Objects                  }
+{                                                            }
+{          Copyright(c) 2002-2005, The Mercury Team          }
+{                  Contact: info@mdolib.org                  }
+{                                                            }
+{           Based on the FreeIBComponents written            }
+{          by  Gregory H. Deatz - gdeatz@hlmdd.com           }
+{           and InterBase Express 4.3 created by             }
+{                    Inprise Corporation.                    }
+{                                                            }
+{************************************************************}
+
+MDO-RC2
+28-FEV-2006 - Release RC2 disponível nos arquivos do sourceforge.
+28-FEV-2006 - Examples, na pasta samples, traduzidos para ingles.
+11-fev-2006 - Corrigido TMDODatabaseEditForm para trabalhar com todas opções de Client Lib.
+07-fev-2006 - Corrigido método TMDOXSQLVAR.GetAsCurrency onde o valor para tipos SQL_DOUBLE, SQL_FLOAT, SQL_D_FLOAT retornavam valor truncado (obrigado à Antônio Gomes)
+02-fev-2006 - Adicionado suporte ao Delphi 2006 (obrigado à Hugo Martins);
+07-dez-2005 - Renomeado EMDOFirebirdRoleError para EMDOFirebirdPermissionError.
+01-dez-2005 - Adicionado variável FExplicitEndTransaction para controle de finalização de transação explicita pelo programador, impedindo que O MDO aplique o DefaultAction.
+27-nov-2005 - Método Prepare executado na abertura do Dataset, agora suportado já que o tratamento de permissões foi incluído.
+27-nov-2005 - Adicionado suporte à exceção de erro de permissões: EMDOFirebirdRoleError. 
+20-nov-2005 - Corrigidos os pedidos de suporte 1353245 e 1357622.
+20-nov-2005 - Corrigido uma sobrecarga de memória durante o destroy do TMDOTable.
+19-nov-2005 - Removido as diretivas de compilação FB10/FB15, adicionado clAutoDetect e clFBEmbed à propriedade MDOClientLib do MDODatabase. No modo clAutoDetect (default), MDO tenta carregar a biblioteca cliente na ordem: FBEmbed.dll, FBClient.dll, GDS32.dll.
+18-nov-2005 - Renomeado uma variável em TMDOCSVDataExport e duas exceções traduzidas para o inglês.
+18-nov-2005 - Atualizado MDOHeader para refletir ibase.h atual.
+14-nov-2005 - Adicionado compatibilidade ao Firebird 1.5 na criação de triggers no MDOExtract. (por Ivan Mecena)
+14-nov-2005 - Bug corrigido em TMDOCSVDataExport para trabalhar com a variável privada FSeparator. (por Ivan Mecena)
+14-nov-2005 - Alterador método Prepare do TMDOSQL para ajustar o nome do FCursor; Removido o código de ajuste de FCursor do construtor TMDOSQL.Create. Isto é necessário porque se você criar um MDOSQL dinamicamente, o nome não é determinado na criação e o cursor é baseado apenas no número 'aleatório'. E, em algumas situações especiais, nomes de cursores duplicados apareceriam.(Por Marco de Groot).
+14-nov-2005 - Para os métodos DoBeforeEdit, DoBeforeInsert e DoBeforeDelete de TMDOCustomDataSet antes de chamar o método Prepare é verificado se um objeto TUpdateObject foi indicado para o objeto corrente. (por Marco de Groot)
+14-nov-2005 - Adicionado arquivo MDOConst_PT_BR.pas com mensagens traduzidas para portugues brasileiro;
+--
+MDO-RC1
+01-out-2005 - Documentação incompleta adicionada;
+--
+MDO 0.9.1
+31-jul-2005 - Exemplo MDOEvents adicionado para exemplificar a utilização dos eventos do MDO.
+30-mai-2005 - Suporte ao Delphi 2005 incluído (enviado por Mauricio Torres Fernandes)
+--
+MDO 0.9.0
+05-ago-2005 - New method TMDOTransaction.ApplyDefaultAction added to fix bug post by Edson.
+26-abr-2005 - Traduzido para italiado (por FORNERO MONIA Marco)
+09-jan-2005 - Adicionado ordenação quando recuperar os campos de uma determinada tabela de acordo com a ordem que foi criada. (enviado por João Morais)
+09-jan-2005 - Retoques e correção de tabulação em alguns editores (enviado por João Morais)
+09-jan-2005 - Adicionado tradução de mensagens constantes para pt_pt (enviado por Carlos Mação)
+09-jan-2005 - Criado evento OnStatement em MDOScript (enviado por Carlos Mação)
+09-jan-2005 - Adicionado ao MDOUpdateSQLEditor opção de exclusão de campos calculados na geração do SQL (enviado por Antônio Gomes)
+09-jan-2005 - Alterado a busca pelos campos chave de uma tabela para adequar ao Firebird 1.5, que a partir desta versão permite a alteração do nome dos indices. (enviado por Antônio Gomes)
+09-jan-2005 - Permitido o uso de campo com apelido e busca pelo nome físico do campo em TMDOCustomDataset. (enviado por Antônio Gomes)
+03-fev-2005 - Corrigido erro de variáveis faltando desde a ultima atualização.
+04-fev-2005 - Adicionado método ParamByName(String) (enviado por Hugo Bereta)

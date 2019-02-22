@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{6BB7395F-3A98-4486-A15E-40759A752D54}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="RCLMDO2005.bpl">RCLMDO2005.bdsproj</Projects>
+      <Projects Name="DCLMDO2005.bpl">DCLMDO2005.bdsproj</Projects>
+      <Projects Name="Targets">RCLMDO2005.bpl DCLMDO2005.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

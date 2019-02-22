@@ -1,0 +1,37 @@
+{************************************************************}
+{                                                            }
+{                  Mercury Database Objects                  }
+{                                                            }
+{          Copyright(c) 2002-2005, The Mercury Team          }
+{                  Contact: info@mdolib.org                  }
+{                                                            }
+{           Based on the FreeIBComponents written            }
+{          by  Gregory H. Deatz - gdeatz@hlmdd.com           }
+{           and InterBase Express 4.3 created by             }
+{                    Inprise Corporation.                    }
+{                                                            }
+{************************************************************}
+
+INSTALAÇÃO WINDOWS
+
+
+Os passos seguintes são aplicados para a instalação da biblioteca 
+MDO para Delphi 5, Delphi 6, Delphi 7 e Delphi 2005:
+
+1. Desinstale qualquer versão anterior do MDO, caso exista.
+
+2. Apague todos os arquivos .BPL relacionados ao MDO já existente.
+
+3. Abra o arquivo MDO_D5.BPG para a instalação no Delphi 5 ou 
+MDO_D6.BPG para instalação no Delphi 6, MDO_D7.BPG e MDO_D2005 para a 
+versão Delphi 2005.
+
+4. Na IDE do Delphi selecione: <Project> | <Build All Projects>
+
+5. Para Delphi 5, abra o package DCLMDO50.DPK, para Delphi 6 abra 
+DCLMDO60.DPK, para Delphi 7 abra DCLMDO70.DPK, então clique em <Install>
+
+6. Adicione o caminho onde o código fonte dos arquivos de runtime estão 
+armazenados, como por exemplo: "C:\Mercury\source\runtime". Para isto, 
+selecione:  <Tools> | <Environment Options>, clique na aba <Library> 
+então adicione em Lybrary Path.

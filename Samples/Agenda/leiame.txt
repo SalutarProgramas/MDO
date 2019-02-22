@@ -1,0 +1,41 @@
+======================================================================
+Aplicativo: Agenda 1.0
+Autor.....: Daniel Pereira Guimarães
+E-mail....: tecnobyte@ulbrajp.com.br
+Home-page.: www.ulbrajp.com.br/~tecnobyte
+======================================================================
+
+PRÉ-REQUISITOS
+
+- Windows 95, 98, ME, NT, 2000, XP ou compatível.
+- Servidor de banco de dados FireBird 1.0 ou compatível.
+- 2 MB de espaço em disco (mínimo).
+
+INSTALAÇÃO
+
+Antes de instalar este aplicativo tenha certeza de que este computador
+pode acessar um servidor de banco de dados FireBird 1.0 ou compatível.
+Para isto é necessário o FireBird Server instalado em uma máquina da rede
+e o FireBird Client instalado na máquina onde será instalado o programa
+Agenda.
+
+Siga os passos abaixo para instalar o programa Agenda:
+
+1. Crie uma pasta para colocar os arquivos do programa.
+
+2. Copie para esta pasta os seguintes arquivos:
+2.1. agenda.exe - programa executável.
+2.2. agenda.fb - banco de dados do FireBird.
+2.3. agenda.ini - arquivo de configuração.
+
+3. Abra o arquivo agenda.ini e configure conforme o
+   exemplo abaixo:
+
+[Banco de Dados]
+Caminho=c:\agenda\agenda.fb
+Usuario=SYSDBA
+Senha=masterkey
+
+OBS: Os campos "Usuario" e "Senha" são opcionais.
+======================================================================
+

@@ -1,0 +1,73 @@
+package RCLMDO2005;
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Mercury Database Objects [Run time]'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  rtl,
+  dbrtl,
+  dcldb,
+  vcldesigner,
+  designide,
+  vclactnband,
+  vclx,
+//  designdgm,
+  dclstd;
+
+contains
+  MDOUtils in 'runtime\MDOUtils.pas',
+  MDOBatchMove in 'runtime\MDOBatchMove.pas',
+  MDOBlob in 'runtime\MDOBlob.pas',
+  MDOConst in 'runtime\MDOConst.pas',
+  MDOCustomDataSet in 'runtime\MDOCustomDataSet.pas',
+  MDODataBase in 'runtime\MDODatabase.pas',
+  MDODatabaseInfo in 'runtime\MDODatabaseInfo.pas',
+  MDODialogs in 'runtime\MDODialogs.pas',
+  MDOErrorCodes in 'runtime\MDOErrorCodes.pas',
+  MDOEvents in 'runtime\MDOEvents.pas',
+  MDOExternals in 'runtime\MDOExternals.pas',
+  MDOExtract in 'runtime\MDOExtract.pas',
+  MDOHeader in 'runtime\MDOHeader.pas',
+  MDOInstall in 'runtime\MDOInstall.pas',
+  MDOInstallHeader in 'runtime\MDOInstallHeader.pas',
+  MDOIntf in 'runtime\MDOIntf.pas',
+  MDOQuery in 'runtime\MDOQuery.pas',
+  MDOServices in 'runtime\MDOServices.pas',
+  MDOSQL in 'runtime\MDOSQL.pas',
+  MDOSQLMonitor in 'runtime\MDOSQLMonitor.pas',
+  MDOStoredProc in 'runtime\MDOStoredProc.pas',
+  MDOTable in 'runtime\MDOTable.pas',
+  MDOUpdateSQL in 'runtime\MDOUpdateSQL.pas',
+  MDO in 'runtime\MDO.pas',
+  MDOHTMLDataExport in 'runtime\MDOHTMLDataExport.pas',
+  MDOCSVDataExport in 'runtime\MDOCSVDataExport.pas',
+  MDOCustomExport in 'runtime\MDOCustomExport.pas',
+  MDOScript in 'runtime\MDOScript.pas',
+  MDOMisc in 'runtime\MDOMisc.pas';
+
+end.
+

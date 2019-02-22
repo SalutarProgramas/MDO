@@ -1,0 +1,48 @@
+package DCLMDO50;
+
+{$R *.RES}
+{$R 'MDOReg.dcr'}
+{$ALIGN ON}
+{ ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{ DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS OFF}
+{ LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $502BFFF4}
+{$DESCRIPTION 'Mercury Database Objects [Design time]'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+{$DEFINE DEBUG_ONLY}
+
+requires
+  vcl50,
+  vcldb50,
+  dcldb50,
+  RCLMDO50;
+
+{%File 'MDO.inc'}
+
+contains
+  MDODBReg in 'design\MDODBReg.pas',
+  MDOEventsEditor in 'design\MDOEventsEditor.pas' {MDOEventsEditorForm},
+  MDOTransactionEdit in 'design\MDOTransactionEdit.pas' {MDOTransactionEditForm},
+  MDODatabaseEdit in 'design\MDODatabaseEdit.pas' {MDODatabaseEditForm},
+  MDOUpdateSQLEditor in 'design\MDOUpdateSQLEditor.pas' {MDOUpdateSQLEditForm},
+  MDOServiceEditor in 'design\MDOServiceEditor.pas' {MDOServiceEditorForm};
+
+end.
+

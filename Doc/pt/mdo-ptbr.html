@@ -1,0 +1,3717 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.sf.net">
+<LINK REL="stylesheet" TYPE="text/css" HREF="estilo.css">
+<TITLE>Mercury Database Objects</TITLE>
+</HEAD><body><div class="container">
+<P ALIGN="center"><CENTER><H1>Mercury Database Objects</H1>
+<FONT SIZE="4">
+<I>Biblioteca MDO</I><BR>
+MDO RC1 - 2006-02-26
+</FONT></CENTER>
+
+<P></P>
+<HR NOSHADE SIZE=1>
+<P></P>
+    <UL>
+    <LI><A HREF="#toc1">Procedures &amp; Functions</A>
+      <UL>
+      <LI><A HREF="#toc2">Unit MDO</A>
+      <LI><A HREF="#toc3">Unit MDOIntf</A>
+      <LI><A HREF="#toc4">Unit MDOSQLMonitor</A>
+      </UL>
+    <LI><A HREF="#toc5">TMDOBase</A>
+      <UL>
+      <LI><A HREF="#toc6">Propriedades</A>
+      <LI><A HREF="#toc7">Eventos</A>
+      <LI><A HREF="#toc8">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc9">TMDOBatch</A>
+      <UL>
+      <LI><A HREF="#toc10">Propriedades</A>
+      <LI><A HREF="#toc11">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc12">TMDOBatchInput</A>
+      <UL>
+      <LI><A HREF="#toc13">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc14">TMDOBCDField</A>
+      <UL>
+      <LI><A HREF="#toc15">Propriedades</A>
+      <LI><A HREF="#toc16">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc17">TMDOBlobStream</A>
+      <UL>
+      <LI><A HREF="#toc18">Propriedades</A>
+      <LI><A HREF="#toc19">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc20">TMDOCustomDataSet</A>
+      <UL>
+      <LI><A HREF="#toc21">Propriedades</A>
+      <LI><A HREF="#toc22">Eventos</A>
+      <LI><A HREF="#toc23">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc24">TMDODatabase</A>
+      <UL>
+      <LI><A HREF="#toc25">Propriedades</A>
+      <LI><A HREF="#toc26">Eventos</A>
+      <LI><A HREF="#toc27">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc28">TMDODataLink</A>
+      <UL>
+      <LI><A HREF="#toc29">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc30">TMDOBatchOutput</A>
+      <UL>
+      <LI><A HREF="#toc31">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc32">TMDOCustomDataSet</A>
+      <UL>
+      <LI><A HREF="#toc33">Propriedades</A>
+      <LI><A HREF="#toc34">Eventos</A>
+      <LI><A HREF="#toc35">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc36">TMDOSQLMonitor</A>
+      <UL>
+      <LI><A HREF="#toc37">Propriedades</A>
+      <LI><A HREF="#toc38">Eventos</A>
+      </UL>
+    <LI><A HREF="#toc39">TMDOOutputRawFile</A>
+      <UL>
+      <LI><A HREF="#toc40">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc41">TMDOOutputDelimitedFile</A>
+      <UL>
+      <LI><A HREF="#toc42">Propriedades</A>
+      <LI><A HREF="#toc43">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc44">TMDOInputRawFile</A>
+      <UL>
+      <LI><A HREF="#toc45">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc46">TMDOInputDelimitedFile</A>
+      <UL>
+      <LI><A HREF="#toc47">Propriedades</A>
+      <LI><A HREF="#toc48">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc49">TMDODSBlobStream</A>
+      <UL>
+      <LI><A HREF="#toc50">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc51">TMDODataSetUpdateObject</A>
+      <UL>
+      <LI><A HREF="#toc52">Propriedades</A>
+      <LI><A HREF="#toc53">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc54">TMDOCustomSQLMonitor</A>
+      <UL>
+      <LI><A HREF="#toc55">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc56">EMDOFirebirdError</A>
+    <LI><A HREF="#toc57">EMDOError</A>
+      <UL>
+      <LI><A HREF="#toc58">Propriedades</A>
+      <LI><A HREF="#toc59">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc60">EMDOClientError</A>
+    <LI><A HREF="#toc61">TMDOSQLDA</A>
+      <UL>
+      <LI><A HREF="#toc62">Propriedades</A>
+      <LI><A HREF="#toc63">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc64">TMDOTable</A>
+      <UL>
+      <LI><A HREF="#toc65">Propriedades</A>
+      <LI><A HREF="#toc66">Eventos</A>
+      <LI><A HREF="#toc67">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc68">TMDODataset</A>
+      <UL>
+      <LI><A HREF="#toc69">Propriedades</A>
+      <LI><A HREF="#toc70">Eventos</A>
+      <LI><A HREF="#toc71">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc72">TMDOQuery</A>
+      <UL>
+      <LI><A HREF="#toc73">Propriedades</A>
+      <LI><A HREF="#toc74">Eventos</A>
+      <LI><A HREF="#toc75">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc76">TMDOTransaction</A>
+      <UL>
+      <LI><A HREF="#toc77">Propriedades</A>
+      <LI><A HREF="#toc78">Eventos</A>
+      <LI><A HREF="#toc79">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc80">TMDOSQL</A>
+      <UL>
+      <LI><A HREF="#toc81">Propriedades</A>
+      <LI><A HREF="#toc82">Eventos</A>
+      <LI><A HREF="#toc83">Métodos</A>
+      </UL>
+    <LI><A HREF="#toc84">TMDODatabaseInfo</A>
+      <UL>
+      <LI><A HREF="#toc85">Propriedades</A>
+      <LI><A HREF="#toc86">Métodos</A>
+      </UL>
+    </UL>
+
+<P></P>
+<HR NOSHADE SIZE=1>
+<P></P>
+<P>
+<small>
+Documento inspirado do arquivo de ajuda do Interbase Express 4.3
+</small>
+</P>
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc1"></A>
+<H2>Procedures &amp; Functions</H2>
+<A NAME="toc2"></A>
+<H3>Unit MDO</H3>
+<DL>
+<DT><B>MDOAlloc(var P; OldSize, NewSize: Integer)</B></DT><DD>
+Aloca ou desaloca memória para o tamanho passado, e reinicializa a nova memória para zero.
+<P></P>
+<DT><B>CheckStatusVector(ErrorCodes: array of ISC_STATUS): Boolean</B></DT><DD>
+Verifica o Status Vector.
+<P></P>
+<DT><B>MDOError(ErrMess: EMDOClientError; const Args: array of const)</B></DT><DD>
+Retorna a mensagem de erro para o código de erro especificado. Utilize esta procedure para localizar uma mensagem de erro apropriada para um erro específico e levantar uma exceção EMDOClientError.
+<P></P>
+<DT><B>MDODataBaseError</B></DT><DD>
+Interpreta o SQLCode e o status do MDOErrorCode e envia para uma exceção EMDOFirebirdError. Utilize esta procedure para localizar no Status Vector e interpretar o SQLCode e status do MDOErrorCode, então construa a string de status, e passe para a exceção EMDOFirebirdError.
+<P></P>
+<DT><B>SetMDODataBaseErrorMessages(Value: TMDODataBaseErrorMessages)</B></DT><DD>
+Lhe permite escolher a mensagem de erro que você deseja ver.
+<P></P>
+<PRE>
+  type
+    TMDODataBaseErrorMessage =(ShowSQLCode, ShowFBMessage, ShowSQLMessage);
+    TMDODataBaseErrorMessages = set of TMDODataBaseErrorMessage;
+</PRE>
+<P></P>
+Utilize a procedure para escolher a mensagem de erro que deseja. As opões disponíveis estão definidas no TMDODataBaseErrorMessages.
+</DL>
+
+<DL>
+<DT><B>GetMDODataBaseErrorMessages: TMDODataBaseErrorMessages</B></DT><DD>
+Retorna a configuração da mensagem de erro atual.
+<P></P>
+<PRE>
+  type
+    TMDODataBaseErrorMessage =(ShowSQLCode, ShowFBMessage, ShowSQLMessage);
+    TMDODataBaseErrorMessages = set of TMDODataBaseErrorMessage;
+</PRE>
+<P></P>
+<DT><B>StatusVector: PISC_STATUS</B></DT><DD>
+Recupera o Status Vector thread-specific do thread-local armazenado.
+<P></P>
+<DT><B>StatusVectorArray: PStatusVector</B></DT><DD>
+Recupera um ponteiro para o array do Status Vector.
+<P></P>
+<DT><B>StatusVectorAsText: String</B></DT><DD>
+Captura o Status Vector e retorna como uma string formatada.
+</DL>
+
+<A NAME="toc3"></A>
+<H3>Unit MDOIntf</H3>
+<DL>
+<DT><B>LoadFBInstallLibrary</B></DT><DD>
+Carrega IBInstall.DLL na memória. Utilizado para carregar a biblioteca na memória e resolver os respectivos pontos de entrada ao respectivo ponteiro da procedure dentro da unit.
+<P></P>
+<DT><B>LoadFBLibrary</B></DT><DD>
+Carrega a biblioteca GDS32.DLL ou FBCLIENT.DLL na memória e resolve os pontos de entrada respectivos aos ponteiros da procedure dentro da unit.
+<P></P>
+A biblioteca FBCLIENT.DLL é utilizada por padrão, mas também há suporte à bibliteca GDS32.DLL. Se você deseja alternar entre um e outro você pode configurar no arquivo de diretivas de compilação MDO.INC, onde FB10 representa GDS32 e FB15 representa FBCLIENT. Esta alteração também pode ser feita em tempo de projeto no objeto database, alterando sua propriedade ClientLib.
+<P></P>
+<DT><B>FreeFBInstallLibrary</B></DT><DD>
+Libera a biblioteca IBInstall.DLL da memória previamente carregada.
+<P></P>
+<DT><B>FreeFBLibrary</B></DT><DD>
+Libera a biblioteca GDS32.DLL ou FBCLIENT.DLL da memória previamente carregada. 
+</DL>
+
+<DL>
+<DT><B>CheckFBInstallLoaded</B></DT><DD>
+Tenta carregar IBInstall.DLL na memória se já não estiver carregada. Se não conseguir será levantada uma exceção.
+</DL>
+
+<DL>
+<DT><B>CheckFBLoaded</B></DT><DD>
+Tenta carregar GDS32.DLL ou FBCLIENT.DLL na memória se já não estiver carregada. Se não conseguir será levantada uma exceção.
+<P></P>
+<DT><B>GetFBClientVersion: Integer</B></DT><DD>
+Retorna a maior versão do cliente Firebird.
+</DL>
+
+<A NAME="toc4"></A>
+<H3>Unit MDOSQLMonitor</H3>
+<DL>
+<DT><B>DisableMonitoring</B></DT><DD>
+Desliga o monitoramento de SQL.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc5"></A>
+<H2>TMDOBase</H2>
+<P>
+<B>Unit MDODatabase</B>
+</P>
+<P>
+TMDOBase é o objeto ancestral o qual TMDODatabase e TMDOTransaction descendem.
+</P>
+<A NAME="toc6"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOBase.Database</B></DT><DD>
+Conjunto de bases associadas.
+Use a propriedade database para ajustar ou retornar uma base de dados associada.
+</DL>
+
+<DL>
+<DT><B>TMDOBase.DBHandle: PISC_DB_HANDLE</B></DT><DD>
+Indica o database handle. Use DBHandle para retornar  o database handle.
+</DL>
+
+<DL>
+<DT><B>TMDOBase.Owner: TObject</B></DT><DD>
+Indica qual o proprietário do componente. Owner refere-se ao objeto SQL (DataSet, TMDOSQL, etc) que criou o componente TMDOBase.
+</DL>
+
+<DL>
+<DT><B>TMDOBase.Transaction: TMDOTransaction</B></DT><DD>
+Ajusta ou retorna a transação associada.
+</DL>
+
+<DL>
+<DT><B>TMDOBase.TRHandle: PISC_TR_HANDLE</B></DT><DD>
+Retorna o transaction handle.
+</DL>
+
+<A NAME="toc7"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOBase.AfterDatabaseDisconnect: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma base de dados é desconectada. Usado para ter ações específicas depois que uma base de dados é desconectada.
+<P></P>
+<DT><B>TMDOBase.BeforeDatabaseDisconnect: TNotifyEvent</B></DT><DD>
+Ocorre antes que uma base de dados é desconetada. Usado para ter ações específicas antes que uma base de dados seja desconectada.
+<P></P>
+<DT><B>TMDOBase.OnDatabaseFree: TnotifyEvent</B></DT><DD>
+Ocorre depois que uma base de dados é liberada da memória.
+<P></P>
+<DT><B>TMDOBase.AfterTransactionEnd: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma transação é finalizada.
+<P></P>
+<DT><B>TMDOBase.BeforeTransactionEnd: TNotifyEvent</B></DT><DD>
+Ocorre antes que uma transação seja finalizada.
+<P></P>
+<DT><B>TMDOBase.OnTransactionFree: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma transação é liberada da memória.
+</DL>
+
+<A NAME="toc8"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOBase.CheckDatabase</B> </DT><DD>
+Procedure que verifica se uma base de dados está conectada, ou seja, se está ajustada e ativa.
+<P></P>
+<DT><B>TMDOBase.CheckTransaction</B></DT><DD>
+Procedure que verifica se uma trnasação está ativa e ajustada.
+<P></P>
+<DT><B>TMDOBase.Create</B></DT><DD>
+Procedure que cria uma instancia de um objeto MDOBase.
+<P></P>
+<DT><B>TMDOBase.Destroy</B></DT><DD>
+Procedure que destrói um objeto MDOBase e libera qualquer recurso associado a ele.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc9"></A>
+<H2>TMDOBatch</H2>
+<P>
+<B>Unit MDOSQL</B>
+</P>
+<P>
+Este objeto é usado para oferecer propriedades e método para uso com os objetos
+TMDOBatchInput e TMDOBatchOutPut, os quais tornam possíveis a entrada e saída 
+de dados em qualquer formato virtualmente. 
+</P>
+<P>
+Descendentes desta classe podem especificar um nome de arquivo (para entrada ou 
+saída), e um objeto TMDOSQLDA representando um registro ou parametros. O método
+ReadFile é chamado antes de processar a entrada ou saída.
+</P>
+<A NAME="toc10"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOBatch.Columns: TMDOSQLDA</B></DT><DD>
+Usado para recuperar colunas XSQLDA.
+<P></P>
+<DT><B>TMDOBatch.Filename: String</B></DT><DD>
+Ajusta ou exibe o nome do nome de arquivo externo.
+<P></P>
+<DT><B>TMDOBatch.Params: TMDOSQLDA</B></DT><DD>
+Usado para retornar parametros XSQLDA.
+</DL>
+
+<A NAME="toc11"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOBatch.ReadyFile</B> </DT><DD>
+Procedure para preparar o arquivo para entrada ou saída.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc12"></A>
+<H2>TMDOBatchInput</H2>
+<P>
+<B>Unit MDOSQL</B>
+</P>
+<P>
+Objeto utilizado para abstração de todas entradas batch. Provê propriedades e métodos úteis para
+uso de entradas batch.
+</P>
+<A NAME="toc13"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOBatchInput.ReadParameters: Boolean</B></DT><DD>
+<P></P>
+Função para ler parametros de entrada XSQLDA. Sua chamada lê a entrada de parametros da área do descritor SQL extendido (XSQLDA) de um arquivo especificado.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc14"></A>
+<H2>TMDOBCDField</H2>
+<P>
+<B>Unit MDOCustomDataSet</B>
+</P>
+<P>
+Encapsula o tipo moeda do Windows.
+</P>
+<A NAME="toc15"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOBCDField.Size: Integer</B></DT><DD>
+Indica o tamanho do tipo de dado, o padrão é 8.
+</DL>
+
+<A NAME="toc16"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOBCDField.Create</B> </DT><DD>
+Cria uma instancia do objeto TMDOBCDField, tipo de dado ftBCD de tamanho padrão 8.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc17"></A>
+<H2>TMDOBlobStream</H2>
+<P>
+<B>Unit MDOBlob</B>
+</P>
+<P>
+TMDOBlobStream é um objeto de fluxo que permite aplicações a lerem ou gravar em campos que representam Blob.
+Usado para acessar ou modificar o valor de um objeto de campo blob. Objetos de campos blob são objetos TBlobField e descendem de TBlobField assim como TGraphicField e TMemoField. Campos blob usam canais blob para implementar a maioria dos metodos e propriedades de acesso a dados.
+</P>
+<P>
+TMDOBlobStrem permite que não seja preciso ter conhecimentos sobre como os dados são gravados em campos do tipo blob, tanto para ler ou escrever dados bastando empregar uma interface de fluxo uniforme.
+</P>
+<P>
+Para usar um fluxo Blob, crie uma instancia de TMDOBlobStream, utilize seus métodos para ler ou gravar dados, e então libere o fluxo Blob da memória. Não utilize uma mesma instancia do objeto TBlobStream para acessar mais de um registro. Em vez disso, crie um novo objeto todas as vezes que você precisar ler ou escrever dados Blob em um novo registro.
+</P>
+<A NAME="toc18"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOBlobStream.BlobID: TISC_QUAD</B></DT><DD>
+Ajusta ou retorna o Blob ID definido em 64-bit, o qual é gravado em um campo na tabela e aponta para o primeiro segmento do blob ou para uma página de ponteiros de fragmentos de Blob.
+<P></P>
+<DT><B>TMDOBlobStream.BlobMaxSegmentSize: Long</B></DT><DD>
+Retorna o tamanho de segmento máximo.
+<P></P>
+<DT><B>TMDOBlobStream.BlobNumSegments: Long</B> </DT><DD>
+Retorna o número total de segmentos existente em um Blob.
+<P></P>
+<DT><B>TMDOBlobStream.BlobSize: Long</B></DT><DD>
+Retorna o tamanho total em bytes de um blob.
+<P></P>
+<DT><B>TMDOBlobStream.BlobType: Short</B></DT><DD>
+Retorna o tipo de blob, onde 0 para segmentado (segmented) e 1 para fluxo (stream).
+<P></P>
+<DT><B>TMDOBlobStream.Database: TMDODatabase</B></DT><DD>
+Ajusta ou retorna a base de dados associada.
+<P></P>
+<DT><B>TMDOBlobStream.DBHandle: PISC_DB_HANDLE</B></DT><DD>
+Utilizado para retornar o handle da base de dados.
+<P></P>
+<DT><B>TMDOBlobStream.Handle: TISC_BLOB_HANDLE</B></DT><DD>
+Utilizado para retornar o handle do blob.
+<P></P>
+<DT><B>TMDOBlobStream.Mode: TBlobStreamMode</B></DT><DD>
+Ajusta ou retorna o tipo do modo de fluxo do Blob.
+<P></P>
+     <CODE>type TBlobStreamMode = set of (bmRead, bmWrite, bmReadWrite);</CODE>
+<P></P>
+A propriedade BlobStreamMode pode conter os seguintes valores:
+ <UL>
+ <LI>bmRead: usado para ler a partir de um campo blob;
+ <LI>bmWrite: usado para escrever para um campo blob;
+ <LI>bmReadWrite: usado para ler ou escrever em um campo blob;
+ <P></P>
+ </UL>
+<DT><B>TMDOBlobStream.Modified</B></DT><DD>
+Retorna True quando o valor do campo Blob foi modificado. Se o valor do campo Blob é ajustado usando as proriedades de TBlobField, ou usando um objeto TMDOBlobStream, Modified é automaticamente ajustado para True.
+<P></P>
+<DT><B>TMDOBlobStream.Transaction: TMDOTransaction</B></DT><DD>
+Ajusta ou retorna uma transação associada.
+<P></P>
+<DT><B>TMDOBlobStream.TRHandle: PISC_TR_HANDLE</B></DT><DD>
+Retorna o handle da transação.
+</DL>
+
+<A NAME="toc19"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOBlobStream.Call(ISC_STATUS; RaiseError: Boolean): ISC_STATUS</B></DT><DD>
+Retorna uma mensagem de erro baseada no código de erro. Trata-se de um método interno utilizado para fazer chamdas à API do Firebird e devolver à aplicação a opção de tratar uma exceção ou retornar um erro baseado no valor do RaiserError.
+<P></P>
+<DT><B>TMDOBlobStream.CheckReadable</B></DT><DD>
+Determina se um blob pode ser lido. Este  método levanta uma exceção se o blob não permitir leitura.
+<P></P>
+<DT><B>TMDOBlobStream.CheckWritable</B></DT><DD>
+Determina se um blob pode ser escrito. Este método levanta uma exceção se o blob não permitir gravação.
+<P></P>
+<DT><B>TMDOBlobStream.Create</B></DT><DD>
+Chamado para criar uma instancia de TMDOBlobStream para leitura ou escrita de um objeto TBlobField específico.
+<P></P>
+<DT><B>TMDOBlobStream.Destroy</B></DT><DD>
+Destrói uma instancia de TMDOBlobStream. Não chame o método Destroy diretamente na aplicação. Ao invés disto chame o método Free. O método Free verifica se o objeto TMDOBlobStream já não está liberado da memória e somente então chama Destroy.
+<P></P>
+Destrua um objeto TMDOBlobStream chamando o método Free quando ele não for mais necessário para leitura ou escrita de um campo Blob. O método Destroy dispara um evento OnDataChange se o fluxo do Blob era usado para sobrescrever ou modificar o dado em um campo. Destroy então liberará qualquer buffer que estiver alocado para o manipulador do dado.
+<P></P>
+<DT><B>TMDOBlobStream.Finalize</B></DT><DD>
+Cria um blob no servidor Firebird e escreve o dado de BlobStream nele e então o fecha.
+<P></P>
+<DT><B>TMDOBlobStream.LoadFromFile(FileName: String)</B></DT><DD>
+Carrega um blob a partir de um arquivo para o campo blob. Especifique o nome do arquivo a ser carregado dentro do campo como um nome de arquivo.
+<P></P>
+<DT><B>TMDOBlobStream.LoadFromStream(Stream: TStream)</B></DT><DD>
+Carrega um blob a partir de um fluxo (stream) dentro de um campo blob. Especifique o fluxo (stream) do qual os valores dos campos são copiados como o valor de um parametro Stream. Isto fará com que o conteúdo do fluxo seja copiado para dentro do campo.
+<P></P>
+<DT><B>TMDOBlobStream.Read(var Buffer; Count: Longint): Longint</B></DT><DD>
+Lê bytes até o número da variável Count a partir da posição corrente no dado do campo dentro do Buffer.
+<P></P>
+Utilizado para ler dados de um campo blob quando o número de bytes no campo não é conhecido. O Buffer deve ter ao menos o número de bytes da variável Count alocado em memória para abrigar os dados que foram lidos do campo.
+<P></P>
+O método Read transfere os dados Blobs até o número de bytes de Count dentro do Buffer, iniciando na posição atual, e então avançando a partir da posição corrente pelo número de bytes transferidos. Read retorna o número de bytes transferidos ( o qual pode ser menor que o número requisitado em Count.)
+<P></P>
+Read verifica a propriedade Transliterate do campo, e converte os dados de ANSI no character set do conjunto de dados se a propriedade Transliterate for True.
+<P></P>
+Todos os outros métodos data-reading de um fluxo blob (ReadBuffer, ReadComponent) chamam o método Read para fazer suas leituras.
+<P></P>
+Obs: Não chame o método Read quando o objeto TMDOBlobStream foi criado no modo bmWrite.
+<P></P>
+<DT><B>TMDOBlobStream.SaveToFile(FileName: String)</B></DT><DD>
+Salva o conteúdo de um campo blob em um arquivo. Especifique o nome do arquivo através do parametro FileName.
+<P></P>
+<DT><B>TMDOBlobStream.SaveToStream(Stream: TStream)</B></DT><DD>
+Salva o conteúdo de um campo blob em um fluxo (stream). Especifique o nome do fluxo ao qual os valores do campo serão salvos passando um objeto TStream por parametro.
+<P></P>
+<DT><B>TMDOBlobStream.Seek(Offset: Longint; Origin: Word): Longint</B></DT><DD>
+Restaura a posição atual do objeto TMDOBlobStream. Utilize o método Seek para mover a posição atual dentro de um blob pelo indicador offset. Seek permite que uma aplicação leia ou escreva em uma localização qualquer dentro de um dado blob.
+<P></P>
+O parametro Origin indica como interpretar o parametro Offset. Origin deve ser um dos seguintes valores:
+soFromBeginning : Offset é a partir do inicio do blob. Seek moverá para a posição do Offset; Offset deve ser maior que zero.
+soFromCurrent: Offset é a partir da posição atual em um blob. Seek moverá da posição atual + Offset.
+soFromEnd: Offset é a partir do fim de um blob; Offset deve ser menor que zero para indicar o número de bytes antes do fim do blob; Seek retornará o novo valor da propriedade Position, a nova posição no blob.
+<P></P>
+<DT><B>TMDOBlobStream.SetSize(NewSize: Long)</B></DT><DD>
+Ajusta o novo tamanho total de um blob. 
+<P></P>
+<DT><B>TMDOBlobStream.Truncate</B></DT><DD>
+Rejeita todos dados dentro de um campo blob a partir da posição atual em diante. Usado para limitar o tamanho do blob. Chamando o método Truncate quando a posição corrente é zero irá limpar o conteúdo do campo blob.
+<P></P>
+Obs: Não chame o método Truncate quando o objeto TMDOBlobStream for criado no modo bmRead.
+<P></P>
+<DT><B>TMDOBlobStream.Write(const Buffer; Count: Longint): Longint</B></DT><DD>
+Escreve Count bytes do Buffer até a posição atual no campo e atualiza a posição atual por Count.
+Usado para escrever Count bytes em um blob, iniciando da posição atual. O método Write para TMDOBlobStream sempre escreve todos os bytes de Count, já que um blob não possui necessariamente um caracter de terminação. Assim, Write é equivalente ao método WriteBuffer.
+<P></P>
+Write verifica a propriedade Transliterate do campo, e converte os dados de ANSI no character set do conjunto de dados se a propriedade Transliterate for True.
+<P></P>
+Todos os outros métodos 
+Todos os outros métodos data-writing de um fluxo blob (WriteBuffer, WriteComponent) chamam o método Write para fazer suas escritas.
+<P></P>
+Obs: Não chame Write quando o objeto TMDOBlobStream for criado em modo bmRead.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc20"></A>
+<H2>TMDOCustomDataSet</H2>
+<P>
+<B>Unit MDOCustomDataSet</B>
+</P>
+<P>
+Encapsula funcionalidades do MDO para objetos dataset descendentes.
+</P>
+<P>
+Aplicações nunca usam objetos TMDOCustomDataSet diretamente. De outra maneira, eles usam descendentes de TMDOCustomDataSet, como TMDODataSet, TMDOQuery, TMDOStoredProc, e TMDOTable, os quais herdam suas propriedades e métodos dataset-related.
+</P>
+<A NAME="toc21"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOCustomDataSet.Database: TMDODatabase</B></DT><DD>
+Identifica o compontente database para o qual este dataset representará uma ou mais tabelas. Usado para acessar propriedades, eventos, e métodos do componente database associado a este dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.DBHandle: PISC_DB_HANDLE</B></DT><DD>
+Especifica o handle do database para este dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.ForcedRefresh</B></DT><DD>
+Especifica se o dataset deve ser atualizado. Ajustando para True forçará a atualização do dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.Transaction: TMDOTransaction</B></DT><DD>
+Identifica a transação sob a qual a query é executada.
+<P></P>
+<DT><B>TMDOCustomDataSet.TRHandle: PISC_TR_HANDLE</B></DT><DD>
+Especifica o handle da transação para o dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.UpdateObject: TMDODataSetUpdateObject</B></DT><DD>
+Especifica o objeto de atualização (update) usado para atualizar um result set read-only quando cached updates está habilitado.
+<P></P>
+Usado para especificar um componente TMDODataSetUpdateObject para usar em uma aplicação que deve ser capaz de atualizar um result set read-only.
+<P></P>
+Em alguns casos, tais como query feitas em tabelas múltiplas, um result set não pode ser retornado. Neste casos, o UpdateObject pode ser usado para especificar um componente TMDOUpdateSQL que execute atualizações como uma transação separada que seja transparente à aplicação.
+<P></P>
+<DT><B>TMDOCustomDataSet.UpdateRecordTypes: TMDOUpdateRecordTypes</B></DT><DD>
+Especifica o tipo de registros visíveis em um datase quendo cached updates está habilitado.
+<P></P>
+<CODE>type TMDOUpdateRecordTypes = set of (cusModified, cusInserted, cusDeleted, cusUnmodified, cusUninserted);</CODE>
+<P></P>
+TMDOUpdateRecordTypes é um conjunto que pode ter os seguintes valores:
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>cusModified</TD>
+<TD>Registros modificados são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusInserted</TD>
+<TD>Registros inseridos são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusDeleted</TD>
+<TD>Registros apagados são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusUnmodified</TD>
+<TD>Registros não modificados são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusUninserted</TD>
+<TD>Registros não inseridos são visíveis.</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<P>
+Por padrão, um dataset é criado com um UpdateRecordTypes ajustado para cusModified, cusInserted, ou cusUnmodified, seginificando que todos registros existentes, editados, ou inseridos são visíveis para o usuário.
+</P>
+<P>
+Uma aplicação que deva percorrer através de um dataset sem apagar registro pode alterar UpdateRecordTypes como parte de um método que não apaga registros, assim os registros apagados serão visíveis o tempo suficiente para restaurar a condição prévia sem apagar.
+</P>
+<P>
+Uma aplicação que deva circular por um dataset para registros que não possam ser apagados pode alterar UpdateRecordTypes como parte de um método NaoApagar, de modo que os registros "não apagados" estejam visíveis o suficiente para restaura-los para a condição anterior de "não apagados".
+</P>
+<P>
+Igualmente, uma aplicaçã que deva circular por um dataset para registros que não possam ser inseridos pode alterar UpdateRecordTypes como parte de um método NaoInserir, de modo que os registros "não inseridos" estejam visíveis o suficiente para restaura-los para a condição anterior de "não inseridos".
+</P>
+<P>
+Uma aplicação pode também usar UpdateRecordTypes como um filtro para temporariamente limitar os registros visíveis àqueles adicionados ou inseridos pelo usuário durante a sessão atual.
+</P>
+<DL>
+<DT><B>TMDOCustomDataSet.UpdatesPending: Boolean</B></DT><DD>
+Indica se o buffer cached updates contem registros que ainda não foram aplicados. Se o retorno for True, então há registros editados, apagados, ou inseridos à serem aplicados à base de dados. Se o retorno for False não há registros no cache.
+</DL>
+
+<A NAME="toc22"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOCustomDataSet.OnUpdateError: TMDOUpdateErrorEvent</B></DT><DD>
+Ocorre se uma exceção é gerada quando o cached updates é aplicado à base de dados.
+<P></P>
+<PRE>
+  type
+    TMDOUpdateAction = (uaFail, uaAbort, uaSkip, uaRetry, uaApplied, uaApply);
+    TMDOUpdateErrorEvent = procedure(DataSet: TDataSet; E: EDatabaseError; UpdateKind: TUpdateKind; var UpdateAction:
+</PRE>
+<P></P>
+Escreva um manipulador de evento OnUpdateError para responder à exceções geradas quando o cached updates é aplicado à base de dados. Pois há um certo tempo entre o tempo que um registro é aramazenado em memória e o tempo que o cached updates é aplicado, existe uma possibilidade de outra aplicação poder alterar um ou mais do mesmo registro em uma base de dados antes que a alteração armazenada possa ser aplicada. DataSet é o nome do conjunto de dados o qual atualizações são aplicadas.
+<P></P>
+ <UL>
+ <LI>E é um ponteiro para um objeto EDBEngineError do qual uma aplicação pode extrair uma mensagem de erro e a causa tual da condição do erro. Um handler OnUpdateError pode usar esta informação para determinar como responder à condição de erro.
+ <LI>UpdateKind indica se um erro ocorreu enquanto estava inserindo, apagando, ou modificando um registro.
+ <LI>UpdateAction indica a ação a ser feita quando o handler do OnUpdateError sair. Quando entrar no handler, UpdateAction está sempre ajustado para uaFail. Se OnUpdateError pode manipular ou corrigir o erro, ajuste UpdateAction para uaRetry antes de sair do manipulador de erro. A tabela abaixo lista os valores possíveis para o UpdateAction e para quê eles servem:
+ </UL>
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD ALIGN="center">uaAbort</TD>
+<TD>Aborta a operação de update sem retornar uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaApply</TD>
+<TD>Somente para uso interno</TD>
+</TR>
+<TR>
+<TD ALIGN="right">uaApplied</TD>
+<TD>Não usado em rotinas de manipulação de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaFail</TD>
+<TD>Abora a operação de update e retorna uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaRetry</TD>
+<TD>Repete a operação do update que levantou a condição de erro originalmente</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaSkip</TD>
+<TD>Abandona a atualização do registro que levantou a condição de erro, e deixa as alterações não aplicadas em cache</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<P>
+O manipulador de erro pode usar as propriedades TField.OldValue e TField.NewValue para avaliar as condições de erro e ajustar TField.NewValue para um novo valor a ser reaplicado. Neste caso, ajuste UpdateAction para uaRetry antes de sair.
+</P>
+<P>
+Obs: Se uma chamada à ApplyUpdates levantar uma exceção e este ApplyUpdates não é chamado dentro de um bloco try..except, uma mensagem de erro é retornada. Se um handler OnUpdateError não puder corrigir a condição de erro e deixar UpdateAction ajustado para uaFail, a mensagem de erro é retornada duas vezes. Para prevenir isto, ajuste UpdateAction para uaAbort no manipulador do erro.
+</P>
+<P>
+Importante: O código em um OnUpdateError não deve chamar nenhum método que faça alteração no registro atual.
+</P>
+<DL>
+<DT><B>TMDOCustomDataSet.OnUpdateRecord: TMDOUpdateRecordEvent</B></DT><DD>
+Ocorre quando cached updates é aplicado em um registro.
+<P></P>
+<PRE>
+  type
+    TMDOUpdateAction = (uaFail, uaAbort, uaSkip, uaRetry, uaApply, uaApplied);
+    TMDOUpdateRecordEvent = procedure(DataSet: TDataSet; UpdateKind: TUpdateKind; 
+                                var UpdateAction: TMDOUpdateAction) of object;
+</PRE>
+<P></P>
+Escreva um evento OnUpdateRecord para processar atualizações que não possam ser manipuladas por um único componente de update, tais como implementação de updates em cascata, inserções, ou exclusões. Este evento também é útil para aplicações que necessitam controle adicional sobre substituição de parametros em componentes de update.
+<P></P>
+ <UL>
+ <LI>DataSet é o nome do dataset ao qual as atualizações serão aplicadas.
+ <LI>UpdateKind é usado se o update atual é a inserção de um registro, a exlusão de um registro, ou a modificação de um registro.
+ <LI>UpdateAction indica que a ação feita pelo evento OnUpdateRecord antes dela saiu. Quando entrar no envento, UpdateAction estará sempre como uaFail. Se OnUpdateRecord for executado com sucesso, ele deverá alterar UpdateAction para uaApplied antes de sair. A tabela abaixo lista os valores possíveis para o UpdateAction e para quê eles servem:
+ </UL>
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD ALIGN="center">uaAbort</TD>
+<TD>Aborta a operação de update sem retornar uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaApply</TD>
+<TD>Somente para uso interno</TD>
+</TR>
+<TR>
+<TD ALIGN="right">uaApplied</TD>
+<TD>Não usado em rotinas de manipulação de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaFail</TD>
+<TD>Abora a operação de update e retorna uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaRetry</TD>
+<TD>Repete a operação do update que levantou a condição de erro originalmente</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaSkip</TD>
+<TD>Abandona a atualização do registro que levantou a condição de erro, e deixa as alterações não aplicadas em cache</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<A NAME="toc23"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOCustomDataSet.ApplyUpdates</B></DT><DD>
+Escreve as atualizações em cache pendentes de um dataset no banco de dados. 
+<P></P>
+Este método envia os dados armazenados em memória para o database armazernar, mas as alterações não são aplicadas (commit) no banco de dados. Uma aplicação deve explicitamente chamar o método Commit do componente TMDOTransaction para aplicar as alterações no banco de dados se a escrita for bem sucedida, ou chamar o método Rollback do componente TMDOTransaction para desfazer as alterações se existir algum erro.
+<P></P>
+Obs: O método preferencial para atualização de datasets é chamar o método ApplyUpdates do componente database do que chamar o método ApplyUpdates de cada dataset individualmente. A aplicação é responsável por aplicar (commit) ou desfazer (rollback) a transação.
+<P></P>
+<DT><B>TMDOCustomDataSet.CachedUpdateStatus: TCachedUpdateStatus</B></DT><DD>
+Retorna o status do cached updates do registro atual no dataset. 
+<P></P>
+<CODE>type TCachedUpdateStatus = (cusUnmodified, cusModified, cusInserted, cusDeleted, cusUninserted);</CODE>
+<P></P>
+TCachedUpdateStatus pode ser um dos seguintes tipos:
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>cusDeleted</TD>
+<TD>O registro será apagado.</TD>
+</TR>
+<TR>
+<TD>cusInserted</TD>
+<TD>O registro será inserido.</TD>
+</TR>
+<TR>
+<TD>cusModified</TD>
+<TD>O registro será alterado.</TD>
+</TR>
+<TR>
+<TD>cusUninserted</TD>
+<TD>O registro foi inserido e então apagado.</TD>
+</TR>
+<TR>
+<TD>cusUnmodified</TD>
+<TD>O registro foi alterado.</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<DL>
+<DT><B>TMDOCustomDataSet.CancelUpdates</B></DT><DD>
+Limpa todas pendencias do cached updates. Quando um dataset é fechado, ou a propriedade CachedUpdates está False, CancelUpdates é chamado automaticamente.
+<P></P>
+Obs: Para desfazer mudanças em um único registro, chame RevertRecord.
+<P></P>
+<DT><B>TMDOCustomDataSet.CompareBookmarks(Bookmark1, Bookmark2: TBookmark): Integer</B></DT><DD>
+Compara dois bookmarks. Retorna um inteiro indicando a diferença entre os dois bookmarks. Retorna zero se os dois bookmarks são iguais, um valor negativo -1 se Bookmark1 é menor que Bookmark2, ou um valor positivo 1 se Bookmark1 é maior que Bookmark2. Também retorna zero se um dos dois bookmarks estiver nulo (nil). Bookmark1 e Bookmark2 são dois valores TBookmark a serem comparados.
+<P></P>
+<DT><B>TMDOCustomDataSet.Create(AOwner: TComponent)</B></DT><DD>
+Cria uma instancia de um componente TDataSet em tempo de execução. Normalmente aplicações instanciam descendentes de dataset, tais como TMDOTable, TMDOQuery, TMDODataSet, ou TMDOStoredProc, ao invés de TMDOCustomDataSet. Estes objetos instanciados são manipulados automaticamente.
+<P></P>
+Por outro lado, aplicações que criam componentes dataset especializados, como por exemplo componentes customizados, podem precisar instanciar um componente TMDOCustomDataSet chamando o método Create.
+<P></P>
+ <UL>
+ <LI>Create:
+    <UL>
+    <LI>Chama o método herdado Create de TDataSet.
+    <LI>Cria cinco objetos query.
+    <LI>Cria o objeto base para assegurar a referencia ao database e transaction.
+    <LI>Associa os eventos do database e transaction relacionado ao componente base.
+    <P></P>
+    </UL>
+ </UL>
+<DT><B>TMDOCustomDataSet.CreateBlobStream(Field: TField; Mode: TBlobStreamMode): TStream</B></DT><DD>
+Retorna um objeto TBlobStream para leitura ou escrita de dados em um campo especificado blob.
+<P></P>
+<CODE>type TBlobStreamMode = (bmRead, bmWrite, bmReadWrite);</CODE>
+<P></P>
+Chame este método para obter um fluxo para leitura ou escrita de dados para um objeto binário grande (BLOB - Binary Large OBject). O parametro Field deve especificar um componente TBlobField da propriedade array Fields. O parametro Mode especifica se o fluxo será usado para leitura, escrita, ou atualização de conteúdo do campo.
+<P></P>
+<DT><B>TMDOCustomDataSet.Destroy</B></DT><DD>
+Destrói a instancia de um componente dataset.
+<P></P>
+Não chame Destroy diretamente em uma aplicação. Normalmente a destruição de datasets é manipulada automaticamente pelo Delphi. Se uma aplicação cria suas próprias instancias de um dataset, entretanto, a aplicação deverá chamar o método Free, o qual verifica que o componente dataset não está pronto para ser liberado antes de chamar Destroy.
+ <UL>
+ <LI>Destroy executa as seguintes tarefas:
+   <UL>
+   <LI>Libera os objetos query associados.
+   <LI>Libera o objeto base.
+   <LI>Libera os recursos internos associados.
+   <P></P>
+   </UL>
+ </UL>
+<DT><B>TMDOCustomDataSet.FetchAll</B></DT><DD>
+Acessa todos registros da posição atual do cursor até o fim do arquivo e guarda isto localmente. Este método é utilizado para reduzir o tráfeco da rede quando estiver usando cached updates. FetchAll chama o método CheckBrowseMode para postar quaisquer alterações pendentes, e então acessa todos registros a partir da posição do cursor até o fim do arquivo, e guarda localmente. Normalmente quando cached updates está habilitado, uma transação recupera somente os dados que são necessários para as finalidades de retorno.
+<P></P>
+Obs: O uso de FetchAll nem sempre é apropriado. Por exemplo, quando uma aplicação acessa uma base de dados usada por muitos clientes simultaneos e existe um grau elevado de disputa por atualizações nos mesmos registros, capturando todos registros de uma vez pode não ser vantajoso porque alguns registros capturados podem ter sido alterados por outras aplicações. Tente sempre pesar o que é mais vantajoso: a redução de tráfeco na rede ou reduzir a disputa por registros.
+<P></P>
+<DT><B>TMDOCustomDataSet.GetCurrentRecord(Buffer: PChar): Boolean</B></DT><DD>
+Recupera o registro atual em um buffer.A maioria das aplicações não deve precisar chamar este método. TDataSet automaticamente aloca um buffer para o registro ativo.
+<P></P>
+Chame GetCurrentRecord para copiar o registro atual dentro de um buffer alocado pela aplicação. Buffer deve ser pelo menos tão grande quando o tamanho do registro indicado pela propriedade RecordSize.
+<P></P>
+<DT><B>TMDOCustomDataSet.GetFieldData(FieldNo: Integer; Buffer: Pointer): Boolean</B></DT><DD>
+Lê o dado do campo dentro de um buffer a partir de um campo de um dataset especificado pelo FieldNo. Retorna o tamanho do Buffer.
+<P></P>
+<DT><B>TMDOCustomDataSet.GetFieldData(Field: TField; Buffer: Pointer): Boolean</B></DT><DD>
+Lê o dado do campo dentro de um buffer a partir de um campo de um dataset especificado pelo Field. Retorna o tamanho do Buffer.
+<P></P>
+<DT><B>TMDOCustomDataSet.Locate(const KeyFields: string; const KeyValues: Variant; Options: TLocateOptions): Boolean</B></DT><DD>
+Chame Locate para buscar em um dataset por um registro específico e a posição do cursor nele.
+  <UL>
+  <LI>KeyFields é uma string contendo uma lista separada por ';' de nomes de campo no qual será feita a busca.
+  <LI>KeyValues é um variant que especifica os valores a serem localizados nos campos chave. Se KeyFields lista somente um campo, KeyValues especificará o valor para aquele campo no registro desejado. Para especificar múltiplos valores de busca, passe um array de variant como KeyValues, ou construa um array variant usando a rotina VarArrayOf. Por exemplo:
+  <P></P>
+<PRE>
+    with cad_cliente do
+      Locate('Nome;Telefone;Email', VarArrayOf(['Mercury', '99-9999-9999', 'info@mdolib.com']), [loPartialKey]);
+</PRE>
+  <P></P>
+  <LI>Options é um conjunto de opções que especificam uma busca adicional enquanto procura nos campos. Se Options conter o tipo loCaseInsensitive, então Locate ignora entre maiúsculas e minúsculas enquanto equipara os campos. Se Options contém o tipo loPartialKey, então Locate permite strings aproximadas nas strings de KeyValues. Se Options está vazio, ou se KeyFields não inclui quaisquer campos string, Options é ignorado.
+  <P></P>
+Locate retorna True se encontrar um registro identico, e faz aquele registro o atual. De outra maneira Locate retorna False. 
+  <P></P>
+Locate usará o método mais rápido possível para localizar registros equivalentes. Se a busca dos campos no KeyFields estiver indexada e o indece for compatível com as opções de busca especificada, Locate usará o indíce. De outra maneira criará um filtro para a busca.
+  <P></P>
+  </UL>
+<DT><B>TMDOCustomDataSet.LocateNext(const KeyFields: string; const KeyValues: Variant; Options: TLocateOptions): Boolean</B></DT><DD>
+Busca no dataset por registro depois de um registro especificado e o faz o registro atual. Chame Locatenext para buscar em um dataset por um registro depois da posição atual do cursor.
+<P></P>
+  <UL>
+  <LI>KeyFields é uma string contendo uma lista separada por ';' de nomes de campo no qual será feita a busca.
+  <LI>KeyValues é um variant que especifica os valores a serem localizados nos campos chave. Se KeyFields lista somente um campo, KeyValues especificará o valor para aquele campo no registro desejado. Para especificar múltiplos valores de busca, passe um array de variant como KeyValues, ou construa um array variant usando a rotina VarArrayOf.
+  <LI>Options é um conjunto de opções que especificam uma busca adicional enquanto procura nos campos. Se Options conter o tipo loCaseInsensitive, então Locate ignora entre maiúsculas e minúsculas enquanto equipara os campos. Se Options contém o tipo loPartialKey, então Locate permite strings aproximadas nas strings de KeyValues. Se Options está vazio, ou se KeyFields não inclui quaisquer campos string, Options é ignorado.
+  <P></P>
+LocateNext retorna True se encontrar um registro identico, e faz aquele registro o atual. De outra maneira LocateNext retorna False. 
+  <P></P>
+LocateNext usará o método mais rápido possível para localizar registros equivalentes. Se a busca dos campos no KeyFields estiver indexada e o indece for compatível com as opções de busca especificada, Locate usará o indíce. De outra maneira criará um filtro para a busca.
+  <P></P>
+  </UL>
+<DT><B>TMDOCustomDataSet.Lookup(const KeyFields: string; const KeyValues: Variant; const ResultFields: string): Variant</B></DT><DD>
+Recupera valores de campo de um registro que equipara aos valores de uma busca.
+  <UL>
+  <LI>KeyFields é uma string contendo uma lista separada por ';' de nomes de campo no qual será feita a busca.
+  <LI>KeyValues é um array variant contendo os valores para comparar nos campos chaves. Para especificar múltiplos valores de busca, passe KeyValues como um array variante, ou construa um array variant através da rotina VarArrayOf.
+  <LI>ResultFields é uma string contendo uma lista separada por ';' de nomes de campo dos quais seus os valores devem ser retornados do registro equiparado.
+  <P></P>
+Lookup retorna um array variant contendo os valores dos campos especificados no ResultFields.
+  <P></P>
+Lookup usa um método mais rápido possível para localizar registros equivalentes. Se a busca dos campos no KeyFields estiverem indexados, Lookup usará os índices. De outra maneira criará um filtro para a busca.
+  <P></P>
+  </UL>
+<DT><B>TMDOCustomDataSet.RecordModified(Value: Boolean)</B></DT><DD>
+Ajusta o registro para modificado ou não modificado. 
+<P></P>
+Obs: Este método é de uso interno.
+<P></P>
+<DT><B>TMDOCustomDataSet.RevertRecord</B></DT><DD>
+Restaura o registro atual em um dataset para um estado de não modificado quando cached updates está habilitado.
+<P></P>
+Obs: Para desfazer todas alterações para todas pendencias de atualizações em um cache, chame CancelUpdates.
+<P></P>
+<DT><B>TMDOCustomDataSet.Undelete</B></DT><DD>
+Restaura um registro apagado de um dataset. Também pode ser recuperado um registro "desinserido" (uninserted).
+<P></P>
+<DT><B>TMDOCustomDataSet.UpdateStatus: TUpdateStatus</B></DT><DD>
+Informa o estado de update para o registro corrente.
+<P></P>
+<CODE>type TUpdateStatus = (usUnmodified, usModified, usInserted, usDeleted);</CODE>
+<P></P>
+Usado para determinar o estado de update do registro corrente enquanto cached updates estiver habilitado. O estado de update pode ser alterado frequantemente como quando registros são editados, inseridos, ou apagados. UpdateStatus oferece um método conveniente para que as aplicações avaliem o status atual antes de empreender ou de terminar as operações que dependem do status de update dos registros.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc24"></A>
+<H2>TMDODatabase</H2>
+<P>
+<B>Unit MDODatabase</B>
+</P>
+<P>
+TMDODatabase encapsula uma conexão com uma base de dados Firebird. Todos objetos descendentes de TMDOCustomDataSet e TMDOSQL usam TMDODatabase para obter acesso à base de dados.
+</P>
+<A NAME="toc25"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDODatabase.AllowStreamedConnected: Boolean</B></DT><DD>
+Indica se a propriedade Connected pode ser ajustada em tempo de projeto.
+<P></P>
+Quando AllowStreamedConnected está True (por padrão), então ajustando a propriedade Connected para True em tempo de projeto fará com que este componente automaticamente estabeleça conexão com o banco de dados quando a aplicação for inicializada. Quando AllowStreamedConnected está False, a conexão deve ser explicitamente aberta em tempo de execução, ajustando a propriedade Connected para True, ou chamando o método Open.
+<P></P>
+<DT><B>TMDODatabase.ClientLib: TMDOClientLib</B></DT><DD>
+Indica a biblioteca cliente a ser utilizada para as chamadas à API do Firebird.
+<P></P>
+Existem quatro opções para carga da biblioteca Firebird que pode ser configurada em tempo de projeto ou ajustada em tempo de execução.
+<P></P>
+<PRE>
+    TMDOClientLib = (clAutoDetect, clGDS32, clFBClient, clFBEmbed);
+</PRE>
+<P></P>
+</DL>
+
+<TABLE CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>clAutoDetect</TD>
+<TD>Opção default. Determina automaticamente qual biblioteca deverá ser utilizada na seguinte ordem: Embedded, FBClient, GDS32|</TD>
+</TR>
+<TR>
+<TD>clGDS32</TD>
+<TD>Indica que deverá ser carregado a biblioteca GDS32</TD>
+</TR>
+<TR>
+<TD>clFBClient</TD>
+<TD>Indica que deverá ser carregado a biblioteca FBClient</TD>
+</TR>
+<TR>
+<TD>clFBEmbed</TD>
+<TD>Indica que deverá ser carregado a biblioteca FBEmbed</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<DL>
+<DT><B>TMDODatabase.Connected: Boolean</B></DT><DD>
+Indica se uma conexão está ativa. Ajustando a propriedade para True estabelecerá a conexão com a base de dados, sem abrir qualquer dataset. Ajustando para False, irá fechar a conexão com a base de dados. Uma aplicação pode verificar a propriedade Connected para determinar a situação atual da conexão com a base de dados. Se Connected é True, a conexão com a base de dados está ativa, caso contrário, se False, então a conexão está inativa.
+<P></P>
+<DT><B>TMDODatabase.DatabaseName: String</B></DT><DD>
+Especifica o nome da base de dados à associar com este componente database. Para bases locais, poderá ser informado apenas o nome do arquivo.
+ <UL>
+ <LI>Para conectar-se à uma base em um servidor remoto usando TCP/IP a sintaxe será &lt;server_name&gt;:&lt;filename&gt;;
+ <LI>Para conectar-se à uma base em um servidor remoto usando NetBEUI a sintaxe será \\&lt;server_name&gt;\&lt;filename&gt;;
+ <LI>Para conectar-se à uma base em um servidor remoto usando SPX a sintaxe será &lt;server_name&gt;@&lt;filename&gt;; 
+ </UL>
+</DL>
+
+<DL>
+<DT><B>TMDODatabase.DBParamByDPB:[const Idx: Integer]: String</B></DT><DD>
+Especifica o nome da base de dados à associar com este componente. Usado para inspecionar e ajustar os parametros DPB sem olhar na lista de parametros em Params. Por exemplo, DBParamByDPB[isc_dpb_user_name] poderá ser usado para ajustar e inspecionar o nome de usuário.
+</DL>
+
+<DL>
+<DT><B>TMDODatabase.DBSQLDialect: Integer</B></DT><DD>
+Retorna o dialeto do banco.
+<P></P>
+<DT><B>TMDODatabase.DefaultTransaction: TMDOTransaction</B></DT><DD>
+Ajusta ou retorna o objeto de transação padrão. 
+<P></P>
+Uma única conexão pode gerenciar uma ou mais transações. DefaultTransaction é uma forma conveniente de especificar a transação padrão à uma conexão.
+<P></P>
+<DT><B>TMDODatabase.Handle: TISC_DB_Handle</B></DT><DD>
+Especifica o hanle da base da API Firebird, o qual é usado para fazer chamadas diretas à API do Firebird. Muitas das funções da API Firebird requerem um handle da base como um de seus argumentos. Ao Handle é atribuído um valor incial quando a base é aberta.
+<P></P>
+<DT><B>TMDODatabase.HandleIsShared: Boolean</B></DT><DD>
+Indica se o handle da base está compartilhado. 
+<P></P>
+<DT><B>TMDODatabase.IdleTimer: Integer</B></DT><DD>
+Especifica quanto tempo a base de dados deve esperar antes de desconectar se estiver com uma conexão ociosa.
+<P></P>
+<DT><B>TMDODatabase.InternalTransaction: TMDOTransaction</B></DT><DD>
+Usado internamente por transações Firebird. Não utilize InternalTransaction, pois é para uso interno.
+<P></P>
+<DT><B>TMDODatabase.IsReadOnly: Boolean</B></DT><DD>
+Indica se uma base de dados é somente-leitura.
+<P></P>
+<DT><B>TMDODatabase.Params: TStrings</B></DT><DD>
+Especifica os parametros da base de dados a serem passados ao servidor Firebird. 
+<P></P>
+Parametros de base de dados são passados ao servidor como texto a fim de estabelecer a conexão. Por exemplo
+<P></P>
+<PRE>
+      user_name=sysdba
+      password=masterkey
+      sql_role_name=finance
+      lc_ctype=WIN1252
+</PRE>
+<P></P>
+Para maiores informações sobre character set, veja o documento <I>Firebird Language Reference na</I> seção <I>Character Sets and Collation Orders</I>.
+<P></P>
+Para outras informações, veja o documento <I>Firebird API Guide</I>.
+</DL>
+
+<DL>
+<DT><B>TMDODatabase.SQLDialect: Integer</B></DT><DD>
+Retorna ou ajusta o dialeto usado pelo cliente.
+<P></P>
+Se a conexão estiver ativa, a propriedade SQLDialect não poderá ter um valor maior que o dialeto da base de dados. Se a conexão estiver inativa, então na conexão um evento OnDialectDowngradeWarning poderá ser disparado se o SQLDialect for maior que o dialeto do banco. Neste caso, a propriedade SQLDialect terá seu valor abaixado até o equivalente ao dialeto do banco.
+<P></P>
+<DT><B>TMDODatabase.SQLObjectCount: Integer</B></DT><DD>
+Retorna o número de objetos SQL no database. Objetos SQL são normalmente definidos como datasets Firebird, MDOSQL, e Blobs.
+</DL>
+
+<DL>
+<DT><B>TMDODatabase.SQLObjects[Index: Integer]: TMDOBase</B></DT><DD>
+Retorna um objeto sQL baseado no número Index. Objetos SQL são normalmente definidos como datasets Firebird, MDOSQL, e Blobs.
+<P></P>
+<DT><B>TMDODatabase.TraceFlags: TTraceFlags</B></DT><DD>
+Especifica as operações da base de dados que serão monitoradas em tempo de execução com um SQL Monitor.
+<P></P>
+<PRE>
+  type
+    TTraceFlag = (tfQPrepare, tfQExecute, tfQFetch, tfError, tfStmt, 
+                  tfConnect, tfTransact, tfBlob, tfService, tfMisc);
+    TTraceFlags = set of TTraceFlag;
+</PRE>
+<P></P>
+Utilize a propriedade TraceFlags para especificar as operações que o SQL Monitor deverá trilhar na aplicação durante sua execução em um banco de dados. TraceFlags é útil somente para monitoramento SQL, o qual é provido para habilitar tuning de performance e debug de SQL quando trabalha com servidores remotos.
+<P></P>
+Obs: Normalmente as opções de trace são ajustadas no SQL Monitor do que no TraceFlags do código da aplicação. 
+<P></P>
+O valor da propriedade TraceFlags de um componente de sessão determinam os ajustes iniciais da propriedade TraceFlags para componentes database associados com a sessão.
+<P></P>
+O tipo TTraceFlags define os valores individuais que podem ser incluídos na propriedade TraceFlags. A tabela a seguir resume estes valores:
+<P></P>
+</DL>
+
+<TABLE CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD ALIGN="right">tfQPrepare</TD>
+<TD>Monitora declarações Prepare</TD>
+</TR>
+<TR>
+<TD ALIGN="right">tfQExecute</TD>
+<TD>Monitora declarações ExecSQL</TD>
+</TR>
+<TR>
+<TD ALIGN="center">tfQFetch</TD>
+<TD>Monitora declarações Fetch</TD>
+</TR>
+<TR>
+<TD ALIGN="center">tfError</TD>
+<TD>Monitora mensagens de erro do servidor. Tais mensagens podem incluir o código do erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">tfStmt</TD>
+<TD>Monitora todas declarações SQL</TD>
+</TR>
+<TR>
+<TD ALIGN="center">tfConnect</TD>
+<TD>Monitora operações de conexão e desconexão da base de dados, incluíndo alocação de handles de conexão, e liberação de handles de conexão</TD>
+</TR>
+<TR>
+<TD ALIGN="right">tfTransact</TD>
+<TD>Monitora declarações de transação, tais como StartTransaction, Commit, e Rollback</TD>
+</TR>
+<TR>
+<TD ALIGN="center">tfBlob</TD>
+<TD>Monitora operações em cima de tipo de dados Blob</TD>
+</TR>
+<TR>
+<TD ALIGN="center">tfService</TD>
+<TD>Monitora serviços</TD>
+</TR>
+<TR>
+<TD ALIGN="center">tfMisc</TD>
+<TD>Monitora qualquer declaração tratada por outras opções de flag</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<P>
+Já que TraceFlags é uma propriedade de conjuntos, uma aplicação pode especificar diferentes combinações de flags para monitorar diferentes preparações de declarações:
+</P>
+<P>
+<CODE>TraceFlags := [tfConnect, tfQPrepare];</CODE>
+</P>
+<DL>
+<DT><B>TMDODatabase.TransactionCount: Integer</B></DT><DD>
+Retorna o número de transações associadas com um componente TMDODatabase.
+<P></P>
+<DT><B>TMDODatabase.Transactions[Index: Integer]: TMDOTransaction</B></DT><DD>
+Especifica uma transação para o Index passado. Passando um valor inteiro, Transactions irá devolver a transação neste índice. Isto é usado internamente para trasmissão de mensagens importantes para componentes anexados.
+</DL>
+
+<A NAME="toc26"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDODatabase.OnDialectDowngradeWarning: TNotifyEvent</B></DT><DD>
+Ocorre após diminuir o dialeto da conexão cliente. Escreva neste evento para fazer uma ação específica quando o dialeto for diminuído. Por exemplo, se o dialeto de sua aplicação é 3 e então uma conexão é feita com dialeto 1, então o dialeto é diminuído para 1 e o evento OnDialectDowngradeWarning é disparado.
+<P></P>
+<DT><B>TMDODatabase.OnIdleTimer: TNotifyEvent</B></DT><DD>
+Ocorre após um time out da conexão.
+</DL>
+
+<DL>
+<DT><B>TMDODatabase.OnLogin: TMDODatabaseLoginEvent</B></DT><DD>
+Ocorre quando uma aplicação conecta-se à base de dados.
+<P></P>
+<CODE>TMDODatabaseLoginEvent = procedure(Database: TMDODatabase; LoginParams: TStrings) of object;</CODE>
+<P></P>
+Usado para aplicar ações específicas quando uma aplicação tenta conectar-se à base de dados. Por padrão, um login é requeirido. O USER_NAME atual é lido a partir da propriedade Params, e uma caixa de login padrão é aberta. A janela de login solicita um nome de usuário e senha, e então usa os valores inseridos pelo usuário para ajustar o valores USER_NAME e PASSWORD da propriedade Params. Estes valores são então passados ao servidor.
+<P></P>
+Aplicações que forneçam manipuladores do evento OnLogin alternativos devem ajustar os valores USER_NAME e PASSWORD no LoginParams. LoginParams é uma lista de string temporária e liberada automaticamente quando não mais necessária.
+</DL>
+
+<A NAME="toc27"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDODatabase.AddTransaction(TR: TMDOTransaction): Integer</B></DT><DD>
+Adiciona uma associação entre o componente transaction e um componente database.
+<P></P>
+<DT><B>TMDODatabase.ApplyUpdates(const DataSets: array of TDataSet)</B></DT><DD>
+Aplica as pendencias do cached updates no servidor para um dataset específico.
+<P></P>
+ApplyUpdates somente será útil se a propriedade CachedUpdates do dataset estiver True.
+<P></P>
+DataSets é uma lista de dataset que possuem pendencias de atualização. DataSets não precisa listar todos os dataset atualmente abertos. Para cada dataset listado ApplyUpdates chamará os métodos ApplyUpdates e CommitUpdates do dataset para aplicar as pendencias de atualizações deste dataset.
+<P></P>
+<DT><B>TMDODatabase.Call(ErrCode: ISC_STATUS; RaiseError: Boolean): ISC_STATUS</B></DT><DD>
+Retorna uma mensagem de erro baseado no código de erro. Call é um método interno usado para fazer chamdas à API do Firebird, e oferece a opção de levantar uma exceção ou retornar um erro baseado no valor do RaiseError.
+<P></P>
+<DT><B>TMDODatabase.CheckActive</B></DT><DD>
+Verifica se a conexão com a base de dados está ativa. Se estiver inativa retornará um erro.
+<P></P>
+<DT><B>TMDODatabase.CheckDatabaseName</B></DT><DD>
+Verifica se o nome da base de dados está limpo, propriedade DatabaseName. Se estiver vazia retornará um erro.
+<P></P>
+<DT><B>TMDODatabase.CheckInactive</B></DT><DD>
+Verifica se uma conexão com a base de dados está inativa. Se estiver ativa retornará um erro.
+<P></P>
+<DT><B>TMDODatabase.CloseDataSets</B></DT><DD>
+Fecha todos os datasets associados ao componente database sem disconectar do servidor.
+<P></P>
+Normalmente, quando uma aplicação chama Close, todos os datasets são fechados, e a conexão com o servidor é desfeita. Chamando CloseDataSets assegura que um aplicativo pode fechar todos os datasets ativos sem ter que reconectar-se à base de dados.
+</DL>
+
+<DL>
+<DT><B>TMDODatabase.Create(AOwner: TComponent)</B></DT><DD>
+Cria uma instancia de um componente TMDODatabase em tempo de execução. Um aplicativo pode criar um componente database a fim de controlar a existencia do componente e ajustar suas propriedades e eventos.
+<P></P>
+O construtor Create instancia um componente database e cria umalista vazia de componentes dataset para a propriedade DataSets e uma lista de string vazia para a propriedade Params.
+<P></P>
+<DT><B>TMDODatabase.CreateDatabase</B></DT><DD>
+Cria uma base de dados usando a propriedade Params como o restante do comando CREATE DATABASE.
+<P></P>
+Por exemplo, se você desejar criar uma base de dados Firebird local, você pode fazer o seguinte:
+<P></P>
+<PRE>
+    1. Ajuste o nome do database para drive, caminho, e nome do arquivo database.
+    2. Ajuste Params para parametrizar  a declaração CREATE DATABASE:
+       - USER "SYSDBA"
+       - PASSWORD "masterkey"
+       - PAGE_SIZE 4096
+    3. Ajuste o valor do SQLDialect.
+    4. Chame o método CreateDatabase.
+</PRE>
+<P></P>
+<DT><B>TMDODatabase.Destroy</B></DT><DD>
+Destrói a instancia do componente database.
+<P></P>
+Não chame o método Destroy diretamente pela aplicação. Ao invés disto, chame Free, o qual verificará se o componente database já não foi liberado antes de chamar Destroy.
+<P></P>
+Destroy disconectará do servidor, se necessário. Libera então os recursos de string alocados das propriedades Params e DataSets antes de chamar seu destrutor herdado.
+<P></P>
+<DT><B>TMDODatabase.DropDatabase</B></DT><DD>
+Elimina uma base de dados, o qual removerá o arquivo da base de dados do servidor.
+<P></P>
+<DT><B>TMDODatabase.FindTransaction(TR: TMDOTransaction): Integer</B></DT><DD>
+Encontra o índice da transação especificada.
+<P></P>
+<DT><B>TMDODatabase.ForceClose</B></DT><DD>
+Força o fechamento da conexão com a base de dados. 
+<P></P>
+Obs: Forçando a desconexão da base de dados tentará fechar a conexão com o servidor. Mesmo se a chamada falhar, o handle do database receberá nil.
+<P></P>
+<DT><B>TMDODatabase.GetFieldNames(const TableName: string; List: TStrings)</B></DT><DD>
+Popula uma lista com os nomes dos campos em uma tabela. Chamando GetFieldNames você receberá uma lista dos campos da tabela associada.
+<P></P>
+<DT><B>TMDODatabase.GetTableNames(List: TStrings; SystemTables: Boolean = False)</B></DT><DD>
+Popula uma lista de string com os nomes das tabelas na base de dados.
+<P></P>
+ <UL>
+ <LI>List é um parametro objeto de lista de string já existente onde os nomes das tabelas são colocados.
+ <LI>SystemTables indica se a lista de nome de tabelas deverá incluir as tabelas de sistema.
+ <P></P>
+Obs: Qualquer conteúdo existente no objeto de lista de string serão eliminados e sobrescritos pelos valores produzidos por GetTableNames.
+ <P></P>
+ </UL>
+<DT><B>TMDODatabase.IndexOfDBConst(st: String): Integer</B></DT><DD>
+Busca pelo parametro nomeado na lista de parametros do database. Utilizado para localizar um parametro dentro dos parametros do database. Retorna -1 se o parametro não for encontrado.
+<P></P>
+<DT><B>TMDODatabase.RemoveTransaction(Idx: Integer)</B></DT><DD>
+Disassocia uma transação do database. 
+<P></P>
+<DT><B>TMDODatabase.RemoveTransactions</B></DT><DD>
+Disassocia todas transações do database.
+<P></P>
+<DT><B>TMDODatabase.SetHandle</B></DT><DD>
+Ajusta o handle para o database.
+<P></P>
+<DT><B>TMDODatabase.TestConnected: Boolean</B></DT><DD>
+Testa se o database está conectado. Retorna True se a conexão está estabelecida, caso contrário False.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc28"></A>
+<H2>TMDODataLink</H2>
+<P>
+<B>Unit MDOCustomDataSet</B>
+</P>
+<P>
+TMDODataLink é uma classe qua ajuda objetos data-aware coordenarem ações do TMDODataSet e a responder à eventos de dados.
+</P>
+<P>
+O construtor de objetos data-aware devem chamar o construtor de TMDODataLink, e inicializar qualquer propriedade relevante. O objeto data-aware pode então ligar-se à um TDataSource utilizando a propriedade DataSource do TMDODataLink. 
+</P>
+<P>
+Objetos data-aware que ligam-se a um único campo em um dataset devem usar um TFieldDataLink.
+</P>
+<A NAME="toc29"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDODataLink.Create(ADataSet: TMDOCustomDataSet)</B></DT><DD>
+Cria uma instancia de TMDODataLink. 
+<P></P>
+Create é chamado a partir do construtor de qualquer objeto data-aware que utilize um TMDODataLink para implementar sua propriedade DataSource.
+<P></P>
+Após chamar seu construtor herdado, Create inicializa a propriedade BufferCount com 1. Objetos data-aware  que usam um objeto TMDODataLink para gerenciar sua ligação com um DataSource devem alterar a propriedade BufferCount para o número ou registros que eles representam, após chamar o construtor herdado.
+</DL>
+
+<DL>
+<DT><B>TMDODataLink.Destroy</B></DT><DD>
+Destrói uma instancia de TMDODataLink.
+<P></P>
+Não chame o método Destroy diretamente pela aplicação. Ao invés disto, chame Free, o qual verificará se o objeto TMDODataLink já não foi liberado antes de chamar Destroy.
+<P></P>
+Antes de chamar o destrutor herdado, Destroy remove qualquer referencia ao TMDODataLink da fonte de dados do objeto. O objeto TMDODataLink deverá ser destruído no destructor de seu proprietário, onde o proprietário chamou o Create de seu construtor.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc30"></A>
+<H2>TMDOBatchOutput</H2>
+<P>
+<B>Unit MDOSQL</B>
+</P>
+<P>
+Objeto utilizado para abstração de todas saídas batch. Provê propriedades e métodos úteis para
+uso de saídas batch.
+</P>
+<A NAME="toc31"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOBatchOutput.WriteColumns: Boolean</B></DT><DD>
+Função que provê a saída de dados em colunas para um arquivo específico. Usado para escrever dados em colunas na área do descritor SQL extendido (XSQLDA) para um arquivo especificado.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc32"></A>
+<H2>TMDOCustomDataSet</H2>
+<P>
+<B>Unit MDOCustomDataSet</B>
+</P>
+<P>
+Encapsula funcionalidades do MDO para objetos dataset descendentes.
+</P>
+<P>
+Aplicações nunca usam objetos TMDOCustomDataSet diretamente. De outra maneira, eles usam descendentes de TMDOCustomDataSet, como TMDODataSet, TMDOQuery, TMDOStoredProc, e TMDOTable, os quais herdam suas propriedades e métodos dataset-related.
+</P>
+<A NAME="toc33"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOCustomDataSet.Database: TMDODatabase</B></DT><DD>
+Identifica o compontente database para o qual este dataset representará uma ou mais tabelas. Usado para acessar propriedades, eventos, e métodos do componente database associado a este dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.DBHandle: PISC_DB_HANDLE</B></DT><DD>
+Especifica o handle do database para este dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.ForcedRefresh</B></DT><DD>
+Especifica se o dataset deve ser atualizado. Ajustando para True forçará a atualização do dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.Transaction: TMDOTransaction</B></DT><DD>
+Identifica a transação sob a qual a query é executada.
+<P></P>
+<DT><B>TMDOCustomDataSet.TRHandle: PISC_TR_HANDLE</B></DT><DD>
+Especifica o handle da transação para o dataset.
+<P></P>
+<DT><B>TMDOCustomDataSet.UpdateObject: TMDODataSetUpdateObject</B></DT><DD>
+Especifica o objeto de atualização (update) usado para atualizar um result set read-only quando cached updates está habilitado.
+<P></P>
+Usado para especificar um componente TMDODataSetUpdateObject para usar em uma aplicação que deve ser capaz de atualizar um result set read-only.
+<P></P>
+Em alguns casos, tais como query feitas em tabelas múltiplas, um result set não pode ser retornado. Neste casos, o UpdateObject pode ser usado para especificar um componente TMDOUpdateSQL que execute atualizações como uma transação separada que seja transparente à aplicação.
+<P></P>
+<DT><B>TMDOCustomDataSet.UpdateRecordTypes: TMDOUpdateRecordTypes</B></DT><DD>
+Especifica o tipo de registros visíveis em um datase quendo cached updates está habilitado.
+<P></P>
+<CODE>type TMDOUpdateRecordTypes = set of (cusModified, cusInserted, cusDeleted, cusUnmodified, cusUninserted);</CODE>
+<P></P>
+TMDOUpdateRecordTypes é um conjunto que pode ter os seguintes valores:
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>cusModified</TD>
+<TD>Registros modificados são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusInserted</TD>
+<TD>Registros inseridos são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusDeleted</TD>
+<TD>Registros apagados são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusUnmodified</TD>
+<TD>Registros não modificados são visíveis.</TD>
+</TR>
+<TR>
+<TD>cusUninserted</TD>
+<TD>Registros não inseridos são visíveis.</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<P>
+Por padrão, um dataset é criado com um UpdateRecordTypes ajustado para cusModified, cusInserted, ou cusUnmodified, seginificando que todos registros existentes, editados, ou inseridos são visíveis para o usuário.
+</P>
+<P>
+Uma aplicação que deva percorrer através de um dataset sem apagar registro pode alterar UpdateRecordTypes como parte de um método que não apaga registros, assim os registros apagados serão visíveis o tempo suficiente para restaurar a condição prévia sem apagar.
+</P>
+<P>
+Uma aplicação que deva circular por um dataset para registros que não possam ser apagados pode alterar UpdateRecordTypes como parte de um método NaoApagar, de modo que os registros "não apagados" estejam visíveis o suficiente para restaura-los para a condição anterior de "não apagados".
+</P>
+<P>
+Igualmente, uma aplicaçã que deva circular por um dataset para registros que não possam ser inseridos pode alterar UpdateRecordTypes como parte de um método NaoInserir, de modo que os registros "não inseridos" estejam visíveis o suficiente para restaura-los para a condição anterior de "não inseridos".
+</P>
+<P>
+Uma aplicação pode também usar UpdateRecordTypes como um filtro para temporariamente limitar os registros visíveis àqueles adicionados ou inseridos pelo usuário durante a sessão atual.
+</P>
+<DL>
+<DT><B>TMDOCustomDataSet.UpdatesPending: Boolean</B></DT><DD>
+Indica se o buffer cached updates contem registros que ainda não foram aplicados. Se o retorno for True, então há registros editados, apagados, ou inseridos à serem aplicados à base de dados. Se o retorno for False não há registros no cache.
+</DL>
+
+<A NAME="toc34"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOCustomDataSet.OnUpdateError: TMDOUpdateErrorEvent</B></DT><DD>
+Ocorre se uma exceção é gerada quando o cached updates é aplicado à base de dados.
+<P></P>
+<PRE>
+  type
+    TMDOUpdateAction = (uaFail, uaAbort, uaSkip, uaRetry, uaApplied, uaApply);
+    TMDOUpdateErrorEvent = procedure(DataSet: TDataSet; E: EDatabaseError; UpdateKind: TUpdateKind; var UpdateAction:
+</PRE>
+<P></P>
+Escreva um manipulador de evento OnUpdateError para responder à exceções geradas quando o cached updates é aplicado à base de dados. Pois há um certo tempo entre o tempo que um registro é aramazenado em memória e o tempo que o cached updates é aplicado, existe uma possibilidade de outra aplicação poder alterar um ou mais do mesmo registro em uma base de dados antes que a alteração armazenada possa ser aplicada. DataSet é o nome do conjunto de dados o qual atualizações são aplicadas.
+<P></P>
+ <UL>
+ <LI>E é um ponteiro para um objeto EDBEngineError do qual uma aplicação pode extrair uma mensagem de erro e a causa tual da condição do erro. Um handler OnUpdateError pode usar esta informação para determinar como responder à condição de erro.
+ <LI>UpdateKind indica se um erro ocorreu enquanto estava inserindo, apagando, ou modificando um registro.
+ <LI>UpdateAction indica a ação a ser feita quando o handler do OnUpdateError sair. Quando entrar no handler, UpdateAction está sempre ajustado para uaFail. Se OnUpdateError pode manipular ou corrigir o erro, ajuste UpdateAction para uaRetry antes de sair do manipulador de erro. A tabela abaixo lista os valores possíveis para o UpdateAction e para quê eles servem:
+ </UL>
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD ALIGN="center">uaAbort</TD>
+<TD>Aborta a operação de update sem retornar uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaApply</TD>
+<TD>Somente para uso interno</TD>
+</TR>
+<TR>
+<TD ALIGN="right">uaApplied</TD>
+<TD>Não usado em rotinas de manipulação de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaFail</TD>
+<TD>Abora a operação de update e retorna uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaRetry</TD>
+<TD>Repete a operação do update que levantou a condição de erro originalmente</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaSkip</TD>
+<TD>Abandona a atualização do registro que levantou a condição de erro, e deixa as alterações não aplicadas em cache</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<P>
+O manipulador de erro pode usar as propriedades TField.OldValue e TField.NewValue para avaliar as condições de erro e ajustar TField.NewValue para um novo valor a ser reaplicado. Neste caso, ajuste UpdateAction para uaRetry antes de sair.
+</P>
+<P>
+Obs: Se uma chamada à ApplyUpdates levantar uma exceção e este ApplyUpdates não é chamado dentro de um bloco try..except, uma mensagem de erro é retornada. Se um handler OnUpdateError não puder corrigir a condição de erro e deixar UpdateAction ajustado para uaFail, a mensagem de erro é retornada duas vezes. Para prevenir isto, ajuste UpdateAction para uaAbort no manipulador do erro.
+</P>
+<P>
+Importante: O código em um OnUpdateError não deve chamar nenhum método que faça alteração no registro atual.
+</P>
+<DL>
+<DT><B>TMDOCustomDataSet.OnUpdateRecord: TMDOUpdateRecordEvent</B></DT><DD>
+Ocorre quando cached updates é aplicado em um registro.
+<P></P>
+<PRE>
+  type
+    TMDOUpdateAction = (uaFail, uaAbort, uaSkip, uaRetry, uaApply, uaApplied);
+    TMDOUpdateRecordEvent = procedure(DataSet: TDataSet; UpdateKind: TUpdateKind; 
+                                var UpdateAction: TMDOUpdateAction) of object;
+</PRE>
+<P></P>
+Escreva um evento OnUpdateRecord para processar atualizações que não possam ser manipuladas por um único componente de update, tais como implementação de updates em cascata, inserções, ou exclusões. Este evento também é útil para aplicações que necessitam controle adicional sobre substituição de parametros em componentes de update.
+<P></P>
+ <UL>
+ <LI>DataSet é o nome do dataset ao qual as atualizações serão aplicadas.
+ <LI>UpdateKind é usado se o update atual é a inserção de um registro, a exlusão de um registro, ou a modificação de um registro.
+ <LI>UpdateAction indica que a ação feita pelo evento OnUpdateRecord antes dela saiu. Quando entrar no envento, UpdateAction estará sempre como uaFail. Se OnUpdateRecord for executado com sucesso, ele deverá alterar UpdateAction para uaApplied antes de sair. A tabela abaixo lista os valores possíveis para o UpdateAction e para quê eles servem:
+ </UL>
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD ALIGN="center">uaAbort</TD>
+<TD>Aborta a operação de update sem retornar uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaApply</TD>
+<TD>Somente para uso interno</TD>
+</TR>
+<TR>
+<TD ALIGN="right">uaApplied</TD>
+<TD>Não usado em rotinas de manipulação de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaFail</TD>
+<TD>Abora a operação de update e retorna uma mensagem de erro</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaRetry</TD>
+<TD>Repete a operação do update que levantou a condição de erro originalmente</TD>
+</TR>
+<TR>
+<TD ALIGN="center">uaSkip</TD>
+<TD>Abandona a atualização do registro que levantou a condição de erro, e deixa as alterações não aplicadas em cache</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<A NAME="toc35"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOCustomDataSet.ApplyUpdates</B></DT><DD>
+Escreve as atualizações em cache pendentes de um dataset no banco de dados. 
+<P></P>
+Este método envia os dados armazenados em memória para o database armazernar, mas as alterações não são aplicadas (commit) no banco de dados. Uma aplicação deve explicitamente chamar o método Commit do componente TMDOTransaction para aplicar as alterações no banco de dados se a escrita for bem sucedida, ou chamar o método Rollback do componente TMDOTransaction para desfazer as alterações se existir algum erro.
+<P></P>
+Obs: O método preferencial para atualização de datasets é chamar o método ApplyUpdates do componente database do que chamar o método ApplyUpdates de cada dataset individualmente. A aplicação é responsável por aplicar (commit) ou desfazer (rollback) a transação.
+<P></P>
+<DT><B>TMDOCustomDataSet.CachedUpdateStatus: TCachedUpdateStatus</B></DT><DD>
+Retorna o status do cached updates do registro atual no dataset. 
+<P></P>
+<CODE>type TCachedUpdateStatus = (cusUnmodified, cusModified, cusInserted, cusDeleted, cusUninserted);</CODE>
+<P></P>
+TCachedUpdateStatus pode ser um dos seguintes tipos:
+</DL>
+
+<TABLE ALIGN="center" CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>cusDeleted</TD>
+<TD>O registro será apagado.</TD>
+</TR>
+<TR>
+<TD>cusInserted</TD>
+<TD>O registro será inserido.</TD>
+</TR>
+<TR>
+<TD>cusModified</TD>
+<TD>O registro será alterado.</TD>
+</TR>
+<TR>
+<TD>cusUninserted</TD>
+<TD>O registro foi inserido e então apagado.</TD>
+</TR>
+<TR>
+<TD>cusUnmodified</TD>
+<TD>O registro foi alterado.</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<DL>
+<DT><B>TMDOCustomDataSet.CancelUpdates</B></DT><DD>
+Limpa todas pendencias do cached updates. Quando um dataset é fechado, ou a propriedade CachedUpdates está False, CancelUpdates é chamado automaticamente.
+<P></P>
+Obs: Para desfazer mudanças em um único registro, chame RevertRecord.
+<P></P>
+<DT><B>TMDOCustomDataSet.CompareBookmarks(Bookmark1, Bookmark2: TBookmark): Integer</B></DT><DD>
+Compara dois bookmarks. Retorna um inteiro indicando a diferença entre os dois bookmarks. Retorna zero se os dois bookmarks são iguais, um valor negativo -1 se Bookmark1 é menor que Bookmark2, ou um valor positivo 1 se Bookmark1 é maior que Bookmark2. Também retorna zero se um dos dois bookmarks estiver nulo (nil). Bookmark1 e Bookmark2 são dois valores TBookmark a serem comparados.
+<P></P>
+<DT><B>TMDOCustomDataSet.Create(AOwner: TComponent)</B></DT><DD>
+Cria uma instancia de um componente TDataSet em tempo de execução. Normalmente aplicações instanciam descendentes de dataset, tais como TMDOTable, TMDOQuery, TMDODataSet, ou TMDOStoredProc, ao invés de TMDOCustomDataSet. Estes objetos instanciados são manipulados automaticamente.
+<P></P>
+Por outro lado, aplicações que criam componentes dataset especializados, como por exemplo componentes customizados, podem precisar instanciar um componente TMDOCustomDataSet chamando o método Create.
+<P></P>
+ <UL>
+ <LI>Create:
+    <UL>
+    <LI>Chama o método herdado Create de TDataSet.
+    <LI>Cria cinco objetos query.
+    <LI>Cria o objeto base para assegurar a referencia ao database e transaction.
+    <LI>Associa os eventos do database e transaction relacionado ao componente base.
+    <P></P>
+    </UL>
+ </UL>
+<DT><B>TMDOCustomDataSet.CreateBlobStream(Field: TField; Mode: TBlobStreamMode): TStream</B></DT><DD>
+Retorna um objeto TBlobStream para leitura ou escrita de dados em um campo especificado blob.
+<P></P>
+<CODE>type TBlobStreamMode = (bmRead, bmWrite, bmReadWrite);</CODE>
+<P></P>
+Chame este método para obter um fluxo para leitura ou escrita de dados para um objeto binário grande (BLOB - Binary Large OBject). O parametro Field deve especificar um componente TBlobField da propriedade array Fields. O parametro Mode especifica se o fluxo será usado para leitura, escrita, ou atualização de conteúdo do campo.
+<P></P>
+<DT><B>TMDOCustomDataSet.Destroy</B></DT><DD>
+Destrói a instancia de um componente dataset.
+<P></P>
+Não chame Destroy diretamente em uma aplicação. Normalmente a destruição de datasets é manipulada automaticamente pelo Delphi. Se uma aplicação cria suas próprias instancias de um dataset, entretanto, a aplicação deverá chamar o método Free, o qual verifica que o componente dataset não está pronto para ser liberado antes de chamar Destroy.
+ <UL>
+ <LI>Destroy executa as seguintes tarefas:
+   <UL>
+   <LI>Libera os objetos query associados.
+   <LI>Libera o objeto base.
+   <LI>Libera os recursos internos associados.
+   <P></P>
+   </UL>
+ </UL>
+<DT><B>TMDOCustomDataSet.FetchAll</B></DT><DD>
+Acessa todos registros da posição atual do cursor até o fim do arquivo e guarda isto localmente. Este método é utilizado para reduzir o tráfeco da rede quando estiver usando cached updates. FetchAll chama o método CheckBrowseMode para postar quaisquer alterações pendentes, e então acessa todos registros a partir da posição do cursor até o fim do arquivo, e guarda localmente. Normalmente quando cached updates está habilitado, uma transação recupera somente os dados que são necessários para as finalidades de retorno.
+<P></P>
+Obs: O uso de FetchAll nem sempre é apropriado. Por exemplo, quando uma aplicação acessa uma base de dados usada por muitos clientes simultaneos e existe um grau elevado de disputa por atualizações nos mesmos registros, capturando todos registros de uma vez pode não ser vantajoso porque alguns registros capturados podem ter sido alterados por outras aplicações. Tente sempre pesar o que é mais vantajoso: a redução de tráfeco na rede ou reduzir a disputa por registros.
+<P></P>
+<DT><B>TMDOCustomDataSet.GetCurrentRecord(Buffer: PChar): Boolean</B></DT><DD>
+Recupera o registro atual em um buffer.A maioria das aplicações não deve precisar chamar este método. TDataSet automaticamente aloca um buffer para o registro ativo.
+<P></P>
+Chame GetCurrentRecord para copiar o registro atual dentro de um buffer alocado pela aplicação. Buffer deve ser pelo menos tão grande quando o tamanho do registro indicado pela propriedade RecordSize.
+<P></P>
+<DT><B>TMDOCustomDataSet.GetFieldData(FieldNo: Integer; Buffer: Pointer): Boolean</B></DT><DD>
+Lê o dado do campo dentro de um buffer a partir de um campo de um dataset especificado pelo FieldNo. Retorna o tamanho do Buffer.
+<P></P>
+<DT><B>TMDOCustomDataSet.GetFieldData(Field: TField; Buffer: Pointer): Boolean</B></DT><DD>
+Lê o dado do campo dentro de um buffer a partir de um campo de um dataset especificado pelo Field. Retorna o tamanho do Buffer.
+<P></P>
+<DT><B>TMDOCustomDataSet.Locate(const KeyFields: string; const KeyValues: Variant; Options: TLocateOptions): Boolean</B></DT><DD>
+Chame Locate para buscar em um dataset por um registro específico e a posição do cursor nele.
+  <UL>
+  <LI>KeyFields é uma string contendo uma lista separada por ';' de nomes de campo no qual será feita a busca.
+  <LI>KeyValues é um variant que especifica os valores a serem localizados nos campos chave. Se KeyFields lista somente um campo, KeyValues especificará o valor para aquele campo no registro desejado. Para especificar múltiplos valores de busca, passe um array de variant como KeyValues, ou construa um array variant usando a rotina VarArrayOf. Por exemplo:
+  <P></P>
+<PRE>
+    with cad_cliente do
+      Locate('Nome;Telefone;Email', VarArrayOf(['Mercury', '99-9999-9999', 'info@mdolib.com']), [loPartialKey]);
+</PRE>
+  <P></P>
+  <LI>Options é um conjunto de opções que especificam uma busca adicional enquanto procura nos campos. Se Options conter o tipo loCaseInsensitive, então Locate ignora entre maiúsculas e minúsculas enquanto equipara os campos. Se Options contém o tipo loPartialKey, então Locate permite strings aproximadas nas strings de KeyValues. Se Options está vazio, ou se KeyFields não inclui quaisquer campos string, Options é ignorado.
+  <P></P>
+Locate retorna True se encontrar um registro identico, e faz aquele registro o atual. De outra maneira Locate retorna False. 
+  <P></P>
+Locate usará o método mais rápido possível para localizar registros equivalentes. Se a busca dos campos no KeyFields estiver indexada e o indece for compatível com as opções de busca especificada, Locate usará o indíce. De outra maneira criará um filtro para a busca.
+  <P></P>
+  </UL>
+<DT><B>TMDOCustomDataSet.LocateNext(const KeyFields: string; const KeyValues: Variant; Options: TLocateOptions): Boolean</B></DT><DD>
+Busca no dataset por registro depois de um registro especificado e o faz o registro atual. Chame Locatenext para buscar em um dataset por um registro depois da posição atual do cursor.
+<P></P>
+  <UL>
+  <LI>KeyFields é uma string contendo uma lista separada por ';' de nomes de campo no qual será feita a busca.
+  <LI>KeyValues é um variant que especifica os valores a serem localizados nos campos chave. Se KeyFields lista somente um campo, KeyValues especificará o valor para aquele campo no registro desejado. Para especificar múltiplos valores de busca, passe um array de variant como KeyValues, ou construa um array variant usando a rotina VarArrayOf.
+  <LI>Options é um conjunto de opções que especificam uma busca adicional enquanto procura nos campos. Se Options conter o tipo loCaseInsensitive, então Locate ignora entre maiúsculas e minúsculas enquanto equipara os campos. Se Options contém o tipo loPartialKey, então Locate permite strings aproximadas nas strings de KeyValues. Se Options está vazio, ou se KeyFields não inclui quaisquer campos string, Options é ignorado.
+  <P></P>
+LocateNext retorna True se encontrar um registro identico, e faz aquele registro o atual. De outra maneira LocateNext retorna False. 
+  <P></P>
+LocateNext usará o método mais rápido possível para localizar registros equivalentes. Se a busca dos campos no KeyFields estiver indexada e o indece for compatível com as opções de busca especificada, Locate usará o indíce. De outra maneira criará um filtro para a busca.
+  <P></P>
+  </UL>
+<DT><B>TMDOCustomDataSet.Lookup(const KeyFields: string; const KeyValues: Variant; const ResultFields: string): Variant</B></DT><DD>
+Recupera valores de campo de um registro que equipara aos valores de uma busca.
+  <UL>
+  <LI>KeyFields é uma string contendo uma lista separada por ';' de nomes de campo no qual será feita a busca.
+  <LI>KeyValues é um array variant contendo os valores para comparar nos campos chaves. Para especificar múltiplos valores de busca, passe KeyValues como um array variante, ou construa um array variant através da rotina VarArrayOf.
+  <LI>ResultFields é uma string contendo uma lista separada por ';' de nomes de campo dos quais seus os valores devem ser retornados do registro equiparado.
+  <P></P>
+Lookup retorna um array variant contendo os valores dos campos especificados no ResultFields.
+  <P></P>
+Lookup usa um método mais rápido possível para localizar registros equivalentes. Se a busca dos campos no KeyFields estiverem indexados, Lookup usará os índices. De outra maneira criará um filtro para a busca.
+  <P></P>
+  </UL>
+<DT><B>TMDOCustomDataSet.RecordModified(Value: Boolean)</B></DT><DD>
+Ajusta o registro para modificado ou não modificado. 
+<P></P>
+Obs: Este método é de uso interno.
+<P></P>
+<DT><B>TMDOCustomDataSet.RevertRecord</B></DT><DD>
+Restaura o registro atual em um dataset para um estado de não modificado quando cached updates está habilitado.
+<P></P>
+Obs: Para desfazer todas alterações para todas pendencias de atualizações em um cache, chame CancelUpdates.
+<P></P>
+<DT><B>TMDOCustomDataSet.Undelete</B></DT><DD>
+Restaura um registro apagado de um dataset. Também pode ser recuperado um registro "desinserido" (uninserted).
+<P></P>
+<DT><B>TMDOCustomDataSet.UpdateStatus: TUpdateStatus</B></DT><DD>
+Informa o estado de update para o registro corrente.
+<P></P>
+<CODE>type TUpdateStatus = (usUnmodified, usModified, usInserted, usDeleted);</CODE>
+<P></P>
+Usado para determinar o estado de update do registro corrente enquanto cached updates estiver habilitado. O estado de update pode ser alterado frequantemente como quando registros são editados, inseridos, ou apagados. UpdateStatus oferece um método conveniente para que as aplicações avaliem o status atual antes de empreender ou de terminar as operações que dependem do status de update dos registros.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc36"></A>
+<H2>TMDOSQLMonitor</H2>
+<P>
+<B>Unit MDOSQLMonitor</B>
+TMDOSQLMonitor monitora SQL dinamico passado ao servidor firebird. Utilizado para monitorar SQL dinamicos que ocorrem em aplicações Firebird. Habilite TraceFlags em cada componente TMDODatabase a fim  de fazer com que receba informações sobre o status de cada conexão.
+</P>
+<A NAME="toc37"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOSQLMonitor.TraceFlags: TTraceFlags</B></DT><DD>
+Esta é uma propriedade interna usada pelo componente TMDODatabase.
+<P></P>
+<PRE>
+  type
+    TTraceFlag = (tfQPrepare, tfQExecute, tfQFetch, tfError, tfStmt, tfConnect, tfTransact, tfBlob, tfService, tfMisc);
+    TTraceFlags = set of TTraceFlag;
+</PRE>
+<P></P>
+Utilize TraceFlags para especificar quais operações do database o SQL Monitor deve traçar na aplicação em tempo de execução. TraceFlags é útil somente para o SQL Monitor, o qual é provido para habilitar tuning de performance e debug SQL quando trabalha com servidores remotos.
+<P></P>
+Obs: Normalmente as opções são ajustadas no SQL Monitor do que ajustada no código da aplicação.
+</DL>
+
+<A NAME="toc38"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOSQLMonitor.OnSQL: TSQLEvent</B></DT><DD>
+Informa atividade de SQL dinamico em aplicativos Firebird.
+<P></P>
+<CODE>type TSQLEvent = procedure (EventText: string) of object;</CODE>
+<P></P>
+Escreva um evento OnSQL para informar atividades SQL dinamicas em aplicativos Firebird. OnSQL é um evento do tipo TSQLEvent, e informa a atividade SQL através do EventTxt. 
+<P></P>
+Você precisa habilitar o TraceFlags em cada TMDODatabase a fim de que o SQL Monitor receba informação de status de cada conexão.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc39"></A>
+<H2>TMDOOutputRawFile</H2>
+<P>
+<B>Unit MDOBatch</B>
+</P>
+<P>
+TMDOOutputRawFile envia dados para um arquivo cru formatado. Utilize TMDOOutputRawFile para enviar dados em um arquivo cru, que é equivalente ao external file do Firebird. Arquivos cru não são limitados à um formato de caracter.
+</P>
+<A NAME="toc40"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOOutputRawFile.Destroy</B></DT><DD>
+Destrói a instancia do TMDOInputRawFile.
+<P></P>
+Não chame Destroy diretamene de um apliativo. Ao invés disto, chame Free. Free verifica se o objeto já não foi liberado e somente então chama Destroy.
+<P></P>
+<DT><B>TMDOOutputRawFile.ReadyFile</B></DT><DD>
+Prepara a saída para o XSQLDA.
+<P></P>
+<DT><B>TMDOOutputRawFile.WriteColumns</B></DT><DD>
+Saída de dados em colunas no XSQLDA.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc41"></A>
+<H2>TMDOOutputDelimitedFile</H2>
+<P>
+<B>Unit MDOBatch</B>
+</P>
+<P>
+TMDOInputDelimitedFile processa a saída de dados em batch de arquivos delimitados. 
+</P>
+<A NAME="toc42"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOOutputDelimitedFile.ColDelimiter: String</B></DT><DD>
+Ajusta a coluna delimitadora para o arquivo de saída.
+<P></P>
+<DT><B>TMDOOutputDelimitedFile.OutputTitles: Boolean</B></DT><DD>
+Ajustado para True colocará o título no topo do arquivo.
+<P></P>
+<DT><B>TMDOOutputDelimitedFile.RowDelimiter: String</B></DT><DD>
+Ajusta a linha delimitadora para a saída de dados.
+</DL>
+
+<A NAME="toc43"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOOutputDelimitedFile.Destroy</B></DT><DD>
+Destrói a instancia do TMDOOutputDelimitedFile.
+<P></P>
+Não chame Destroy diretamente em uma aplicação. Ao invés disto chame Free. Free verificará se o objeto já não foi liberado antes de chamar Destroy.
+</DL>
+
+<DL>
+<DT><B>TMDOOutputDelimitedFile.ReadyFile</B></DT><DD>
+Prepara a saída para o XSQLDA.
+<P></P>
+<DT><B>TMDOOutputDelimitedFile.WriteColumns: Boolean</B></DT><DD>
+Ajustado para True para saída de dados em colunas XSQLDA.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc44"></A>
+<H2>TMDOInputRawFile</H2>
+<P>
+<B>Unit MDOBatch</B>
+</P>
+<P>
+TMDOInputRawFile insere dados de um arquivo cru. Utilize TMDOInputRawFile para inserir dados de um arquivo cru, que é equivalente à saída do external file do Firebird. Arquivos cru não são limitados à um formato de caracter.
+</P>
+<A NAME="toc45"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOInputRawFile.Destroy</B></DT><DD>
+Destrói a instancia do TMDOInputRawFile.
+<P></P>
+Não chame Destroy diretamene de um apliativo. Ao invés disto, chame Free. Free verifica se o objeto já não foi liberado e somente então chama Destroy.
+<P></P>
+<DT><B>TMDOInputRawFile.ReadParameters: Boolean</B></DT><DD>
+Lê parametros de entrada XSQLDA.
+<P></P>
+<DT><B>TMDOInputRawFile.ReadyFile</B></DT><DD>
+Prepara a saída para XSQLDA.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc46"></A>
+<H2>TMDOInputDelimitedFile</H2>
+<P>
+<B>Unit MDOBatch</B>
+</P>
+<P>
+TMDOInputDelimitedFile processa a entrada de dados em batch de arquivos delimitados. 
+</P>
+<A NAME="toc47"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOInputDelimitedFile.ColDelimiter: String</B></DT><DD>
+Ajusta a coluna delimitadora para o arquivo de entrada.
+<P></P>
+<DT><B>TMDOInputDelimitedFile.ReadBlanksAsNull: Boolean</B></DT><DD>
+Ajustado para True, lê espaços brancos no arquivo de entrada como caracter nulo.
+<P></P>
+<DT><B>TMDOInputDelimitedFile.RowDelimiter: String</B></DT><DD>
+Ajusta a linha delimitadora para a entrada de dados.
+<P></P>
+<DT><B>TMDOInputDelimitedFile.SkipTitles: Boolean</B></DT><DD>
+Ajustado para True, despresa o primeiro registro de um arquivo delimitado. Campos de título não são úteis em arquivos de entrada em grupo, e esta propriedade permite à você despresar isto.
+</DL>
+
+<A NAME="toc48"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOInputDelimitedFile.Destroy</B></DT><DD>
+Destrói a instancia do TMDOInputDelimitedFile.
+<P></P>
+Não chame Destroy diretamente em uma aplicação. Ao invés disto chame Free. Free verificará se o objeto já não foi liberado antes de chamar Destroy.
+<P></P>
+<DT><B>TMDOInputDelimitedFile.GetColumn(var Col: String): Integer</B></DT><DD>
+Retorna o conteúdo de uma coluna XSQLDA.
+<P></P>
+<DT><B>TMDOInputDelimitedFile.ReadParameters: Boolean</B></DT><DD>
+Lê os parametros de entrada do XSQLDA.
+<P></P>
+<DT><B>TMDOInputDelimitedFile.ReadyFile</B></DT><DD>
+Prepara a entrada para o XSQLDA.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc49"></A>
+<H2>TMDODSBlobStream</H2>
+<P>
+<B>Unit MDOCustomDataSet</B>
+</P>
+<P>
+TMDODSBlobStream é um objeto interno usado pelo DataSet em processo de criação de fluxo de Blob.
+</P>
+<A NAME="toc50"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDODSBlobStream.Create(AField: TField ABlobStream: TMDOBlobStream; Mode: TBlobStreamMode)</B></DT><DD>
+Reinicia o fluxo para o início do Blob.
+</DL>
+
+<P>
+<CODE>type TBlobStreamMode = (bmRead, bmWrite, bmReadWrite);</CODE>
+</P>
+<P>
+Chame Create para iniciar o fluxo para o início do Blob. Dependendo do modo, ele também trunca o fluxo Blob.
+</P>
+<DL>
+<DT><B>TMDODSBlobStream.Read(var Buffer; Count: Longint): Longint</B></DT><DD>
+Lê o número de requisição de bytes do Blob.
+<P></P>
+Utilizado para ler dados de um Blob quando o número de bytes no dado do campo não é conhecido. 
+<P></P>
+Buffer deve ter ao menos Count bytes alocados para assegurar o dado que foi lido do campo.
+<P></P>
+Read transfere Count bytes do dado Blob no Buffer, inicia na posição atual, e então avança pelo número de bytes atualmente transferidos. Read retorna o número de bytes atualmente transferidos ( o qual pode ser menor que o número requisitado no Count).
+<P></P>
+Read verifica a propriedade Transliterate do campo, e converte o dado em ANSI do character set especificado pelo dataset se Transliterate é true.
+<P></P>
+Todos os outros métodos data-reading de um fluxo Blob (ReadBuffer, ReadComponent) chamam Read para fazer sua leitura.
+<P></P>
+Obs: Não chame Read quando o TMDODSBlobStream for criado no modo bmWrite.
+<P></P>
+<DT><B>TMDODSBlobStream.Seek(Offset: Longint; Origin: Word): Longint</B></DT><DD>
+Reinicia a posição atual do objeto TMDODSBlobStream.
+<P></P>
+Utilize Seek para mover a posição atual dentro do Blob para o indicado no offset. Seek permite um aplicativo ler ou escrever em uma localização dentro do blob.
+<P></P>
+O parametro Origin indica como interpretar o parametro Offset. Origin deve ser um dos seguintes valores:
+<P></P>
+</DL>
+
+<TABLE CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Valor</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>soFromBeginning</TD>
+<TD>Offset parte do início do blob. Seek move para a posição do Offset. Offset deve ser &gt;= 0.</TD>
+</TR>
+<TR>
+<TD>soFromCurrent</TD>
+<TD>Offset parte da posição atual do blob. Seek move para posição atual + offset</TD>
+</TR>
+<TR>
+<TD>soFromEnd</TD>
+<TD>Offset parte do fim do blob. Offset deve ser &lt;= 0 para indicar um número de bytes antes do fim do blob. Seek retornará o novo valor da propriedade Position, a nova posição atual no blob.</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<DL>
+<DT><B>TMDODSBlobStream.SetSize(NewSize: Long)</B></DT><DD>
+Ajusta o tamanho do blob para o tamnho requisitado.
+</DL>
+
+<DL>
+<DT><B>TMDODSBlobStream.Write(const Buffer; Count: Longint): Longint</B></DT><DD>
+Ajusta o campo para ser modificado, escre o número de bytes requisitados ao fluxo blob, e dispara o evento OnFieldChange.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc51"></A>
+<H2>TMDODataSetUpdateObject</H2>
+<P>
+<B>Unit MDOCustomDataSet</B>
+</P>
+<P>
+TMDODataSetUpdateObject é a classe base abstrata  para objetos de update usados para atualizar querys "não atualizáveis" quando cached updates está habilitado.
+</P>
+<P>
+Utilize TMDODataSetUpdateObject como classe base quando criar objetos customizados que podem ser usado para atualizar datasets. TMDODataSetUpdateObject declara uma única propriedade e alguns métodos abstratos, mas não provê detalhes de implementação: isto deve ser provido pelos objetos descendentes.
+</P>
+<A NAME="toc52"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDODataSetUpdateObject.RefreshSQL: TMDOSQL</B></DT><DD>
+Provê a abilidade de acessar diretamente o objeto SQL encapsulando a declaração RefreshSQL.
+</DL>
+
+<A NAME="toc53"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDODataSetUpdateObject.Create(AOwner:TComponent)</B></DT><DD>
+Cria uma intancia de um componente TMDODataSetUpdateObject.
+<P></P>
+<DT><B>TMDODataSetUpdateObject.Destroy</B></DT><DD>
+Libera todos os recursos associados com esta instancia.
+<P></P>
+Não chame Destroy diretamente de um aplicativo. Normalmente destruição de objetos são tratados automaticamente pelo Delphi. Se um aplicativo cria sua própria instancia de um objeto de update, então, o aplicativo terá de chamar Free, o qual irá verificar se este objeto de update já não foi liberado antes de chamar Destroy.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc54"></A>
+<H2>TMDOCustomSQLMonitor</H2>
+<P>
+<B>Unit MDOSQLMonitor</B>
+</P>
+<P>
+TMDOCustomSQLMonitor é um objeto ancestral do qual TMDOSQLMonitor e TMDOSQLMonitorHook são derivados.
+</P>
+<A NAME="toc55"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOCustomSQLMonitor.Create(AOwner: TComponent)</B></DT><DD>
+Cria uma instancia do TMDOCustomSQLMonitor. 
+<P></P>
+Também cria:
+<P></P>
+  <UL>
+  <LI>Cria a janela
+  <LI>Registra o evento
+  <LI>Dispara a execução do Monitor
+  <P></P>
+  </UL>
+<DT><B>TMDOCustomSQLMonitor.Destroy</B></DT><DD>
+Destrói a instancia de TMDOCustomSQLMonitor.
+<P></P>
+Não chame Destroy diretamente de um aplicativo. Ao invés disto, um aplicativo deve chamar Free. Free verifica os serviços do objeto que ainda não foram liberados antes de chamar Destroy. 
+<P></P>
+Destroy desregistra o evento, detrói a janela, e mata a execução do Monitor.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc56"></A>
+<H2>EMDOFirebirdError</H2>
+<P>
+<B>Unit MDO</B>
+</P>
+<P>
+EMDOFirebirdError é utilizado para levantar erros do servidor.
+</P>
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc57"></A>
+<H2>EMDOError</H2>
+<P>
+<B>Unit MDO</B>
+</P>
+<P>
+Classe para erros de exceção Firebird. Utilizado para levantar exceções quando um componente detecta um erro no database ou na implementação do componente.
+</P>
+<A NAME="toc58"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>EMDOError.MDOErrorCode: Long</B></DT><DD>
+Retorna o código do erro Firebird.
+<P></P>
+<DT><B>EMDOError.SQLCode: Long</B></DT><DD>
+Traduz um código de erro Firebird do Status Vector para um código de erro SQL.
+<P></P>
+Tipicamente, esta chamada é usada para preencher uma variável com um número de erro SQL para uso em uma rotina de tratamento de erros.
+</DL>
+
+<A NAME="toc59"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>EMDOError.Create(ASQLCode: Long; Msg: string)</B></DT><DD>
+Chama o construtor herdado e ajusta SQLCode e MDOErrorCode.
+<P></P>
+<DT><B>Create(ASQLCode: Long; AMDOErrorCode: Long; Msg: string)</B></DT><DD>
+Chama o construtor herdado e ajusta SQLCode e MDOErrorCode.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc60"></A>
+<H2>EMDOClientError</H2>
+<P>
+<B>Unit MDO</B>
+</P>
+<P>
+Usado para levantar erros específicos no cliente.
+</P>
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc61"></A>
+<H2>TMDOSQLDA</H2>
+<P>
+<B>Unit MDOSQL</B>
+</P>
+<P>
+TMDOSQLDA fornece propriedades e métodos para uso com componentes MDOSQL.
+</P>
+<P>
+Todas aplicações SQL dinamicas (DSQL) devem declarar uma ou mais XSQLDA. O XSQLDA é uma linguagem hospedeira de estrutura de dados que DSQL usa para transportar dados de/para um database quando processa uma string SQL. Existem dois tipos de XSQLDA: entrada e saída de descritores. Ambos são implementados usando a estrutura XSQLDA.
+</P>
+<A NAME="toc62"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOSQLDA.AsXSQLDA: PXSQLDA</B></DT><DD>
+Representa o valor do campo XSQLDA como um valor XSQLDA.
+<P></P>
+<DT><B>TMDOSQLDA.Count: Integer</B></DT><DD>
+Retorna o númer de campos XSQLDA.
+<P></P>
+<DT><B>TMDOSQLDA.Modified: Boolean</B></DT><DD>
+Indica se um campo foi modificado.
+<P></P>
+<DT><B>TMDOSQLDA.Names: String</B></DT><DD>
+Retorna os nomes do campo XSQLDA.
+<P></P>
+<DT><B>TMDOSQLDA.RecordSize: Integer</B></DT><DD>
+Retorna o tamanho do registro XSQLDA.
+<P></P>
+<DT><B>TMDOSQLDA.UniqueRelationName: String</B></DT><DD>
+Retorna o nome de uma relação única. Utilize para trazer o nome de uma relação se somente uma relação estiver envolvida na query, de outra maneira, será retornado nil. Esta propriedade é utilizada internamente.
+<P></P>
+<DT><B>TMDOSQLDA.Vars: [Idx: Integer]: TMDOSQLVAR; default</B></DT><DD>
+Retorna o XSQLVAR definido para o parametro XSQLDA.
+<P></P>
+Vars é uma propriedade default para TMDOSQLDSA, o que significa que o nome da propriedade Vars pode ser omitida quando o objeto TMDOSQLDA implementa um apropriedade em outro objeto.
+</DL>
+
+<A NAME="toc63"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOSQLDA.AddName(FieldName: String; Idx: Integer)</B></DT><DD>
+Adiciona um nome à estrutura XSQLDA.
+<P></P>
+<DT><B>TMDOSQLDA.ByName: (Idx: String): TMDOSQLVAR</B></DT><DD>
+Retorna os campos XSQLVAR por nome.
+<P></P>
+<DT><B>TMDOSQLDA.Create(Query: TMDOSQL)</B></DT><DD>
+Cria uma instancia de uma estrutura XSQLDA.
+<P></P>
+<DT><B>TMDOSQLDA.Destroy</B></DT><DD>
+Destrói a estrutura XSQLDA.
+<P></P>
+Não chame Destroy diretamente. Chame o método Free. Free verifica se todos objetos não estão nil antes de chamar Destroy.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc64"></A>
+<H2>TMDOTable</H2>
+<P>
+<B>Unit MDOtable</B>
+</P>
+<P>
+TMDOTable é um componente dataset que encapsula uma tabela de base de dados. 
+</P>
+<P>
+Utilizado para acessar dados em uma única tabela ou view. TMDOTable prover acesso direto à todos registros e campos em uma tabela de base Firebird. Um componente table pode trabalhar também com um sub conjunto de dados dentro de uma tabela usando filtros.
+</P>
+<A NAME="toc65"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOTable.Active: Boolean</B></DT><DD>
+Indica se uma query está ou não ativa.
+<P></P>
+<DT><B>TMDOTable.BufferChunks: Integer</B></DT><DD>
+Indica o tamanho do incremento do buffer.
+<P></P>
+<DT><B>TMDOTable.CachedUpdates: Integer</B></DT><DD>
+Especifica se o cached updates está habilitado para um dataset.
+<P></P>
+CachedUpdates habilita ou desabilita o uso de cached updates para um dataset. Se CachedUpdates estiver True, cached updates estará habilitado, caso False, estará desabilitado.
+<P></P>
+Quando cached updates está habilitado, atualizações ao dataset, como postar alterações, inserir registros, ou apagar, são armazenados em um cache interno na máquina cliente ao invés de iniciar escrevendo diretamente ao dataset na base de dados. Quando as alterações estão concluídas, um aplicativo escreve todas alterações guardadas para a base de dados em um contexto de uma única transação.
+<P></P>
+Obs: Ao invés de usar cached updates, os aplicativos podem obter os mesmo benefícios com maior controle usando um client dataset.
+<P></P>
+<DT><B>TMDOTable.Constraints: TCheckConstraints</B></DT><DD>
+Especifica o nível de registro estrangerios que devem ser encontrados quando editar um dado. 
+<P></P>
+Utilizado para ler ou adicionar um nível de registro estrangeiro (do inglês record-level) ao dataset. Normalmente Record-Leve Constraints apresentam relacionamentos entre campos em um registro. Constraints que limitam o valor de um único campo devem ser adicionados à um campo de componente individualmente.
+<P></P>
+<DT><B>TMDOTable.CurrentDBKey: TMDODBKey</B></DT><DD>
+Retorna o DBKey da linha corrente na tabela. Um DBKey é um identificador de linha único durante a transação corrente. Esta propriedade é utilizada internamente.
+<P></P>
+<DT><B>TMDOTable.DefaultIndex: Boolean</B></DT><DD>
+Especifica se o dado na tabela deve ser ordenado sobre um indice padrão quando aberto. Quando ajustado para False, uma clausula ORDER BY não será usada. Quando True, o dado é ordenado baseado na primary key ou em um índice único (do ingles unique index). O padrão é True.
+<P></P>
+<DT><B>TMDOTable.Exists: Boolean</B></DT><DD>
+Indica se a tabela subjacente existe.
+<P></P>
+Se a tabela não existir, você pode criar a tabela a partir de definições de campos e definições de índices usando o método CreateTable. Esta propriedade é somente leitura (do ingles read-only).
+<P></P>
+<DT><B>TMDOTable.Filter: string</B></DT><DD>
+Especifica linhas em um dataset que combinam com as condições do filtro.
+<P></P>
+Utilize esta propriedade para restringir linhas em um dataset. A sintaxe para Filter é o mesmo de uma condição de busca que aparece depois da clausula WHERE em uma declaração de SELECT. Por exemplo, para ver somente registros onde o valor no campo PAIS contenha 'Brasil' ou 'Portugal' faça:
+<P></P>
+<CODE>PAIS = 'Brasil' or PAIS = 'Portugal'</CODE>
+<P></P>
+Você pode ainda utilizar coringas (do ingles wildcards) como percento (%) e underscore (_) nas condições quando você usar o operador LIKE. Por exemplo, para filtrar todos os países que iniciam com 'B' faça:
+<P></P>
+<CODE>PAIS LIKE 'B%'</CODE>
+<P></P>
+Para filtrar registros em que o campo seja nulo, ou não nulo, utilize o operador IS, como:
+<P></P>
+<CODE>PAIS IS NULL and ESTADO IS NOT NULL</CODE>
+<P></P>
+Você tamem poderá utilizar expressões mais complexas. O exemplo abaixo recupera linhas contendo valores de PAIS onde a língua oficial é o Portugues:
+<P></P>
+<CODE>PAIS IN (SELECT PAIS FROM LANGUAGE WHERE LANGUAGE_NAME = 'Portugues')</CODE>
+</DL>
+
+<DL>
+<DT><B>TMDOTable.Filtered: Boolean</B></DT><DD>
+Especifica se o filtro está ativo ou não para uma tabela. Se Filtered for True, então o filtro está ativo. Para aplicar condições de filtro determinado na propriedade Filter ou no evento OnFilterRecord, ajuste Filtered para True.
+<P></P>
+<DT><B>TMDOTable.IndexDefs: TIndexDefs</B></DT><DD>
+Contém informação sobre os indices para uma tabela. IndexDefs é um array de itens de índices, cada qual descreve um índice disponível para a tabela. Normalmente um aplicativo acessa ou especifica índices através das propriedades IndexFieldNames ou IndexFields. Se IndexDefs for atualizado ou editado manualmente, a propriedade StoredDefs será True.
+<P></P>
+Obs: Os itens de índice no IndexDefs podem nem sempre refletir os índices atuais disponíveis para a tabela. Antes de examinar IndexDefs, chame seu método Update para atualizar a lista de item.
+<P></P>
+<DT><B>TMDOTable.IndexFieldCount: Integer</B></DT><DD>
+Indica o número de campos que compõem a chave atual. Para os índices baseados em uma coluna única, IndexFieldCount retornará 1. Para indices multi-colunas, IndexFieldCount indicará o número de campos o qual o índice é baseado.
+<P></P>
+<DT><B>TMDOTable.IndexFieldNames: String</B></DT><DD>
+Lista as colunas a serem usadas como índice em uma tabela. Utilize como uma alternativa para especificar o índice a ser utilizado. Em IndexFieldNames indique o nome de cada coluna a ser usada como um índice para a tabela. A ordem dos nomes das colunas é significante. Separe os nomes com ponto e vígula. 
+<P></P>
+Obs: As propriedades IndexFieldNames e IndexName são mutuamente exclusivas. Ajustando uma limpará a outra.
+<P></P>
+<DT><B>TMDOTable.IndexFields [Index: Integer]: TField</B></DT><DD>
+Campo de um índice. Provê um array de objetos field, onde cada um corresponde à um campo no índice corrente. Index é um valor ordinário que indica a posição de um campo em um índice. O primeiro campo em um índice é IndexFields[0], o segundo é IndexFields[1], e assim por diante. 
+<P></P>
+Obs: Não altere IndexField diretamente. Ao invés disto utilize IndexFieldNames para requisitar ao dataset em tempo de execução.
+<P></P>
+<DT><B>TMDOTable.IndexName: String</B></DT><DD>
+Identifica um índice para a tabela. Se IndexName estiver vazio, a ordenação é baseada em seu índice primário.
+<P></P>
+Se IndexName contém um nome de índice válido, então o índice é utilizado para determinar a ordem dos registros.
+<P></P>
+Obs: IndexFieldNames e IndexName são mutualmente exclusivos. Alterando um limpará o outro.
+<P></P>
+<DT><B>TMDOTable.MasterFields: String</B></DT><DD>
+Especifica um ou mais campos em um tabela master para ligar com os campos correspondentes em uma tabela a fim de estabelecer um relacionamento master-detail entre as tabelas.
+<P></P>
+Utilize MasterFields depois que especificar a propriedade MasterSource, o qual determina os nomes de um ou mais campos para usar em um relacionamento master-detail entre esta tabela e outra especificada no MasterSource.
+<P></P>
+MasterFields é uma string contendo um ou mais nomes de campos  em uma tabela master. Separe os nomes dos campos com ponto e vígula.
+<P></P>
+Cada vez que o registro atual na tabela master for alterado, o novo valor naqueles campos são usados para selecionar os registros correspondentes nesta tabela.
+<P></P>
+<DT><B>TMDOTable.MasterSource: TDataSource</B></DT><DD>
+<P></P>
+Especifica o nome da fonte de dados para um dataset usar como uma tabela master em um relacionamento master-detail entre esta tabela e outra.
+<P></P>
+Após ajustar a propriedade MasterSource, especifique quais campos a usar na tabela master ajustando a propriedade MasterFields. Em tempo de execução cada vez que o registro atual na tabela master for alterado, o novo valor nos campos serão usados para selecionar os registros correspondentes nesta tabela para exibição.
+<P></P>
+<DT><B>TMDOTable.ReadOnly: Boolean</B></DT><DD>
+Especifica se uma tabela é somente leitura para a aplicação. Utilize para prevenir que usuários de atualização, inserções, ou exclusões de dados na tabela. Por padrão, ReadOnly é False, o que significa que usuários podem alterar os dados da tabela.
+<P></P>
+Obs: Sempre que ReadOnly estiver False, usuários talvez possam não estar habilitados para modificar ou adicionar dados à uma tabela. Outro fator, assim como privilégios insuficientes para a aplicação ou seu usuário corrente possam ser prevenidos de alterações com sucesso.
+<P></P>
+Para garantir que usuários não possam modificar ou adicionar dados à tabela:
+  1. Ajuste a propriedade Active para False;
+  2. Ajuste ReadOnly para True;
+<P></P>
+<DT><B>TMDOTable.StoreDefs: Boolean</B></DT><DD>
+<P></P>
+Indica se o campo da tabela e definição de índices persistem com o datamodule ou form.
+Se StoreDefs for True, o índice da tabela e a definição de campo são guardados com o datamodule ou form.
+<P></P>
+Ajustando StoredDefs para True fará com que o método CreateTable dentro de uma procedure o qual criará os campos, índices, e validação em tempo de execução.
+<P></P>
+StoredDefs por padrão é False. Torna-se verdadeiro sempre que FieldDefs ou IndexDefs é atualizado ou editado manualmente; para prevenir de definições editadas (ou importadas) de serem armazenadas, reajuste StoredDefs para False.
+<P></P>
+<DT><B>TMDOTable.TableTypes: TMDOTableTypes</B></DT><DD>
+Ajusta os tipos de relação exibidos na lista drop-down de nome de tabelas.
+<P></P>
+<PRE>
+  type 
+    TMDOTableType = (ttSystem, ttView);
+    TMDOTableTypes = set of TMDOTableType;
+</PRE>
+<P></P>
+Utilize para alterar quais os tipos de relação são exibidos na lista de tabelas. Os tipos são:
+  <UL>
+  <LI>ttSystem: Tabelas de sistema e views
+  <LI>ttView: Views do usuário
+  <P></P>
+  </UL>
+<DT><B>TMDOTable.TableName: String</B></DT><DD>
+Indica o nome da tabela ou view que este componente encapsula.
+<P></P>
+Para ajustar TableName para um valor significativo, a propriedade Database já deve estar ajustada. Se Database for ajustado em tempo de projeto, então selecione um nome de tabela válido a partir da lista drop-down de nome de tabelas no Object Inspector.
+<P></P>
+Obs: Para ajustar TableName, a propriedade Active deve ser False.
+<P></P>
+<DT><B>TMDOTable.TableNames: TStrings</B></DT><DD>
+Retorna uma lista de nome de tabelas. É uma propriedade interna usada para mostrar uma lista de tabelas e views em uma base de dados.
+<P></P>
+<DT><B>TMDOTable.UniDirectional: Boolean</B></DT><DD>
+Determina se o cursor bidirecional deve estar habilitado ou não para uma tabela.
+<P></P>
+<DT><B>TMDOTable.UpdateObject: TMDODataSetUpdateObject</B></DT><DD>
+Especifica o objeto TUpdateObject, componente usado para atualizar um result set read-only quando cached updates estiver habilitado.
+<P></P>
+Em uma query que trabalha com várias tabelas, o result set não pode ser retornado. Neste caso, UpdateObject pode ser usado para especificar um TMDOUpdateSQL que fará atualizações em transações separadas que é transparente para a aplicação.
+</DL>
+
+<A NAME="toc66"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOTable.AfterDatabaseDisconnect: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma base de dados é desconectada.
+<P></P>
+<DT><B>TMDOTable.BeforeDatabaseDisconnect: TNotifyEvent</B></DT><DD>
+Ocorre antes que uma base de dados é desconectada.
+<P></P>
+<DT><B>TMDOTable.DatabaseFree: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma base de dados é liberada da memória.
+<P></P>
+<DT><B>TMDOTable.AfterTransactionEnd: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma transação é finalizada.
+<P></P>
+<DT><B>TMDOTable.BeforeTransactionEnd: TNotifyEvent</B></DT><DD>
+Ocorre antes de uma transação ser finalizada.
+<P></P>
+<DT><B>TMDOTable.TransactionFree: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma transação foi liberada da memória.
+</DL>
+
+<A NAME="toc67"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOTable.AddIndex(const Name, Fields: string; Options: TIndexOptions const DescFields: string = ' ')</B></DT><DD>
+Procedure que cria um índice novo para a tabela.
+<P></P>
+Chame AddIndex para criar um novo índice de uma tabela associada com um dataset. O indice criado com esta procedure é adicionada à base de dados. 
+ <UL>
+ <LI>Name é o nome do novo índice. 
+ <LI>Fields é uma lista separada por ponto e vígula de campos para incluir no índice;
+ <LI>Options é uma restrição de atributos do índice. Ele pode especificar um índice:
+   <UL>
+   <LI>Representa o íncice primário (ixPrimary)
+   <LI>Contém valores não duplicados (ixUnique)
+   <LI>Ordena registros na ordem descendente (isDescending).
+   </UL>
+ </UL>
+</DL>
+
+<P>
+Aviso: Tentar criar um índice usando opções que não são aplicáveis à tabela levantará uma exceção.
+</P>
+<DL>
+<DT><B>TMDOTable.Create(AOwner: TComponent)</B></DT><DD>
+Cria uma instancia de um componente Table.
+<P></P>
+Chame Create para instanciar uma tabela declarada em um aplicativo, se ele não foi declarado no form em tempo de projeto. Create chama seu construtor herdado, cria uma lista de definição de índices limpo, cria um link de dados limpo, e cria uma lista de arquivos de índice limpo.
+<P></P>
+<DT><B>TMDOTable.CreateTable</B></DT><DD>
+Constrói uma nova tabela usando a nova informação de estrutura. Chame em tempo de execução para criar uma tabela usando as definições correntes de dataset. CreateTable sobrescreve uma estrutura de tabela e dados existentes; para evitar a sobrescrita em uma tabela existente, verifique pelo método Exists antes de chamar CreateTable;
+<P></P>
+Se a propriedade FieldDefs contém valores, estes valores serão usados para criar a definição dos campos. De outra maneira a propriedade Fields será usada. Uma ou ambas propriedades devem conter valores a fim de recriar um dataset.
+<P></P>
+Se a propriedade IndexDefs contiver valores, estes serão usados para criar a definição dos índices para o dataset.
+<P></P>
+<DT><B>TMDOTable.DeleteIndex(const Name: string)</B></DT><DD>
+Apaga um índice de uma tabela. Name é o nome do índice a ser excluído. DeleteIndex não pode remover um índice usado por uma restrição (do inglês constraint).
+<P></P>
+<DT><B>TMDOTable.DeleteTable</B></DT><DD>
+Apaga uma tabela existente. A tabela deve ser fechada antes que possa ser apagada. 
+<P></P>
+Aviso: Apagando uma tabela apagará todos os dados da tabela e destruirá a informação de estrutura da tabela.
+<P></P>
+<DT><B>TMDOTable.Destroy</B></DT><DD>
+Destrói a instancia de uma tabela. 
+<P></P>
+Não chame Destroy diretamente. Ao invés disto chame o método Free que verificará se a tabela já não está sendo liberada antes de chamar Destroy. Destroy libera os arquivos de índice, libera seu link de dados, libera suas definições de índices, e então chama seu método destrutor Destroy.
+<P></P>
+<DT><B>TMDOTable.EmptyTable</B></DT><DD>
+Apaga todos registros da tabela. 
+<P></P>
+Obs: Exclusão de registros pode falhar se o usuário não tiver privilégios suficientes para aplicar a operação de delete.
+<P></P>
+<DT><B>TMDOTable.GetDetailLinkFields(MasterFields, DetailFields: TList)</B></DT><DD>
+Lista os campos dos componetes que ligam este datase como um detalhe de um dataset master.
+<P></P>
+GetDetailLinkFields preenche duas lista de TFields que definem uma relação master-detail entre esta tabela e outro dataset (master). A lista MasterFields é preenchida com campos da tabela master onde os valores devem ser iguais aos valores dos campos em uma lista DetailFields. A lista DetailFields é preenchida com campos do dataset chamado.
+<P></P>
+<DT><B>TMDOTable.GetIndexNames(List: TStrings)</B></DT><DD>
+Recupera uma lista de indeces disponíveis de uma tabela.
+<P></P>
+List é um objeto de lista de string, criado e mantido pela aplicação, dentro do qual recupera-se os nomes dos índices.
+<P></P>
+<DT><B>TMDOTable.GotoCurrent(Table: TMDOTable)</B></DT><DD>
+Sincroniza o registro atual para esta tabela com o registro atual de um componente table especificado.
+<P></P>
+Chame o método para sincronizar a posição do cursor desta tabela baseado na posição do cursor em outro dataset que usa um componente data source diferente, mas o qual é conectado à mesma tabela da base de dados. Table é o nome de um componente Table do qual a posição do cursor é usado para sincronização.
+<P></P>
+Obs: Este procedimento trabalha somente para componentes table que tenham o mesmo valor nas propriedades Database e Tablename. De outra forma uma exceção será levantada.
+<P></P>
+GotoCurrent é principalmente utilizado em aplicativos que tenham dois componentes table que são ligados à mesma tabela através de componentes data source diferentes. Isto possibilita ao aplicativo ter certeza que visões separadas dos dados parecem estar ligadas.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc68"></A>
+<H2>TMDODataset</H2>
+<P>
+<B>Unit MDODataset</B>
+</P>
+<P>
+TMDODataSet executa expressões SQL Firebird. TMDODataSet tem como principal objetivo
+utilização com expressões de SELECT. TMDODataSet armazena as informações de dados,
+fazendo-o completamente navegavel. Por TMDODataSet ser descendente de TDataset, ele
+funciona bem com todos componentes data-aware.
+</P>
+<A NAME="toc69"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDODataSet.Active</B></DT><DD>
+Indica se a query está ativa.
+<P></P>
+<DT><B>TMDODataSet.AutoCalcFields</B></DT><DD>
+Determina se os cursores bidirecionais estão habilitados ou não para uma tabela.
+<P></P>
+Ajuste AutoCalcFields para controlar quando o evento OnCalcFields será disparado
+para atualizar campos calculados durante o processo do dataset. Um campo calculado é
+um que deriva seu valor dos valores de um ou mais campos no registro ativo, algumas
+vezes com processamento adicional.
+<P></P>
+Quando AutoCalcFields é True (padrão), OnCalcFields é disparado quando:
+   . O dataset é aberto;
+   . O dataset é colocado no modo dsEdit;
+   . O foco muda de um controle visual para outro, ou de uma coluna para outra em
+uma grade data-aware e modificações são feitas no registro;
+   . Um registro é recuperado do database.
+<P></P>
+Se um aplicativo permite alteração de dados pelo usuário, OnCalcFields é
+frequentemente disparado. Nestes casos o aplicativo pode ajustar AutoCalcFields para
+False para reduzir a frequencia com o qual AutoCalcFiels é chamado. Quando
+AutoCalcFields é False, OnCalcFields não é chamado quando mudanças são feitas nos
+campos dentro de um registro.
+<P></P>
+<DT><B>TMDODataSet.BufferChunks</B></DT><DD>
+Ajustará ou retornará o tamanho do pedaço do buffer do dataset.
+<P></P>
+<DT><B>TMDODataSet.CachedUpdates</B></DT><DD>
+Especificará se cached updates estará habilitado ou não para um dataset.
+<P></P>
+CachedUpdates habilitará ou desabilitará o uso de cached updates para um dataset. Se
+CachedUpdates é True, cached updates estará habilitado. Se CachedUpdates é False,
+cached updates estará desabilitado.
+<P></P>
+Quando cached updates está habilitado, atualizações ao dataset (como update, insert
+ou delete de registros), são guardados em um cache interno na máquina cliente ao
+invés de serem escritas diretamente ao dataset das tabelas no database. Quando as
+alterações são completadas, um aplicativo escreverá todas alterações de atualizações
+ao database no contexto de uma única transação.
+<P></P>
+Obs.: Ao invés de usar cached updates, os aplicativos podem obter os mesmos
+benefícios com grande controle usando um client dataset.
+</DL>
+
+<DL>
+<DT><B>TMDODataSet.DataSource</B></DT><DD>
+Especificará a fonte de dados (componente data source) do qual estrairá os valores
+do campo corrente para usar com os parametros de mesmo nome na expressão SQL da
+query.
+</DL>
+
+<P>
+Ajuste DataSource para automaticamente preencher os parametros na query com os
+valores de campos de outro dataset. 
+</P>
+<P>
+Parametros que tenhma o mesmo nome de campos em outro dataset são preenchidos com os
+valores do campo.
+</P>
+<P>
+Parametros com nomes que não são os mesmos dos campos em outro dataset não têm
+valores recuperados automaticamente, e devem ser ajustados via programação. Por
+exemplo, se a propriedade SQL do TMDODataSet contém a expressão SQL abaixo e o
+dataset referenciado através de DataSource tem um campo Codigo, o valor do registro
+corrente no outro dataset é usado no parametro Codigo.
+</P>
+<P>
+SELECT Codigo
+FROM Cliente C
+WHERE (C.Codigo = :Codigo)
+</P>
+<P>
+DataSource deve apontar para um componente TDataSource lincado à outro componente
+dataset; ele não pode apontar para este componente datasource desta query.
+</P>
+<P>
+Dica: DataSource é especialmente usado quando cria-se um relacionamento
+mestre/detalhe entre tabelas usando uma query lincada. Ele é também usado para
+garantir o ligamento de parametros que não foram ajustados na propriedade Params.
+</P>
+<DL>
+<DT><B>TMDODataSet.DeleteSQL: TStrings</B></DT><DD>
+Conterá a expressão SQL usada para apagar linhas do dataset.
+</DL>
+
+<DL>
+<DT><B>TMDODataSet.InsertSQL: TStrings</B></DT><DD>
+Conterá a expressão SQL usada para inserir linhas dentro do dataset.
+<P></P>
+<DT><B>TMDODataSet.ModifySQL: TStrings</B></DT><DD>
+Fornece acesso ao objeto SQL encapsulando a expressão ModifySQL.
+<P></P>
+<DT><B>TMDODataSet.ParamCheck</B></DT><DD>
+Especifica se a lista de prametros para uma query é gerada ou não se a propriedade
+SQL é alterada em tempo de execução.
+<P></P>
+Ajuste ParamCheck para especificar se a propriedade Params deve ser lima e regerada
+se um aplicativo modifica a propriedade SQL em tempo de execução.
+<P></P>
+Por padrão, ParamCheck é true, significando que a propriedade Params é
+automaticamente gerada em tempo de execução. Quando ParamCheck é True, o número
+apropriado de parametros é garantido a ser gerado para a expressão SQL atual.
+<P></P>
+Esta propriedade é útil para DDL (Data Definition Language) que contém parametros
+como parte do DDL e que não são parametros para o TMDOQuery. Por exemplo, o DDL para
+criar uma stored procedure pode conter parametros que são parte da stored
+procedures. Ajuste ParamCheck para False para prevenir que estes parametros sejam
+confundidos com os parametros de execução DDL do TMDOQuery.
+</DL>
+
+<DL>
+<DT><B>TMDODataSet.Params: TMDOSQLDA</B></DT><DD>
+Fornece abilidade para especificar valores para uma query parametrizada.
+<P></P>
+Utilize para fornecer valores à uma pesquisa parametrizada. Por exemplo:
+  ''' DataSet1.Params[0].AsInteger := 25
+  ''' DataSet1.Params.ByName['Field2'].AsString := 'value'
+</DL>
+
+<DL>
+<DT><B>TMDODataSet.Prepared: Boolean</B></DT><DD>
+Determinará se um conjunto de querys no dataset está ou não preparado para execução.
+<P></P>
+Verifique Prepared para saber se um conjunto de queries já encontra-se preparado
+para execução. Se Prepared está True, o conjunto de queries está preparado, e se
+Prepared está False, o conjunto de queries está despreparado. 
+<P></P>
+Quando um conjunto de queries não precisar ser preparado antes da execução, a
+performance da execução é melhorada se o cojunto de queries for preparada antes,
+particulamente se ela é um conjunto de queries parametrizada que é executada mais de
+uma vez usando os mesmos valores de parametros.
+<P></P>
+<DT><B>TMDODataSet.QDelete: TMDOSQL</B></DT><DD>
+Fornece maneiras de acessar diretamente o objeto SQL encapsulando a expressão
+DeleteSQL.
+<P></P>
+<DT><B>TMDODataSet.QInsert: TMDOSQL</B></DT><DD>
+Fornece maneiras de acessar diretamente o objeto SQL encapsulando a expressão
+InsertSQL.
+<P></P>
+<DT><B>TMDODataSet.QModify: TMDOSQL</B></DT><DD>
+Fornece maneiras de acessar diretamente o objeto SQL encapsulando a expressão
+ModifySQL.
+<P></P>
+<DT><B>TMDODataSet.QRefresh: TMDOSQL</B></DT><DD>
+Fornece maneiras de acessar diretamente o objeto SQL encapsulando a expressão
+RefreshSQL.
+<P></P>
+<DT><B>TMDODataSet.QSelect: TMDOSQL</B></DT><DD>
+Fornece maneiras de acessar diretamente o objeto SQL encapsulando a expressão
+SelectSQL.
+<P></P>
+<DT><B>TMDODataSet.RefreshSQL: TStrings</B></DT><DD>
+Fornece maneiras de acessar diretamente o objeto SQL encapsulando a expressão
+RefreshSQL.
+<P></P>
+<DT><B>TMDODataSet.SelectSQL: TStrings</B></DT><DD>
+Fornece maneiras de acessar diretamente o objeto SQL encapsulando a expressão
+SelectSQL.
+<P></P>
+<DT><B>TMDODataSet.SelectStmtHandle</B></DT><DD>
+Recebe o handle de uma expressão SELECT.
+<P></P>
+<DT><B>TMDODataSet.StatementType: TMDOSQLTypes</B></DT><DD>
+Retorna o tipo de expressão da query QSelect.
+<P></P>
+Utilize StatementType para determinar o tipo de expressão de uma query QSelect.
+<P></P>
+Os tipos de TMDOSQLTypes são:
+   '''SQLCommit: Efetua (aplica commit) em uma transação ativa;
+   '''SQLDDL: Executa uma expressão DDL;
+   '''SQLDelete: Remove linhas em uma tabela ou no set ativo de um cursor;
+   '''SQLExecProcedure: Chama uma stored procedure;
+   '''SQLGetSegment: Lê um segmento de um blob aberto;
+   '''SQLInsert: Adiciona um ou mais novos registros à uma tabela especificada;
+   '''SQLPutSegment: Escreve um segmento blob;
+   '''SQLRollback: Retorna o database ao seu estado anterior ao início da transação
+atual;
+   '''SQLSelectForUpdate: Ajusta a Stored Procedure para atualização;
+   '''SQLSetGenerator: Ajusta um novo valor para um generator existente;
+   '''SQLSelect: Recupera dados de uma ou mais tabelas;
+   '''SQLStartTransaction: Inicia uma nova transação em um ou mais databases;
+   '''SQLUnknown: Tipo SQL desconhecido;
+   '''SQLUpdate: Altera dados em todos ou parte de uma linha existente em uma
+tabela, view, ou set ativo de um cursor.
+<P></P>
+<DT><B>TMDODataSet.UniDirectional: Boolean</B></DT><DD>
+Determina se cursores bidirecionais está ou não habilitados para uma tabela.
+</DL>
+
+<A NAME="toc70"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDODataSet.AfterDatabaseDisconnect: TNotifyEvent*</B></DT><DD>
+Ocorre depois que um database é desconectado.
+<P></P>
+Escreva no evento AfterDatabaseDisconnect ações específicas para depois que um
+database é desconectado.
+<P></P>
+<DT><B>TTMDODataSet.BeforeDatabaseDisconnect: TNotifyEvent*</B></DT><DD>
+Ocorre antes que um database seja desconectado.
+<P></P>
+Escreva no evento BeforeDatabaseDisconnect ações específicas para antes que um
+database seja desconectado.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.DatabaseFree: TNotifyEvent*</B></DT><DD>
+Ocorre depois que um database é liberado da memória.
+<P></P>
+Escreva no evento DatabaseFree ações específicas para depois que um database é
+liberado da memória.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.AfterTransactionEnd: TNotifyEvent*</B></DT><DD>
+Ocorre depois que uma transação é finalizada.
+<P></P>
+Escreva no evento AfterTransactionEnd ações específicas para depois que uma
+transação é finalizada.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.BeforeTransactionEnd: TNotifyEvent*</B></DT><DD>
+Ocorre antes que uma transação seja finalizada.
+<P></P>
+Escreva no evento AfterTransactionEnd ações específicas para antes que uma transação
+seja finalizada.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.TransactionFree: TNotifyEvent*</B></DT><DD>
+Ocorre depois que uma transação é liberada da memória.
+<P></P>
+Escreva no evento AfterTransactionEnd ações específicas para depois que uma
+transação é liberada da memória.
+</DL>
+
+<A NAME="toc71"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TTMDODataSet.BatchInput(InputObject: TMDOBatchInput)</B></DT><DD>
+Executa a query parametrizada no SQL para entrada no objeto referenciado.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.BatchOutput(OutputObject: TMDOBatchOutput)</B></DT><DD>
+Fornece a saída da query selecionada no SQL para o objeto OutputObject referenciado.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.ExecSQL</B></DT><DD>
+Executa a expressão SQL da query.
+<P></P>
+Chame ExecSQL para executar a expressão SQL atualmente definida na propriedade SQL.
+Utilize ExecSQL para executar pesquisas que não retornam um cursor de dados (como
+INSERT, UPDATE, DELETE e CREATE TABLE).
+<P></P>
+Obs.: Para expressões SELECT, chame o método Open ao invés de ExecSQL.
+<P></P>
+ExecSQL prepara a expressão na propriedade SQL para execução se ela ainda não foi
+preparada. Para melhorar a performance, um aplicativo deve chamar Prepare antes de
+chamar ExecSQL pela primeira vez.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.Prepare</B></DT><DD>
+Prepara todas queries no dataset a serem executados.
+</DL>
+
+<DL>
+<DT><B>TTMDODataSet.UnPrepare</B></DT><DD>
+Reinicia o estado das queries internas do dataset.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc72"></A>
+<H2>TMDOQuery</H2>
+<P>
+<B>Unit MDOquery</B>
+</P>
+<P>
+TMDOQuery executa expressões SQL Firebird.
+</P>
+<P>
+Utilize TMDOQuery para acessar uma ou mais tabelas em um banco de dados usando
+expressões SQL. Utilize componentes query em servidores Firebird remotos.
+</P>
+<P>
+Componentes query são úteis por eles poderem: acessar  mais de uma tabela de uma vez
+(joins); Automaticamente acessar um subset de linhas e colunas em suas tabelas
+subjacentes, ao invés de sempre trazer todas linhas e colunas.
+</P>
+<P>
+Obs.: TMDOQuery é particulamente importante ao desenvolvimento de aplicativos de
+base de dados escalável. Se há alguma chance de uma aplicação que executa em base de
+dados locais ser escalada para um servidor SQL remoto no futuro, utilize TMDOQuery
+no inínio para assegurar uma escalonamento facilitado depois.
+</P>
+<A NAME="toc73"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOQuery.Active: Boolean</B></DT><DD>
+Indica se uma query está ou não ativa.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.BufferChunks: Integer</B></DT><DD>
+Ajusta ou retorna o tamanho do pedaço do buffer de um dataset.
+<P></P>
+<DT><B>TMDOQuery.CachedUpdates: Boolean</B></DT><DD>
+Especifica se o cached updates está habilitado para um dataset.
+<P></P>
+CachedUpdates habilita ou desabilita o uso de cached updates para um dataset. Se
+CachedUpdates estiver True, cached updates estará habilitado, caso False, estará
+desabilitado.
+<P></P>
+Quando cached updates está habilitado, atualizações ao dataset, como postar
+alterações, inserir registros, ou apagar, são armazenados em um cache interno na
+máquina cliente ao invés de iniciar escrevendo diretamente ao dataset na base de
+dados. Quando as alterações estão concluídas, um aplicativo escreve todas alterações
+guardadas para a base de dados em um contexto de uma única transação.
+<P></P>
+Obs: Ao invés de usar cached updates, os aplicativos podem obter os mesmo benefícios
+com maior controle usando um client dataset.
+</DL>
+
+<DL>
+<DT><B>TMDOTable.Constraints: TCheckConstraints</B></DT><DD>
+Especifica o nível de registro estrangerios que devem ser encontrados quando editar
+um dado. 
+<P></P>
+Utilizado para ler ou adicionar um nível de registro estrangeiro (do inglês
+record-level) ao dataset. Normalmente Record-Leve Constraints apresentam
+relacionamentos entre campos em um registro. Constraints que limitam o valor de um
+único campo devem ser adicionados à um campo de componente individualmente.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.DataSource: TDataSource</B></DT><DD>
+Especifica o componente data source do qual será extraído o valor do campo atual
+para usar com os parametros de mesmo nome na expressão da query SQL.
+<P></P>
+Ajuste a propriedade DataSource para preencher automaticamente os parametros na
+query com o valor dos campos de outro datase. 
+<P></P>
+Parametros que tenham o mesmo nome de campos em outro dataset serão preenchidos com
+os valores do campo. 
+<P></P>
+Parametros com nomes que não são identicos aos campos no outro dataset não obterão
+os valores automaticamente, e devem ser ajustados programaticamente. Por exemplo, se
+a propriedade SQL do TMDOQuery contém a expressão SQL abaixo e o dataset
+referenciado através do DataSource tem um campo CodCli, o valor do registro atual no
+outro dataset será usado no parametro CodCli.
+<P></P>
+SELECT *
+FROM Endereco e
+WHERE (e.CodCli = :CodCli)
+<P></P>
+DataSource deve apontar para um componente TDataSource lincado à outro componente
+datasource.
+<P></P>
+O dataset especificado no DataSource deve ser criado, populado, e aberto antes de
+tentar ligar os parametros. Parametros são limitados à chamar o método Prepare antes
+de exectuar a query.
+<P></P>
+Dica: DataSource é especificamente de uso quando criado um relacionamento
+mestre/detalhe entre tabelas usando uma query lincada. Ele é também usado para
+garantir o ligamento para parametros que já não estão ajustados na propriedade
+Params.
+<P></P>
+<DT><B>TMDOQuery.GenerateParamNames: Boolean</B></DT><DD>
+Gera uma lista de nome de parametros para a query.
+<P></P>
+<DT><B>TMDOQuery.ParamCheck: Boolean</B></DT><DD>
+Especifica se a lista de prametros para uma query é gerada se a propriedade SQL é
+alterada em tempo de execução.
+<P></P>
+Por padrão, ParamCheck é true, significando que a propriedade Params é
+automaticamente gerada em tempo de execução. Quando ParamCheck é True, o número
+apropriado de parametros é garantido a ser gerado para a expressão SQL atual.
+<P></P>
+Esta propriedade é útil para DDL (Data Definition Language) que contém parametros
+como parte do DDL e que não são parametros para o TMDOQuery. Por exemplo, o DDL para
+criar uma stored procedure pode conter parametros que são parte da stored
+procedures. Ajuste ParamCheck para False para prevenir que estes parametros sejam
+confundidos com os parametros de execução DDL do TMDOQuery.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.ParamCount: Word</B></DT><DD>
+Indica o número atual de parametros de uma query. Se a propriedade ParamCheck é
+True, ParamCount sempre corresponderá ao número dos parametros atuais na expressão
+SQL da query.
+<P></P>
+<DT><B>TMDOQuery.Params: TParams</B></DT><DD>
+Contém os parametros da query.
+<P></P>
+Acessando Params em tempo de execução poderá ser visto e ajustado os nomes, valores
+e tipo de dados dinamicamente dos parametros (em tempo de projeto é utilizado o
+editor de parametros para ajustar as informações). Param é um array iniciado em zero
+de registros TParams. Index especifica o elemento do array a acessar. 
+<P></P>
+Obs.: Um modo fácil de ajustar e recuperar os valores de parametros quando o nome de
+cada parametro é conhecido é chamar ParamByName. ParamByName não pode, entretanto,
+ser usado para mudar um tipo de dado ou nome de parametro.
+<P></P>
+<DT><B>TMDOQuery.Prepared: Boolean</B></DT><DD>
+Determina se a query está ou não preparada para execução. Se Prepare é True, a query
+está preparada, caso seja False não está preparada. Quando uma query não precisa ser
+preparada antes da execução, a performance da execução é comprometida se a query é
+preparada antes, particularmente se ela é uma query parametrizada que é executada
+mais de uma vez usando o mesmo valor de parametro.
+<P></P>
+Obs.: Um aplicativo pode mudar a configuração atual de Prepared para preparar ou
+despreparar uma query. Se Prepared é True, mudando-o para False chamará o método
+Unprepare para despreparar a query. Se Prepared é False, mudando-o para True chamará
+o método Prepare para preparar a query. Geralmente, entretanto, a boa prática de
+programação é chamar Prepare e Unprepare diretamente. Estes médos atualizam
+automaticamente a propriedade Prepared.
+<P></P>
+<DT><B>TMDOQuery.RowsAffected: Integer</B></DT><DD>
+Retorna o número de linhas tratadas pela última execução da query. 
+<P></P>
+Verifique RowsAffected para determinar quantas linhas foram atualizadas ou excluídas
+pela última operação da query. Se RowsAffected é -1, a query não atualizou ou
+excluiu qualquer linha.
+<P></P>
+<DT><B>TMDOQuery.SQL: TStrings</B></DT><DD>
+Contém o texto da expressão SQL a ser executada pela query.
+<P></P>
+Utilize SQL para fornecer a expressão SQL que um componente query executará quando
+seus métodos ExecSQL ou Open forem chamados. Em tempo de projeto a propriedade SQL
+pode ser editada invocando o editor de String List no Object Inspector.
+<P></P>
+A propriedade SQL deve conter somente uma expressão SQL completa por vez.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.StatementType: TMDOSQLTypes</B></DT><DD>
+Retorna o tipo de expressão da query.
+<P></P>
+Os tipos são: SQLUnknown, SQLSelect, SQLInsert, SQLUpdate, SQLDelete, SQLDDL,
+SQLGetSegment, SQLPutSegment, SQLExecProcedure, SQLStartTransaction, SQLCommit,
+SQLRollback, SQLSelectForUpdate, SQLSetGenerator;
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.StmtHandle: TISC_STMT_HANDLE</B></DT><DD>
+Identifica o manipulador da expressão da query.
+<P></P>
+Utilize StmHandle se o aplicativo faz chamadas diretas ao servidor Firebird,
+passando os métodos do TMDOQuery. Algumas chamadas à API requerem um handle da
+expressão como um parametro. Em todas outras circustancias um aplicativo não precisa
+de acesso à esta propriedade.
+<P></P>
+<DT><B>TMDOQuery.Text: String</B></DT><DD>
+Aponta o texto atual da query SQL.
+<P></P>
+Text é uma propriedade somente-leitura que pode ser examinada para determinar o
+conteúdo atual da expressão SQL. Para query parametrizada, Text contém a expressão
+SQL com os parametros substituídos pelo símbolo de substituição de parametro (?) em
+lugar do valor atual do parametro.
+<P></P>
+Em geral não é necessário verificar a propriedade Text. Para acessar ou alterar a
+expressão SQL de uma query, utilize a propriedade SQL. Para verificar ou modificar
+parametros, utilize a propriedade Params.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.UniDirectional: Boolean</B></DT><DD>
+<P></P>
+Determinará se o cursor bidirecional está ou não habilitado para um result set da
+query.
+<P></P>
+Ajuste UniDirectional para controlar se um cursor pode ou não mover-se para frente
+ou para trás através de um result set. Por padrão UniDirectional é False,
+habilitando navegação pra frente e para trás.
+<P></P>
+Obs.: Se um aplicativo não precisa de acesso bidirecional aos registros em um result
+set, ajuste UniDirectional para True. Quando UniDirectional é True, um aplicativo
+requer menos memória e a performance é melhorada.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.UpdateObject: TMDODataSetUpdateObject</B></DT><DD>
+Especifica o objeto de update usado para atualizar um resutl set somente-leitura
+quando cached updates está habilitado.
+<P></P>
+Ajuste UpdateObject para especificar o componente update object usado para atualizar
+um result set somente-leitura quando cached updates está habilitado.
+</DL>
+
+<A NAME="toc74"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOQuery.AfterDatabaseDisconnect: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma base de dados é desconectada.
+<P></P>
+Escreva no evento AfterDatabaseDisconnect ações específicas para quando um database
+é desconectado.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.BeforeDatabaseDisconnect: TNotifyEvent</B></DT><DD>
+Ocorre antes que uma base de dados é desconectada.
+<P></P>
+Escreva no evento BeforeDatabaseDisconnect ações específicas para antes que um
+database é desconectado.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.DatabaseFree: TNotifyEvent</B></DT><DD>
+Ocorre depois que um database é liberado da memória.
+<P></P>
+Escreva no evento DatabaseFree ações específicas quando um database é liberado da
+memória.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.AfterTransactionEnd: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma transação foi terminada.
+<P></P>
+Escreve no evento AfterTransactionEnd ações específicas para depois que uma
+transação foi terminada.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.BeforeTransactionEnd: TNotifyEvent</B></DT><DD>
+Ocorre antes uma transação ser finalizada.
+<P></P>
+Escreve no evento BeforeTransactionEnd ações específicas para antes de uma transação
+ser finalizada.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.TransactionFree: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma transação foi liberada da memória.
+<P></P>
+Escreva no evento TransactionFree ações específicas para depois que uma transação
+for liberada da memória.
+</DL>
+
+<A NAME="toc75"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOQuery.BatchInput</B></DT><DD>
+Executará uma query parametrizada em SQL para entrada no objeto de entrada
+referenciado.
+<P></P>
+<DT><B>TMDOQuery.BatchOutput</B></DT><DD>
+Fornece a saída da query selecionada no sQL para o OutputObject referenciado.
+<P></P>
+<DT><B>TMDOQuery.Create</B></DT><DD>
+Cria uma instancia de um componente query.
+<P></P>
+Chame create para instanciar uma query em tempo de execução. Componentes query
+colocados nos formulários ou data modules em tempo de projeto são criados
+automaticamente.
+<P></P>
+Create chamará seu construtor herdado, criará uma lista de expressão SQL limpa,
+criará uma lista de parametros limpa, ajustará o hanlder do evento OnChange para a
+lista de expressão SQL, ajustará a propriedade ParamCheck para True, e ajustará a
+propriedade RowsAffected para -1.
+<P></P>
+<DT><B>TMDOQuery.Destroy</B></DT><DD>
+Destrói a instancia de uma query.
+<P></P>
+Não chame Destroy diretamente. Ao invés disto chame Free para verificar se a query
+já não foi liberada antes de chamar Destroy. Destroy disconecta do servidor, libera
+a lista de expressão SQL e a lista de parametros, e então chama seu destrutor
+herdado.
+<P></P>
+<DT><B>TMDOQuery.ExecSQL</B></DT><DD>
+Executará a expressão SQL para a query.
+<P></P>
+Chame o método para executar a expressão SQL atualmente na propriedade SQL. Utilize
+ExecSQL para executar ações que não retornam um cursor de dados (como INSERT,
+UPDATE, DELETE e CREATE TABLE).
+<P></P>
+Obs.: Para expressões SELECT, chame o método Open ao invés de ExecSQL. ExecSQL
+prepara a expressão na propriedade SQL para execução se ele já não foi preparado.
+Para velocidade de performance, um aplicativo deve chamar Prepare antes de chamar
+ExecSQL pela primeira vez.
+<P></P>
+<DT><B>TMDOQuery.GetDetailLinkFields</B></DT><DD>
+Preencherá uma lista com os campos mestre e detalhes do link.
+<P></P>
+Criará duas lista de TFields de relacionamento mestre/detalhe entre duas tabelas;
+uma contém os campos master, e outra contém os campos detalhes.
+<P></P>
+<DT><B>TMDOQuery.ParamByName(const Value: string): TParam</B></DT><DD>
+Acessará informação de parametros baseado em um nome de parametro especificado.
+<P></P>
+Chame ParamByName para ajustar ou usar informação de parametro para um parametro
+específico baseado em seu nome.
+<P></P>
+Value é o nome do parametro para o qual deseja-se recuperar informação.
+<P></P>
+ParamByName é primeiramente usado para ajustar um valor de parametro em tempo de
+execução. Por exemplo, a expressão abaixo recupera o valor atual de um parametro
+chamado 'Contato' dentro de uma caixa de edição:
+  Edit1.Text := Query1.ParamByName('Contato').AsString;
+<P></P>
+<DT><B>TMDOQuery.Prepare</B></DT><DD>
+Envia uma query ao servidor para otimização da execução.
+<P></P>
+Chame Prepare para ter os recusos de uma query alocados no servidor e executar
+otimizações adicionais. 
+<P></P>
+Chamando Prepare antes de executar uma query melhora a performance do aplicativo.
+<P></P>
+Delphi automaticamente preparará uma query se ela é executada sem ser primeiramente
+preparada. Depois da execução, Delphi despreparará a query. Quando uma query for
+executada um certo número de vezes, um aplicativo deve sempre explicitamente
+preparar a query para evitar múltiplas preparações e despreparações desnecessárias.
+<P></P>
+Preparando uma query faz com que alguns recursos do database sejam consumidos, assim
+é uma boa prática para um aplicativo despreparar uma query quando for concluído seu
+uso. O método UnPrepare despreparará uma query.
+<P></P>
+Obs.: Quando você alterar o texto de uma query em tempo de execução, a query é
+automaticamente fechada e despreparada.
+</DL>
+
+<DL>
+<DT><B>TMDOQuery.UnPrepare</B></DT><DD>
+Libera os recursos alocados por uma query previamente preparada.
+<P></P>
+Chame UnPrepare para liberar os recursos alocados de uma query previamente preparada
+no lado do servidor e no lado do cliente.
+<P></P>
+Preparando uma query faz com que alguns recursos do database sejam consumidos, assim
+é uma boa prática para um aplicativo despreparar uma query quando for concluído seu
+uso. O método UnPrepare despreparará uma query.
+<P></P>
+Obs.: Quando você alterar o texto de uma query em tempo de execução, a query é
+automaticamente fechada e despreparada.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc76"></A>
+<H2>TMDOTransaction</H2>
+<P>
+<B>Unit MDOdatabase</B>
+</P>
+<P>
+TMDOTransaction fornece controle discreto sobre uma ou mais conexões ao banco de
+dados em um aplicativo.
+</P>
+<P>
+Todos descendentes de TMDOCustomDataSet e TMDOSQL precisam usar uma transação junto
+com um componente database para obter acesso aos dados em um banco de dados.
+</P>
+<P>
+Obs.: Em aplicações MIDAS, toda query deve estar em sua própria transação. Você deve
+usar um componente de transação para cada componente query.
+</P>
+<A NAME="toc77"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOTransaction.Active: Boolean</B></DT><DD>
+Especifica se uma transação está ou não ativa.
+<P></P>
+<DT><B>TMDOTransaction.DatabaseCount: Integer</B></DT><DD>
+Indica o número de databases que estão envolvidos em uma transação.
+<P></P>
+<DT><B>TMDOTransaction.Databases[Index: Integer]: TMDODatabase</B></DT><DD>
+Retorna o database a partir do valor de index.
+<P></P>
+<DT><B>TMDOTransaction.DefaultAction: TTransactionAction</B></DT><DD>
+Especifica qual ação uma transação deve tomar em um time out.
+<P></P>
+<PRE>
+      type TTransactionAction = (taRollback, taCommit, 
+           taRollbackRetaining, taCommitRetaining);
+</PRE>
+<P></P>
+Utilize DefaultAction para indicar a ação que a transação tomara quando o limite de
+IdleTimer é alcançado. A ação da transação pode ser uma das seguintes:
+<P></P>
+</DL>
+
+<TABLE CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Opção</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>taRollback</TD>
+<TD>Aplica rollback na transação</TD>
+</TR>
+<TR>
+<TD>taCommit</TD>
+<TD>Aplica commit na transação</TD>
+</TR>
+<TR>
+<TD>taRollbackRetaining</TD>
+<TD>Aplica rollback na transação, porém retém o contexto atual da transação</TD>
+</TR>
+<TR>
+<TD>taCommitRetaining</TD>
+<TD>Aplica commit na transação, porém retém o contexto atual da transação</TD>
+</TR>
+</TABLE>
+
+<P></P>
+<DL>
+<DT><B>TMDOTransaction.DefaultDatabase: TMDODatabase</B></DT><DD>
+Ajusta ou retorna o database padrão da transação.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.Handle: TISC_TR_HANDLE</B></DT><DD>
+Retorna o handle da transação.
+<P></P>
+Utilize Handle para recuperar o manipulador (handle) da transação. Handle tem um
+valor inicial atribuído  quando uma transação é iniciada.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.HandleIsShared: Booelan</B></DT><DD>
+Indica se o handle é compartilhado ou não.
+<P></P>
+HandleIsShared retornará True quando o handle da transação é compartilhado por mais
+de um componente de transação.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.IdleTimer: Integer</B></DT><DD>
+Especifica quanto tempo a transação deve esperar antes de automaticamente aplicar
+commit ou rollback.
+<P></P>
+Utilize DefaultAction para determinar a ação que a transação deve tomar.
+<P></P>
+<DT><B>TMDOTransaction.InTransaction: Boolean</B></DT><DD>
+Indica se uma transação do banco de dados está em progresso ou não.
+<P></P>
+Verifique InTransaction em tempo de execução para determinar se uma transação de
+banco de dados está atualmente em progresso. 
+<P></P>
+InTransaction será True se uma transação está em progresso, False caso contrário.
+<P></P>
+O valor de InTransaction não pode ser alterado diretamente. Chamando
+StartTransaction ajusta InTransaction para True. Chamando Commit ou Rollback ajusta
+InTransaction para False.
+<P></P>
+<DT><B>TMDOTransaction.Params: TStrings</B></DT><DD>
+Retorna o buffer de parametros da transação associado com o componente de transação.
+<P></P>
+Dica: Referencie-se ao Firebird API Guide para conhecer os nomes de parametos
+fornecidos.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.SQLObjectCount: Integer</B></DT><DD>
+Retorna o número de datasets ativos associado com o componente database.
+<P></P>
+Utilize SQLObjectCount para retornar o número de datasets ativos, objetos TMDOSQL e
+Blobs associados com o componente database. Como objetos SQL são abertos e fechados,
+este valor muda apropriadamente.
+<P></P>
+<DT><B>TMDOTransaction.SQLObjects[Index: Integer]: TMDOBase</B></DT><DD>
+Fornece um array indexado de todos datasets ativos do componente database.
+<P></P>
+<DT><B>TMDOTransaction.TPB: PChar</B></DT><DD>
+Fornece uma visualização somente leitura do buffer de parametro da transação.
+<P></P>
+Para escrever no buffer de parametros da transação, utilize a propriedade Params.
+<P></P>
+<DT><B>TMDOTransaction.TPBLength: Short</B></DT><DD>
+Retorna o tamanho do buffer de parametros da transação.
+</DL>
+
+<A NAME="toc78"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOTransaction.OnIdleTimer: TNotifyEvent</B></DT><DD>
+Ocorre depois que uma transação alcançar o time out.
+<P></P>
+Escreva para o evento OnIdleTimer para tomar ações específicas depois que uma
+transação é marcada para permanecer inativa pelo número de segundos especificados em
+IdleTimer.
+</DL>
+
+<A NAME="toc79"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOTransaction.AddDatabase(db: TMDODatabase): Integer</B></DT><DD>
+Associa um database à transação.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.Call(ErrCode: ISC_STATUS; RaiseError: Boolean): ISC_STATUS</B></DT><DD>
+Retorna uma mensagem de erro baseado no código de erro.
+<P></P>
+Call é um método interno usado par afazer chamadas à API do Firebird, e dar-lhe as
+opções de levantar exceções ou retornar um erro baseado no valor de RaiseError.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.CheckDatabasesInList</B></DT><DD>
+Verifica por databases na lista.
+<P></P>
+Chame CheckDatabasesInList para verificar se há algum database na lista. Se não
+existir databases na lista, uma exceção é levantada.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.CheckInTransaction</B></DT><DD>
+Verifica se a transação está ativa e se há algum database na lista de database da
+transação.
+<P></P>
+Se alguma condição for falsa, uma exceção é levantada.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.CheckNotInTransaction</B></DT><DD>
+Verifica se a transação não está ativa e se não há datatabases na lista de database
+da transação.
+<P></P>
+Se alguma condição for falsa, uma exceção é levantada.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.Commit</B></DT><DD>
+Guarda permanentemente as alterações, inserções e exclusões de dados associado com a
+transação corrente, e finaliza as transações correntes.
+<P></P>
+A transação corrente é a última transação iniciada pela chamada de StartTransaction.
+<P></P>
+Obs.: Antes de chamar Commit, um aplicativo deve verificar o status da propriedade
+InTransaction. Se um aplicativo chama Commit e não há transação corrente, uma
+exceção é levantada.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.CommitRetaining</B></DT><DD>
+Aplica Commit na transação ativa e retém o contexto da transação depois do commit.
+<P></P>
+Chame CommitRetaining para guardar permanentemente no servidor todas atualizações,
+inserções e exclusões de dados associado com a transação corrente e então reter o
+contexto da transação. A transação corrente é a última transação iniciada  chamando
+StartTransaction.
+<P></P>
+Obs.: Antes de chamar CommitRetaining, um aplicativo deve verificar o status da
+propriedade InTransaction. Se um aplicativo chama CommitRetaining e não há transação
+corrente, uma exceção é levantada.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.Create(AOwner: TComponent)</B></DT><DD>
+Cria uma instancia do componente de transação.
+<P></P>
+Chame Create para instanciar um componente de transação em tempo de execução. Um
+aplicativo cria um componente de transação a fim de controlar a existencia do
+componente e ajustar suas propriedades e eventos.
+<P></P>
+Create instanciará um componente de transação e criará uma lista de string limpa
+para a propriedade Params.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.Destroy</B></DT><DD>
+Destrói a instancia do componente de transação.
+<P></P>
+Não chame Destroy diretamente em um aplicativo. Ao invés disto, chame Free, o qual
+verificará se o componente de transação já não foi liberado antes de chamar
+Destroy.
+<P></P>
+Destroy disconecta do servidor do banco de dados, se necessário. Ele então libera os
+recursos alocados para as propriedades Params e SQLObjects antes de chamar seu
+destrutor herdado.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.FindDatabase(db: TMDODatabase): Integer</B></DT><DD>
+Encontra o índice do database associado.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.RemoveDatabase(Idx: Integer)</B></DT><DD>
+Desassocia um database da transação.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.RemoveDatabases</B></DT><DD>
+Desassocia todos os database da transação.
+</DL>
+
+<DL>
+<DT><B>TMDOTransaction.Rollback</B></DT><DD>
+Cancela todas atualizações, inserções e exclusões para a transação corrente e
+finaliza a transação.
+<P></P>
+A transação corrente  é a última transação iniciada chamando StarTransaction. 
+<P></P>
+Obs.: Antes de chamar Rollback, um aplicativo deve verificar o status da propriedade
+InTransaction. Se um aplicativo chama Rollback e não há transação corrente, uma
+exceção é levantada.
+<P></P>
+<DT><B>TMDOTransaction.RollbackRetaining</B></DT><DD>
+Cancela todas atualizações, inserções e exclusões para a transação corrente e retém
+o contexto da transação.
+<P></P>
+A transação corrente  é a última transação iniciada chamando StarTransaction. 
+</DL>
+
+<P>
+Obs.: Antes de chamar RollbackRetaining, um aplicativo deve verificar o status da
+propriedade InTransaction. Se um aplicativo chama RollbackRetaining e não há
+transação corrente, uma exceção é levantada.
+</P>
+<DL>
+<DT><B>TMDOTransaction.StartTransaction</B></DT><DD>
+Inicia uma nova transação no servidor de banco de dados.
+<P></P>
+Chame StartTransaction para iniciar uma nova transação no servidor de banco de
+dados. Antes de chamar StartTransaction, um aplicativo precisa verificar o status da
+propriedade InTransaction. Se InTranscation é True, indica que uma transação já está
+em progresso, uma chamada subsequente ao StartTransaction sem chamar um Commit ou
+Rollback antes para finalizar a transação corrente levantará uma exceção.
+<P></P>
+Atualizações, inserções e exclusões que ocorrem depois que uma chamada à
+StartTransaction são mantidas pelo servidor até que o aplicativo chame Commit para
+salvar as alterações ou Rollback para cancela-las.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc80"></A>
+<H2>TMDOSQL</H2>
+<P>
+<B>Unit MDOSQL</B>
+TMDOSQL fornece um objeto para execução de expressão SQL Firebird com um mínimo de
+sobrecarga.
+</P>
+<P>
+TMDOSQL não tem interface com objetos de controle data-aware e é unidirecional.
+</P>
+<A NAME="toc81"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDOSQL.Bof: Boolean</B></DT><DD>
+Indica se uma query está no início do dataset.
+</DL>
+
+<DL>
+<DT><B>TMDOSQL.Database: TMDODatabase</B></DT><DD>
+Ajusta ou retorna o database associado com a query.
+</DL>
+
+<DL>
+<DT><B>TMDOSQL.DBHandle: PISC_DB_HANDLE</B></DT><DD>
+Especifica o handle do database para a query.
+<P></P>
+<DT><B>TMDOSQL.Eof: Boolean</B></DT><DD>
+Indica se a query está no final do dataset.
+<P></P>
+Utilize a propriedade Eof para determinar se uma query está ou não no final do
+dataset e se  a query retornou linhas no resultado.
+<P></P>
+Em adição, se a propriedade é True imediatamente depois a query é aberta, então isto
+significa que o dataset está vazio.
+<P></P>
+<DT><B>TMDOSQL.FieldIndex<A HREF="String">FieldName:</A>: Integer</B></DT><DD>
+Retorna o índice do campo nomeado.
+<P></P>
+<DT><B>TMDOSQL.Fields<A HREF="Integer">const Idx:</A>: TMDOSQLVAR</B></DT><DD>
+Retorna o campo XSQLVAR.
+<P></P>
+<DT><B>TMDOSQL.GenerateParamNames: Boolean</B></DT><DD>
+Gera uma lista de nome de parametros da query.
+<P></P>
+Ajuste para True para ter uma lista de nome de parametros gerada da query.
+</DL>
+
+<DL>
+<DT><B>TMDOSQL.GoToFirstRecordOnExecute: Boolean</B></DT><DD>
+Vai para o primeiro registro no result set aberto.
+<P></P>
+Utilize a propriedade GoToFirstRecordOnExecute para ir para o primeiro registro no
+result set aberto. Por padrão, esta propriedade é ajustada para True.
+GoToFirstRecordOnExecute existe primeiramente para uso no TMDODataSet o qual ajusta
+este valor paraFAlse para seus TMDOSQL internos.
+<P></P>
+<DT><B>TMDOSQL.Handle: TISC_STMT_HANDLE</B></DT><DD>
+Especifica o handle da query.
+<P></P>
+<DT><B>TMDOSQL.Open</B></DT><DD>
+Determina se o dataset está aberto.
+<P></P>
+<DT><B>TMDOSQL.ParamCheck: Boolean</B></DT><DD>
+Especifica se a lista de parametros para uma query SQL é gerada se a propriedade SQL
+é alterada em tempo de execução.
+<P></P>
+Esta propriedade é útil para expressões DDL (Data Definition Language) que contém
+parametros como parte da expressão DDL e que não tem parametros para a query
+TMDOSQL. Por exemplo, a expressão DDL para criar uma stored procedure pode conter
+expressões de parametro que são parte da stored procedure. Ajuste ParamCheck para
+False para prevenir que estes parametros sejam confundidos por parametros da query
+TMDOSQL que executa a expressão DDL.
+<P></P>
+Um aplicativo que não utiliza queries parametrizadas podem escolher ajustar
+ParamCheck para False, mas de outra forma deve ser marcado como True.
+<P></P>
+<DT><B>TMDOSQL.Params: TMDOSQLDA</B></DT><DD>
+Retorna os parametros XSQLDA.
+<P></P>
+<DT><B>TMDOSQL.Plan: String</B></DT><DD>
+Retorna o plan para a query.
+<P></P>
+Utilize a propriedade Plan para visualizar o plan de execução da query uma vez que a
+query foi preparada.
+<P></P>
+<DT><B>TMDOSQL.Prepared: Boolean</B></DT><DD>
+Indica se a query foi preparada.
+<P></P>
+<DT><B>TMDOSQL.RecordCount: Integer</B></DT><DD>
+Retorna a quantidade de registros atuais em uma query.
+<P></P>
+Utilize a propriedade RecordCount para ver quantos registros foram retornados pela
+query. Se o result set retornar 100 linhas, RecordCount irá retornar 100 linhas
+somente depois que todos os registros forem visitados. Isto é, após olhar o primeiro
+registro, RecordCount é 1, e assim por diante.
+<P></P>
+<DT><B>TMDOSQL.RowsAffected: Integer</B></DT><DD>
+Retorna o número de linhas afetadas.
+<P></P>
+Esta propriedade é útil para INSERT, DELETE e UPDATE.
+<P></P>
+<DT><B>TMDOSQL.SQL: TStrings</B></DT><DD>
+Ajusta a query SQL a ser executada.
+<P></P>
+Utilize a propriedade SQL para visualizar ou escrever a query SQL a ser executada.
+<P></P>
+<DT><B>TMDOSQL.SQLType: TMDOSQLTypes read FSQLType</B></DT><DD>
+Retorna o tipo da query a ser executada.
+<P></P>
+<PRE>
+  type TMDOSQLTypes = set of (SQLUnknown, SQLSelect, SQLInsert, SQLUpdate,
+</PRE>
+SQLDelete, 
+<PRE>
+  SQLDDL, SQLGetSegment, SQLPutSegment, SQLExecProcedure, SQLStartTransaction,
+</PRE>
+SQLCommit, 
+<PRE>
+  SQLRollback, SQLSelectForUpdate, SQLSetGenerator);
+</PRE>
+</DL>
+
+<P>
+Utilize SQLType para determinar o tipo da query a ser executada. Os tipos de query
+incluem:
+</P>
+<TABLE CELLPADDING="4" BORDER="1">
+<TR>
+<TH>Tipo</TH>
+<TH>Descrição</TH>
+</TR>
+</TABLE>
+
+<P>
+|SQLCommit | Aplica commit em uma transação ativa |
+|SQLDDL | Modifica o metadata do database |
+|SQLDelete | Remove linhas em uma tabela ou no conjunto de um cursor ativo |
+|SQLExecProcedure | Chama uma stored procedure |
+|SQLGetSegment | Lê um segumento de um Blob aberto |
+|SQLInsert | Adiciona uma ou mais linhas à uma tabela específica | 
+|SQLPutSegment | Escreve um segmento Blob |
+|SQLRollback | Restaura o database para o seu estado inicial anterior da transação
+corrente |
+|SQLSelectForUpdate | Usado para updates posicionados |
+|SQLSetGenerator | Ajusta um novo valor para um generator existente |
+|SQLSelect | Recupera dados de uma ou mais tabelas |
+|SQLStartTransaction | Inicia uma nova transação em um ou mais base de dados |
+|SQLUnknown | Tipo SQL desconhecido |
+|SQLUpdate | Altera dados em todo ou parte de uma linha existente em uma tabela,
+view ou set de cursor ativo |
+</P>
+<DL>
+<DT><B>TMDOSQL.Transaction: TMDOTransaction</B></DT><DD>
+Ajusta ou retorna a transação a ser utilizada pela query.
+<P></P>
+<DT><B>TMDOSQL.TRHandle: PISC_TR_HANDLE</B></DT><DD>
+Especifica o handle da transação para a query.
+<P></P>
+<DT><B>TMDOSQL.UniqueRelationName: String</B></DT><DD>
+Indica o único nome de relação. 
+</DL>
+
+<A NAME="toc82"></A>
+<H3>Eventos</H3>
+<DL>
+<DT><B>TMDOSQL.OnSQLChanging: TNotifyEvent</B></DT><DD>
+Ocorre quanto a query SQL é modificada.
+<P></P>
+Escreva para o evento OnSQLChanging ações específicas quando uma query for
+modificada. Se uma exceção é levantada neste evento, a query não foi modificada.
+</DL>
+
+<A NAME="toc83"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDOSQL.BatchInput(InputObject: TMDOBatchInput)</B></DT><DD>
+Executa uma query parametrizada no SQL para entradas em um objeto input referenciado.
+<P></P>
+<DT><B>TMDOSQL.BatchOutput(OutputObject: TMDOBatchOutput)</B></DT><DD>
+Saída da query selecionada em um SQL para o objeto OutputObject referenciado.
+<P></P>
+<DT><B>TMDOSQL.Call(ErrCode: ISC_STATUS; RaiseError: Boolean): ISC_STATUS</B></DT><DD>
+Retorna uma mensagem de erro baseado no código de erro.
+<P></P>
+Call é um método interno utilizado para fazer chamadas à API do Firebird, e dar-lhe
+opções de levantar execção ou retornar um erro baseado no valor de RaiserError.
+<P></P>
+<DT><B>TMDOSQL.CheckClosed</B></DT><DD>
+Levanta uma exceção se a query não estiver fechada.
+<P></P>
+<DT><B>TMDOSQL.CheckOpen</B></DT><DD>
+Levanta uma exceção se a query não estiver aberta.
+<P></P>
+<DT><B>TMDOSQL.CheckValidStatement</B></DT><DD>
+Levanta uma exceção se a query não tem uma expressão válida.
+<P></P>
+<DT><B>TMDOSQL.Close</B></DT><DD>
+Fecha a query.
+<P></P>
+<DT><B>TMDOSQL.Create(AOwner:TComponent)</B></DT><DD>
+Cria uma instancia do componente TMDOSQL.
+<P></P>
+<DT><B>TMDOSQL.Current: TMDOSQLDA</B></DT><DD>
+Retorna um descritor do SQL extendido para o registro corrente.
+<P></P>
+<DT><B>TMDOSQL.Destroy</B></DT><DD>
+Libera todos recursos associado com esta instancia.
+<P></P>
+Não chame Destroy diretamente no aplicativo. Normalmente a destruição dos objetos é
+manipulada automaticamente pelo Delphi. Se um aplicativo cria sua própria instancia
+de um objeto, entretanto, o aplicativo deve chamar Free, o qual verifica se o objeto
+já não foi liberado antes de chamar Destroy.
+<P></P>
+<DT><B>TMDOSQL.ExecQuery</B></DT><DD>
+Executa uma query SQL.
+<P></P>
+<DT><B>TMDOSQL.FieldByName<A HREF="String">FieldName:</A>: TMDOSQLVAR</B></DT><DD>
+Retorna campos XSQLVAR pelo nome.
+<P></P>
+<DT><B>TMDOSQL.FreeHandle</B></DT><DD>
+Libera recursos do Firebird associdados com a query.
+<P></P>
+<DT><B>TMDOSQL.GetUniqueRelationName: String</B></DT><DD>
+Pega o nome de relação único.
+<P></P>
+<DT><B>TMDOSQL.Next: TMDOSQLDA</B></DT><DD>
+Retorna um descritor do SQL extendido para o próximo registro.
+<P></P>
+<DT><B>TMDOSQL.Prepare</B></DT><DD>
+Prepara uma query para execução.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+<A NAME="toc84"></A>
+<H2>TMDODatabaseInfo</H2>
+<P>
+<B>Unit MDODatabaseInfo</B>
+</P>
+<P>
+TMDODatabaseInfo retorna informações sobre o database anexado.
+</P>
+<P>
+Utilize TMDODatabaseInfo para retornar informações sobre o database, como versão da estrutura do disco online (ODS - Online Disk Structure) usado pelo banco, o número do cache buffer do banco alocado, o número de páginas do banco lida ou escrita, ou a informação do log write-ahread.
+</P>
+<A NAME="toc85"></A>
+<H3>Propriedades</H3>
+<DL>
+<DT><B>TMDODatabaseInfo.Allocation</B></DT><DD>
+Retorna o número de páginas alocadas pelo banco.
+</DL>
+
+<DL>
+<DT><B>TMDODatabaseInfo.BackoutCount: TStringList</B></DT><DD>
+Retorna o número de remoções de uma versão de um registro.
+<P></P>
+Utilize BackoutCount para deterinar o número de vezes que uma versão de um registro foi removido.
+<P></P>
+<DT><B>TMDODatabaseInfo.BaseLevel: Long</B></DT><DD>
+Retorna a versão do banco de dados.
+<P></P>
+Utilize BaseLevel para retorna a versão do banco, o qual consiste de 1 byte contendo o número 1, e 1 byte contendo o número da versão.
+</DL>
+
+<P>
+; <B>TMDODatabaseInfo.CurrentMemory: Long</B>
+Retorna a quantidade de memória (em bytes) atualmente em uso pelo servidor.
+</P>
+<DL>
+<DT><B>TMDODatabaseInfo.Database: TMDODatabase</B></DT><DD>
+Ajusta ou retorna o database o qual terá informações retornadas.
+<P></P>
+<DT><B>TMDODatabaseInfo.DBFileName: String</B></DT><DD>
+Retorna o nome do arquivo do banco.
+<P></P>
+<DT><B>TMDODatabaseInfo.DBImplementationClass: Long</B></DT><DD>
+Retorna o número da classe de implementação do database, 1 ou 12.
+<P></P>
+<DT><B>TMDODatabaseInfo.DBImplementationNo: Long</B></DT><DD>
+Retorna o número da implementação do database.
+<P></P>
+<DT><B>TMDODatabaseInfo.DBSiteName: String</B></DT><DD>
+Retorna o nome do site do database.
+<P></P>
+<DT><B>TMDODatabaseInfo.DBSQLDialect: Long</B></DT><DD>
+Retorna o dialeto SQL do database.
+<P></P>
+<DT><B>TMDODatabaseInfo.DeleteCount: TStringList</B></DT><DD>
+Retorna o número de exclusões do banco desde que o banco foi anexado pela última vez.
+<P></P>
+<DT><B>TMDODatabaseInfo.ExpungeCount: TStringList</B></DT><DD>
+Retorna o número de exclusões de um registro e todo seus antepassados para registros que tiveram a exclusão aplicada commit.
+<P></P>
+<DT><B>TMDODatabaseInfo.Fetches: Long</B></DT><DD>
+Retorna o número de leituras ao cache buffer da memória.
+</DL>
+
+<DL>
+<DT><B>TMDODatabaseInfo.ForcedWrites: Long</B></DT><DD>
+Retorna o modo de escrita pelo qual o banco é executado.
+<P></P>
+ForcedWrites retorna 0 para o modo assíncrono, ou 1 para modo síncrono.
+</DL>
+
+<DL>
+<DT><B>TMDODatabaseInfo.InsertCount: TStringList</B></DT><DD>
+Retorna o número de inserções dentro do banco desde que o banco foi anexado pela última vez.
+</DL>
+
+<DL>
+<DT><B>TMDODatabaseInfo.Marks: Long</B></DT><DD>
+Retorna o número de escrita ao cache buffer da memória.
+<P></P>
+<DT><B>TMDODatabaseInfo.MaxMemory: Long</B></DT><DD>
+Retorna a quantidade máxima de memória usada de uma vez desde o primeiro processo anexado ao database.
+<P></P>
+<DT><B>TMDODatabaseInfo.NoReserve: Long</B></DT><DD>
+Retorna se o espaço é reservado ou não em cada página do banco para prender as versões de backup de registros modificados.
+<P></P>
+NoReserve retornará 0 indicando que o espaço está reservado (padrão) ou 1 para indicar que o espaço não está reservado.
+<P></P>
+<DT><B>TMDODatabaseInfo.NumBuffers: Long</B></DT><DD>
+Retorna o número de memória alocada atualmente.
+<P></P>
+<DT><B>TMDODatabaseInfo.ODSMajorVersion</B></DT><DD>
+Retorna a maior versão do ODS.
+<P></P>
+Bancos com número de verões maiores diferentes tem layouts físicos diferentes.
+<P></P>
+Um engine de banco pode acessar somentebancos com um número de versão ODS particular; tentar anexar à um banco com um número ODS diferente resultará em um erro.
+<P></P>
+<DT><B>TMDODatabaseInfo.ODSMinorVersion: Long</B></DT><DD>
+Retorna a menor versão do ODS.
+<P></P>
+Um incremento em um número menor de versão indica uma alteração não-estrutural, uma que permite ainda que o banco a ser acessado por databases com o mesmo número de versão maior mas possivelmente com número de versões menor diferentes.
+<P></P>
+<DT><B>TMDODatabaseInfo.PageSize: Long</B></DT><DD>
+Retorna o número de bytes por página de um banco anexado. Utilize com Allocation para determinar o tamanho do banco.
+<P></P>
+<DT><B>TMDODatabaseInfo.PurgeCount: TStringList</B></DT><DD>
+Retorna o número de remoções de registro do banco. Isto é, registros que foram afetados pelo commit, resultando em verões antigas não mais necessárias do banco.
+<P></P>
+<DT><B>TMDODatabaseInfo.ReadIdxCount</B></DT><DD>
+Retorna o número de leituras terminadas via um índice desde que o banco foi anexado pela última vez.
+<P></P>
+<DT><B>TMDODatabaseInfo.ReadOnly: Long</B></DT><DD>
+Indica se o banco é somente leitura.
+<P></P>
+ReadOnly retornará 1 se o banco é read-write e 0 se for read-only.
+<P></P>
+<DT><B>TMDODatabaseInfo.Reads</B></DT><DD>
+Retorna o número de páginas lidas de um banco desde que o banco atual foi anexado pela primeira vez, isto é, um conjunto de todas leitras concluídas pelo processo, mais que isto o número de leituras concluídas para o programa chamado desde que ele anexou ao banco.
+<P></P>
+<DT><B>TMDODatabaseInfo.ReadSeqCount: TStringList</B></DT><DD>
+Retorna o número de leitura sequencial do banco concluído em cada tabela desde que o database foi anexado pela última vez.
+<P></P>
+<DT><B>TMDODatabaseInfo.SweepInterval: Long</B></DT><DD>
+Retorna o número de transações que são aplicadas entre os 'sweeps' para remover versões do registro do banco que não são mais necessários.
+<P></P>
+<DT><B>TMDODatabaseInfo.UpdateCount: StringList</B></DT><DD>
+Retorna o número de atualizações no banco desde que o banco foi anexado pela última vez.
+<P></P>
+<DT><B>TMDODatabaseInfo.UserNames: TStringList</B></DT><DD>
+Retorna os nomes de todos usuários atualmente anexados ao banco.
+<P></P>
+<DT><B>TMDODatabaseInfo.Version: String</B></DT><DD>
+Retorna a versão de execução do banco.
+<P></P>
+<DT><B>TMDODatabaseInfo.Writes: Long</B></DT><DD>
+Retorna o número de páginas escritas ao banco atual desde que ele foi anexado pela primeira vez por qualquer processo; isto é, um conjunto de todas escritas concluídas por todos processos anexados, mais que isto o número de escritas concluídas pelo programa chamado desde que ele foi anexado ao banco.
+</DL>
+
+<A NAME="toc86"></A>
+<H3>Métodos</H3>
+<DL>
+<DT><B>TMDODatabaseInfo.Call(ErrCode: ISC_STATUS; RaiseError: Boolean): ISC_STATUS</B></DT><DD>
+Retorna uma mensagem de erro baseada no código de erro.
+<P></P>
+Call é um método interno usado para fazer chamadas à API Firebird, e dar-lhe opções de levantar exceção ou retornar um erro baseado no valor de RaiseError.
+<P></P>
+<DT><B>TMDODatabaseInfo.Create(AOwner: TComponent)</B></DT><DD>
+Cria uma instancia de um componente DatabaseInfo.
+<P></P>
+<DT><B>TMDODatabaseInfo.Destroy</B></DT><DD>
+Destrói uma instancia de um componente DatabaseInfo.
+<P></P>
+Não chame Destroy diretamente. Ao invés disto chame Free para verificar se o componente já não foi liberado antes de chamar Destroy. Destroy disconecta do servidor, libera a lista de parametros, e chama seu destrutor herdado.
+</DL>
+
+<HR NOSHADE SIZE=5>
+<P></P>
+
+<!-- html code generated by txt2tags 2.3 (http://txt2tags.sf.net) -->
+<!-- cmdline: txt2tags -t html C:/desenv/mdo/Doc/source/pt/mdo-ptbr.t2t -->
+</div></body></HTML>
